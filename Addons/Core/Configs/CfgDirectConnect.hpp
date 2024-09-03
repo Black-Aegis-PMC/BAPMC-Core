@@ -17,14 +17,13 @@ class CfgMainMenuSpotlight {
 		actionText = "Connect to server";
 		condition = "true"; //Lies
 	};
-        class Viking_Welcome {
-            text = "VKN Offical Mod";
-            textIsQuote = 0;
-            picture = "\VKN_Misc\VikingLogo512.paa";
-            video = "\VKN_Misc\VKNLOGO_512x.ogv";
-            action = "disableserialization; _script = [] execVM '\VKN_Functions\Functions\fn_ORBATCreate.sqf'; _code = uiNamespace getvariable 'CUR_bis_fnc_credits'; [_code] spawn _code;";
-            actionText = "Developed By Viking PMC";
-            condition = "false";
-        };
-
+    class Viking_Welcome {
+        text = "VKN Offical Mod";
+        textIsQuote = 0;
+        picture = "\VKN_Misc\VikingLogo512.paa";
+        video = "\VKN_Misc\VKNLOGO_512x.ogv";
+        action = "disableserialization; _script = [] execVM '\VKN_Functions\Functions\fn_ORBATCreate.sqf'; _code = uiNamespace getvariable 'CUR_bis_fnc_credits'; [_code] spawn _code;";
+        actionText = "Developed By Viking PMC";
+        condition = "false";
+    };
 };
