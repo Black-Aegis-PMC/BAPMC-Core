@@ -77,6 +77,7 @@ class Extended_PostInit_EventHandlers {
 
 // Config features/fixes
 #include "configs\CfgDefines.hpp"
+#include "configs\CfgDirectConnect.hpp"
 #include "configs\CfgEdenGUI.hpp"
 #include "configs\CfgEdenLoadouts.hpp"
 #include "configs\CfgEdenModules.hpp"
