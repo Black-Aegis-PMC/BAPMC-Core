@@ -89,6 +89,16 @@ _entities =
 		["name", "HC3"]
 	],
 	[
+		["Logic", "HeadlessClient_F", _spawnPos vectorAdd [-2, -3]],
+		["ControlMp", true],
+		["name", "HC4"]
+	],
+	[
+		["Logic", "HeadlessClient_F", _spawnPos vectorAdd [-2, -4]],
+		["ControlMp", true],
+		["name", "HC5"]
+	],
+	[
 		["Object", "B_supplyCrate_F", _spawnPos vectorAdd [-3, 6]],
 		["allowDamage", false],
 		["ArsenalObject", true]
