@@ -15,24 +15,24 @@
 	Nothing.
 
 	Examples:
-	["Odin", "Valhalla", "MTP", 3, false] call vs_core_fnc_edenCreateAssets;
+	["Odin", "Valhalla", "BLACK", 3, false] call vs_core_fnc_edenCreateAssets;
 
 	Author:
 	Met
 License GPL-2.0
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Raider", [""]], ["_zeusCallsign", "Monarch", [""]], ["_camo", "MTP", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", false, [false]]];
+params [["_callsign", "Shield", [""]], ["_zeusCallsign", "Olympus", [""]], ["_camo", "BLACK", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", false, [false]]];
 
 if (_callsign == "") then {
-	_callsign = "Raider";
+	_callsign = "Shield";
 };
 
 if (_zeusCallsign == "") then {
-	_zeusCallsign = "Monarch";
+	_zeusCallsign = "Olympus";
 };
 
 if (_camo == "") then {
-	_camo = "MTP";
+	_camo = "BLACK";
 };
 
 _camo = toUpper _camo;
@@ -152,7 +152,7 @@ for "_i" from 1 to _numberOfSections do {
 	_ix = 3;
 	{
 		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
-		if (_unitDisplayName == "IC MTP" && !isFormationLeader _x) then {
+		if (_unitDisplayName == "IC BLACK" && !isFormationLeader _x) then {
 			_x set3DENAttribute ["description", "2: 2IC"];
 		} else {
 			if (_x getUnitTrait "Medic") then {
@@ -189,7 +189,7 @@ for "_i" from 1 to _numberOfSections do {
 	} else {
 		{
 			_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
-			if (_unitDisplayName == "IC MTP" && !isFormationLeader _x) then {
+			if (_unitDisplayName == "IC BLACK" && !isFormationLeader _x) then {
 				_x set3DENAttribute ["description", "2: 2IC"];
 			} else {
 				if (_x getUnitTrait "Medic") then {

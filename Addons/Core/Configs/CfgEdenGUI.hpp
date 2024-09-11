@@ -35,7 +35,7 @@ class VS_Core_edenGUI {
 			w = 0.225;
 			h = 0.06;
 			colorBackground[] = {0.5,0.5,0.5,0.6};
-			tooltip = "Callsign of sections. Default: Raider";
+			tooltip = "Callsign of sections. Default: Shield";
 			sizeEx = 1.1 * GUI_GRID_H;
 			canModify = 1;
 		};
@@ -55,7 +55,7 @@ class VS_Core_edenGUI {
 			w = 0.225;
 			h = 0.06;
 			colorBackground[] = {0.5,0.5,0.5,0.6};
-			tooltip = "Callsign for zeus. Default: Monarch";
+			tooltip = "Callsign for zeus. Default: Olympus";
 			sizeEx = 1.1 * GUI_GRID_H;
 			canModify = 1;
 		};
@@ -81,10 +81,11 @@ class VS_Core_edenGUI {
 			sizeEx = 1.1 * GUI_GRID_H;
 
 			class Items {
-				class MTP {
-					text = "MTP";
-					data = "MTP";
+				class BLACK {
+					text = "Black";
+					data = "BLACK";
 				};
+				/*
 				class Desert {
 					text = "Desert";
 					data = "Desert";
@@ -93,6 +94,7 @@ class VS_Core_edenGUI {
 					text = "Woodland";
 					data = "Woodland";
 				};
+				*/
 			};
 		};
 

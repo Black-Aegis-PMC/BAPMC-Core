@@ -1,8 +1,9 @@
 /*License GPL-2.0*/
-#define MTP_ASTEAMLEADER "B_Soldier_SL_F"
-#define MTP_TEAMLEADER "B_Soldier_TL_F"
-#define MTP_MEDIC "B_medic_F"
-#define MTP_RIFLEMAN "B_Soldier_F"
+#define BLACK_ASTEAMLEADER "BAPMC_IC"
+#define BLACK_TEAMLEADER "BAPMC_IC"
+#define BLACK_MEDIC "BAPMC_Medic"
+#define BLACK_RIFLEMAN "BAPMC_Rifleman"
+#define BLACK_SURGEON "BAPMC_Surgeon"
 
 #define PACIFIC_ASTEAMLEADER "B_T_Soldier_SL_F"
 #define PACIFIC_TEAMLEADER "B_T_Soldier_TL_F"
@@ -50,120 +51,120 @@ class CfgGroups
 			scope = 0;
 			class infantry {
 				name = "";
-				class MTP_zeus {
+				class BLACK_zeus {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = BLACK_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {1,0,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = BLACK_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 				};
-				class MTP_section {
+				class BLACK_section {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
+						vehicle = BLACK_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = BLACK_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
+						vehicle = BLACK_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
 						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit4 {
 						position[] = {1,0,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit5 {
 						position[] = {1,-3,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit6 {
 						position[] = {1,-6,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit7 {
 						position[] = {1,-9,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 
 				};
-				class MTP_command {
+				class BLACK_command {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
+						vehicle = BLACK_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = BLACK_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2{
 						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
+						vehicle = BLACK_SURGEON;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
 						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};
-				class MTP_defaults {
+				class BLACK_defaults {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
+						vehicle = BLACK_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1{
 						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
+						vehicle = BLACK_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};
 				class PACIFIC_zeus {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
@@ -179,7 +180,7 @@ class CfgGroups
 				class PACIFIC_section {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
@@ -226,7 +227,7 @@ class CfgGroups
 				class PACIFIC_command {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
@@ -252,7 +253,7 @@ class CfgGroups
 				class PACIFIC_defaults {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
@@ -273,7 +274,7 @@ class CfgGroups
 				class WOODLAND_zeus {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
@@ -289,7 +290,7 @@ class CfgGroups
 				class WOODLAND_section {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
@@ -336,7 +337,7 @@ class CfgGroups
 				class WOODLAND_command {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
@@ -362,7 +363,7 @@ class CfgGroups
 				class WOODLAND_defaults {
 					name = "";
 					scope = 0;
-					faction = "BLU_F";
+					faction = "IND_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
