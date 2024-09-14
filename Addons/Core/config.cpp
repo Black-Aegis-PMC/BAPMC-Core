@@ -30,6 +30,7 @@ class CfgFunctions {
 			class getDeadPlayers {};
 			class getDeployAnimations {};
 			class isCurator {};
+			class limitArsenal {};
 			class listDeadPlayers {};
 			class notifyZeus {};
 			class setDefaultLoadouts {};
