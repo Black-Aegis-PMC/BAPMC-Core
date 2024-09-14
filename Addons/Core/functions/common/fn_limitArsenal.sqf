@@ -25,11 +25,11 @@ if (isNull _player) exitWith {
 };
 
 private _ranks = [
-	["Rct", ["arifle_AK12_F"]]
+	["rct", ["arifle_AK12_F"]]
 ];
 
-private _playername = name _player;
-private _splitName = _playerName splitString ".";
+private _playername = toLower name _player;
+private _splitName = _playerName splitString ". ";
 
 if (count _splitName < 2) exitWith {
 	diag_log format ["[vs_core_fnc_limitArsenal] player name '%1' does not contain a rank.", _playerName];
