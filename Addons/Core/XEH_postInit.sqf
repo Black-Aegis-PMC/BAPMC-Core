@@ -90,6 +90,8 @@ player addEventHandler ["Respawn", {
 	[format["%1 respawned at: %2. Died at: %3", name _player, serverTime, _player getVariable "VS_core_diedAt"], "core\XEH_postInit.sqf"] call VS_core_fnc_log;
 }];
 
+[player] call vs_core_fnc_limitArsenal;
+
 // Pass magazine keybinding
 [
 	"Viking Studios",
