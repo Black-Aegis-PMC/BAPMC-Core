@@ -12,12 +12,13 @@ Usage:
 Author:
     Amateur-god
 
-License GPL-3.0
+License:
+    GPL-3.0
 ---------------------------------------------------------------------------- */
 
 private _player = player;
-private _playerOriginalSide = side _player; // Get the player's original side
-private _playerOriginalGroup = group _player; // Get the player's original group
+private _playerOriginalSide = side _player;
+private _playerOriginalGroup = group _player;
 private _playerUniform = uniform _player;
 private _playerVest = vest _player;
 private _playerHeadgear = headgear _player;
@@ -25,17 +26,53 @@ private _playerBackpack = backpack _player;
 private _suspicionLevel = _player getVariable ["suspicionLevel", 0];
 private _isUndercover = false;
 private _disguisedAsFaction = "";
-private _undercoverSide = ""; // Stores the side the player is disguised as
+private _undercoverSide = objNull; // Stores the side the player is disguised as
 
 // Retrieve CBA settings values correctly
 private _suspicionThreshold = VS_Undercover_suspicionThreshold;
 private _suspicionIncreaseRate = VS_Undercover_suspicionIncreaseRate;
 
+// Function to parse comma-separated classnames into arrays
+private _parseClassnames = {
+    params ["_string"];
+    if (_string == "") exitWith { [] };
+    _string splitString "," apply { _x trim };
+};
+
+// Parse the safe gear variables into arrays
+private _safeUniformsWest = _parseClassnames VS_Undercover_safeUniformsWest;
+private _safeVestsWest = _parseClassnames VS_Undercover_safeVestsWest;
+private _safeHeadgearWest = _parseClassnames VS_Undercover_safeHeadgearWest;
+private _safeBackpacksWest = _parseClassnames VS_Undercover_safeBackpacksWest;
+
+private _safeUniformsEast = _parseClassnames VS_Undercover_safeUniformsEast;
+private _safeVestsEast = _parseClassnames VS_Undercover_safeVestsEast;
+private _safeHeadgearEast = _parseClassnames VS_Undercover_safeHeadgearEast;
+private _safeBackpacksEast = _parseClassnames VS_Undercover_safeBackpacksEast;
+
+private _safeUniformsInd = _parseClassnames VS_Undercover_safeUniformsInd;
+private _safeVestsInd = _parseClassnames VS_Undercover_safeVestsInd;
+private _safeHeadgearInd = _parseClassnames VS_Undercover_safeHeadgearInd;
+private _safeBackpacksInd = _parseClassnames VS_Undercover_safeBackpacksInd;
+
+private _safeUniformsCiv = _parseClassnames VS_Undercover_safeUniformsCiv;
+private _safeVestsCiv = _parseClassnames VS_Undercover_safeVestsCiv;
+private _safeHeadgearCiv = _parseClassnames VS_Undercover_safeHeadgearCiv;
+private _safeBackpacksCiv = _parseClassnames VS_Undercover_safeBackpacksCiv;
+
 // Function to check if the player is undercover based on their equipment
 private _checkUndercover = {
-    params ["_uniforms", "_vests", "_headgear", "_backpacks", "_faction"];
-    if ((_playerUniform in _uniforms) && (_playerVest in _vests) && (_playerHeadgear in _headgear) && (_playerBackpack in _backpacks)) then {
+    params ["_uniforms", "_vests", "_headgear", "_backpacks", "_faction", "_side"];
+    if (
+        (
+            (_uniforms isEqualTo [] || { _playerUniform in _uniforms }) &&
+            (_vests isEqualTo [] || { _playerVest in _vests }) &&
+            (_headgear isEqualTo [] || { _playerHeadgear in _headgear }) &&
+            (_backpacks isEqualTo [] || { _playerBackpack in _backpacks })
+        )
+    ) then {
         _disguisedAsFaction = _faction;
+        _undercoverSide = _side;
         true
     } else {
         false
@@ -46,21 +83,17 @@ private _checkUndercover = {
 hint format ["Checking disguise...\nUniform: %1\nVest: %2\nHeadgear: %3\nBackpack: %4", _playerUniform, _playerVest, _playerHeadgear, _playerBackpack];
 
 // Determine which faction the player is disguised as
-if ([VS_Undercover_safeUniformsWest, VS_Undercover_safeVestsWest, VS_Undercover_safeHeadgearWest, VS_Undercover_safeBackpacksWest, "West"] call _checkUndercover) then {
+if ([_safeUniformsWest, _safeVestsWest, _safeHeadgearWest, _safeBackpacksWest, "West", west] call _checkUndercover) then {
     _isUndercover = true;
-    _undercoverSide = west; // Set the undercover side
 } else {
-    if ([VS_Undercover_safeUniformsEast, VS_Undercover_safeVestsEast, VS_Undercover_safeHeadgearEast, VS_Undercover_safeBackpacksEast, "East"] call _checkUndercover) then {
+    if ([_safeUniformsEast, _safeVestsEast, _safeHeadgearEast, _safeBackpacksEast, "East", east] call _checkUndercover) then {
         _isUndercover = true;
-        _undercoverSide = east; // Set the undercover side
     } else {
-        if ([VS_Undercover_safeUniformsInd, VS_Undercover_safeVestsInd, VS_Undercover_safeHeadgearInd, VS_Undercover_safeBackpacksInd, "Independent"] call _checkUndercover) then {
+        if ([_safeUniformsInd, _safeVestsInd, _safeHeadgearInd, _safeBackpacksInd, "Independent", resistance] call _checkUndercover) then {
             _isUndercover = true;
-            _undercoverSide = independent; // Set the undercover side
         } else {
-            if ([VS_Undercover_safeUniformsCiv, VS_Undercover_safeVestsCiv, VS_Undercover_safeHeadgearCiv, VS_Undercover_safeBackpacksCiv, "Civilian"] call _checkUndercover) then {
+            if ([_safeUniformsCiv, _safeVestsCiv, _safeHeadgearCiv, _safeBackpacksCiv, "Civilian", civilian] call _checkUndercover) then {
                 _isUndercover = true;
-                _undercoverSide = civilian; // Set the undercover side
             };
         };
     };
@@ -68,51 +101,62 @@ if ([VS_Undercover_safeUniformsWest, VS_Undercover_safeVestsWest, VS_Undercover_
 
 // Manage suspicion level, player side, and initialize UI if undercover
 if (_isUndercover) then {
-    private _enemyGroup = createGroup _undercoverSide; // Create new group for the undercover side
-    [_player] joinSilent _enemyGroup; // Join player to the new enemy group (use array)
+    if (side _player != _undercoverSide) then {
+        private _enemyGroup = createGroup _undercoverSide;
+        [_player] joinSilent _enemyGroup;
+    };
 
     hint format ["You are disguised as: %1", _disguisedAsFaction];
-    _player setVariable ["isUndercover", true, true]; // Store the undercover status
+    _player setVariable ["isUndercover", true, true];
 
     // Initialize the suspicion UI if not already displayed
     [] spawn {
-        waitUntil { !isNull (findDisplay 46) }; // Wait for the main display to be ready
-        if (isNull (uiNamespace getVariable ["VS_Undercover_RscSuspicionLevel", displayNull])) then {
+        waitUntil { !isNull (findDisplay 46) };
+        if (isNull (uiNamespace getVariable ["VS_Undercover_RscSuspicionLevel"])) then {
             createDialog "VS_Undercover_RscSuspicionLevel";
         };
     };
 
     // Update the suspicion level UI
     private _ctrlSuspicion = (uiNamespace getVariable "VS_Undercover_RscSuspicionLevel") displayCtrl 1000;
-    _ctrlSuspicion ctrlSetText format ["Suspicion Level: %1", _suspicionLevel];
+    if (!isNull _ctrlSuspicion) then {
+        _ctrlSuspicion ctrlSetText format ["Suspicion Level: %1", _suspicionLevel];
+    };
 
 } else {
-    [_player] joinSilent _playerOriginalGroup; // Restore original group (use array)
-    _suspicionLevel = _suspicionLevel + (10 * _suspicionIncreaseRate); // Increase suspicion for improper disguise, scaled by rate
-    _player setVariable ["isUndercover", false, true]; // Store the undercover status
+    if (side _player != _playerOriginalSide) then {
+        [_player] joinSilent _playerOriginalGroup;
+    };
+    _suspicionLevel = _suspicionLevel + (10 * _suspicionIncreaseRate);
+    _player setVariable ["isUndercover", false, true];
 };
 
 // Proximity and line-of-sight checks for suspicion increase
 {
     private _enemy = _x;
-    private _distance = _player distance _enemy;
-    if (_distance < 20) then {
-        _suspicionLevel = _suspicionLevel + ((20 - _distance) * 0.5 * _suspicionIncreaseRate); // Increase suspicion based on distance, scaled by rate
-    };
+    if (_enemy != _player) then {
+        private _distance = _player distance _enemy;
+        if (_distance < 20) then {
+            _suspicionLevel = _suspicionLevel + ((20 - _distance) * 0.5 * _suspicionIncreaseRate);
+        };
 
-    if ([_player, _enemy, eyePos _enemy, true] call BIS_fnc_checkVisibility) then {
-        _suspicionLevel = _suspicionLevel + (1 * _suspicionIncreaseRate); // Line of sight detected, scaled by rate
+        if ([_player, _enemy] call BIS_fnc_checkVisibility) then {
+            _suspicionLevel = _suspicionLevel + (1 * _suspicionIncreaseRate);
+        };
     };
-
-} forEach (allUnits select {side _x == east || side _x == west || side _x == independent || side _x == civilian});
+} forEach (allUnits select {side _x != side _player && {side _x != civilian}});
 
 // Cap suspicion level between 0 and 100
 _suspicionLevel = _suspicionLevel max 0 min 100;
 _player setVariable ["suspicionLevel", _suspicionLevel, true];
 
 // Check for exposure and revert to original side
-if (_suspicionLevel > _suspicionThreshold) then {
-    [_player] joinSilent _playerOriginalGroup; // Expose the player and reset to the original group (use array)
+if (_suspicionLevel >= _suspicionThreshold) then {
+    if (side _player != _playerOriginalSide) then {
+        [_player] joinSilent _playerOriginalGroup;
+        hint "You have been exposed!";
+        _player setVariable ["isUndercover", false, true];
+    };
 };
 
 // Debug output
