@@ -37,117 +37,117 @@ private _VS_undercover_settings = [
     [
         "VS_Undercover_safeUniformsWest",
         "EDITBOX",
-        ["Safe Uniforms (West)", "List of uniform classnames for going undercover as West (comma-separated, no quotes)."],
+        ["Safe Uniforms (West)", "List of uniform classnames for going undercover as West ."],
         ["Viking Studios Undercover", "Disguises - West"],
-        "U_B_CombatUniform_mcam,U_B_CombatUniform_mcam_tshirt"
+        "[]"
     ],
     [
         "VS_Undercover_safeVestsWest",
         "EDITBOX",
-        ["Safe Vests (West)", "List of vest classnames for going undercover as West (comma-separated, no quotes)."],
+        ["Safe Vests (West)", "List of vest classnames for going undercover as West ."],
         ["Viking Studios Undercover", "Disguises - West"],
-        ""
+        "[]"
     ],
     [
         "VS_Undercover_safeHeadgearWest",
         "EDITBOX",
-        ["Safe Headgear (West)", "List of headgear classnames for going undercover as West (comma-separated, no quotes)."],
+        ["Safe Headgear (West)", "List of headgear classnames for going undercover as West ."],
         ["Viking Studios Undercover", "Disguises - West"],
-        ""
+        "[]"
     ],
     [
         "VS_Undercover_safeBackpacksWest",
         "EDITBOX",
-        ["Safe Backpacks (West)", "List of backpack classnames for going undercover as West (comma-separated, no quotes)."],
+        ["Safe Backpacks (West)", "List of backpack classnames for going undercover as West ."],
         ["Viking Studios Undercover", "Disguises - West"],
-        ""
+        "[]"
     ],
     // Undercover settings for East faction
     [
         "VS_Undercover_safeUniformsEast",
         "EDITBOX",
-        ["Safe Uniforms (East)", "List of uniform classnames for going undercover as East (comma-separated, no quotes)."],
+        ["Safe Uniforms (East)", "List of uniform classnames for going undercover as East ."],
         ["Viking Studios Undercover", "Disguises - East"],
-        "U_O_CombatUniform_ocamo,U_O_OfficerUniform_ocamo"
+        "[]"
     ],
     [
         "VS_Undercover_safeVestsEast",
         "EDITBOX",
-        ["Safe Vests (East)", "List of vest classnames for going undercover as East (comma-separated, no quotes)."],
+        ["Safe Vests (East)", "List of vest classnames for going undercover as East ."],
         ["Viking Studios Undercover", "Disguises - East"],
-        ""
+        "[]"
     ],
     [
         "VS_Undercover_safeHeadgearEast",
         "EDITBOX",
-        ["Safe Headgear (East)", "List of headgear classnames for going undercover as East (comma-separated, no quotes)."],
+        ["Safe Headgear (East)", "List of headgear classnames for going undercover as East ."],
         ["Viking Studios Undercover", "Disguises - East"],
-        ""
+        "[]"
     ],
     [
         "VS_Undercover_safeBackpacksEast",
         "EDITBOX",
-        ["Safe Backpacks (East)", "List of backpack classnames for going undercover as East (comma-separated, no quotes)."],
+        ["Safe Backpacks (East)", "List of backpack classnames for going undercover as East ."],
         ["Viking Studios Undercover", "Disguises - East"],
-        ""
+        "[]"
     ],
     // Undercover settings for Independent faction
     [
         "VS_Undercover_safeUniformsInd",
         "EDITBOX",
-        ["Safe Uniforms (Independent)", "List of uniform classnames for going undercover as Independent (comma-separated, no quotes)."],
+        ["Safe Uniforms (Independent)", "List of uniform classnames for going undercover as Independent ."],
         ["Viking Studios Undercover", "Disguises - Independent"],
-        "U_I_CombatUniform, U_I_CombatUniform_shortsleeve"
+        "[]"
     ],
     [
         "VS_Undercover_safeVestsInd",
         "EDITBOX",
-        ["Safe Vests (Independent)", "List of vest classnames for going undercover as Independent (comma-separated, no quotes)."],
+        ["Safe Vests (Independent)", "List of vest classnames for going undercover as Independent ."],
         ["Viking Studios Undercover", "Disguises - Independent"],
-        ""
+        "[]"
     ],
     [
         "VS_Undercover_safeHeadgearInd",
         "EDITBOX",
-        ["Safe Headgear (Independent)", "List of headgear classnames for going undercover as Independent (comma-separated, no quotes)."],
+        ["Safe Headgear (Independent)", "List of headgear classnames for going undercover as Independent ."],
         ["Viking Studios Undercover", "Disguises - Independent"],
-        ""
+        "[]"
     ],
     [
         "VS_Undercover_safeBackpacksInd",
         "EDITBOX",
-        ["Safe Backpacks (Independent)", "List of backpack classnames for going undercover as Independent (comma-separated, no quotes)."],
+        ["Safe Backpacks (Independent)", "List of backpack classnames for going undercover as Independent ."],
         ["Viking Studios Undercover", "Disguises - Independent"],
-        ""
+        "[]"
     ],
     // Undercover settings for Civ faction
     [
         "VS_Undercover_safeUniformsCiv",
         "EDITBOX",
-        ["Safe Uniforms (Civ)", "List of uniform classnames for going undercover as Civilian (comma-separated, no quotes)."],
+        ["Safe Uniforms (Civ)", "List of uniform classnames for going undercover as Civilian ."],
         ["Viking Studios Undercover", "Disguises - Civ"],
-        "U_C_Poloshirt_blue,U_C_Poloshirt_stripped"
+        "[]"
     ],
     [
         "VS_Undercover_safeVestsCiv",
         "EDITBOX",
-        ["Safe Vests (Civ)", "List of vest classnames for going undercover as Civilian (comma-separated, no quotes)."],
+        ["Safe Vests (Civ)", "List of vest classnames for going undercover as Civilian ."],
         ["Viking Studios Undercover", "Disguises - Civ"],
-        ""
+        "[]"
     ],
     [
         "VS_Undercover_safeHeadgearCiv",
         "EDITBOX",
-        ["Safe Headgear (Civ)", "List of headgear classnames for going undercover as Civilian (comma-separated, no quotes)."],
+        ["Safe Headgear (Civ)", "List of headgear classnames for going undercover as Civilian ."],
         ["Viking Studios Undercover", "Disguises - Civ"],
-        ""
+        "[]"
     ],
     [
         "VS_Undercover_safeBackpacksCiv",
         "EDITBOX",
-        ["Safe Backpacks (Civ)", "List of backpack classnames for going undercover as Civilian (comma-separated, no quotes)."],
+        ["Safe Backpacks (Civ)", "List of backpack classnames for going undercover as Civilian."],
         ["Viking Studios Undercover", "Disguises - Civ"],
-        ""
+        "[]"
     ]
 ];
 

@@ -32,33 +32,25 @@ private _undercoverSide = objNull; // Stores the side the player is disguised as
 private _suspicionThreshold = VS_Undercover_suspicionThreshold;
 private _suspicionIncreaseRate = VS_Undercover_suspicionIncreaseRate;
 
-// Function to parse comma-separated classnames into arrays
-private _parseClassnames = {
-    params ["_string"];
-    if (_string == "") exitWith { [] };
-    _string splitString "," apply { _x trim };
-};
+private _safeUniformsWest = parseSimpleArray VS_Undercover_safeUniformsWest;
+private _safeVestsWest = parseSimpleArray VS_Undercover_safeVestsWest;
+private _safeHeadgearWest = parseSimpleArray VS_Undercover_safeHeadgearWest;
+private _safeBackpacksWest = parseSimpleArray VS_Undercover_safeBackpacksWest;
 
-// Parse the safe gear variables into arrays
-private _safeUniformsWest = _parseClassnames VS_Undercover_safeUniformsWest;
-private _safeVestsWest = _parseClassnames VS_Undercover_safeVestsWest;
-private _safeHeadgearWest = _parseClassnames VS_Undercover_safeHeadgearWest;
-private _safeBackpacksWest = _parseClassnames VS_Undercover_safeBackpacksWest;
+private _safeUniformsEast = parseSimpleArray VS_Undercover_safeUniformsEast;
+private _safeVestsEast = parseSimpleArray VS_Undercover_safeVestsEast;
+private _safeHeadgearEast = parseSimpleArray VS_Undercover_safeHeadgearEast;
+private _safeBackpacksEast = parseSimpleArray VS_Undercover_safeBackpacksEast;
 
-private _safeUniformsEast = _parseClassnames VS_Undercover_safeUniformsEast;
-private _safeVestsEast = _parseClassnames VS_Undercover_safeVestsEast;
-private _safeHeadgearEast = _parseClassnames VS_Undercover_safeHeadgearEast;
-private _safeBackpacksEast = _parseClassnames VS_Undercover_safeBackpacksEast;
+private _safeUniformsInd = parseSimpleArray VS_Undercover_safeUniformsInd;
+private _safeVestsInd = parseSimpleArray VS_Undercover_safeVestsInd;
+private _safeHeadgearInd = parseSimpleArray VS_Undercover_safeHeadgearInd;
+private _safeBackpacksInd = parseSimpleArray VS_Undercover_safeBackpacksInd;
 
-private _safeUniformsInd = _parseClassnames VS_Undercover_safeUniformsInd;
-private _safeVestsInd = _parseClassnames VS_Undercover_safeVestsInd;
-private _safeHeadgearInd = _parseClassnames VS_Undercover_safeHeadgearInd;
-private _safeBackpacksInd = _parseClassnames VS_Undercover_safeBackpacksInd;
-
-private _safeUniformsCiv = _parseClassnames VS_Undercover_safeUniformsCiv;
-private _safeVestsCiv = _parseClassnames VS_Undercover_safeVestsCiv;
-private _safeHeadgearCiv = _parseClassnames VS_Undercover_safeHeadgearCiv;
-private _safeBackpacksCiv = _parseClassnames VS_Undercover_safeBackpacksCiv;
+private _safeUniformsCiv = parseSimpleArray VS_Undercover_safeUniformsCiv;
+private _safeVestsCiv = parseSimpleArray VS_Undercover_safeVestsCiv;
+private _safeHeadgearCiv = parseSimpleArray VS_Undercover_safeHeadgearCiv;
+private _safeBackpacksCiv = parseSimpleArray VS_Undercover_safeBackpacksCiv;
 
 // Function to check if the player is undercover based on their equipment
 private _checkUndercover = {
