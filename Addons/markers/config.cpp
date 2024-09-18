@@ -9,6 +9,11 @@ class CfgPatches
 		version = 1.0;
 		versionAr[] = {1,0,0,0};
 		versionStr = "v1.0.0";
+		units[] = {"VS_BA_Flag"};
+        weapons[]={};
+		magazines[] = {};
+		ammo[] = {};
+		worlds[] = {};
     };
 };
 
