@@ -28,8 +28,8 @@ private _disguisedAsFaction = "";
 private _undercoverSide = ""; // Stores the side the player is disguised as
 
 // Retrieve CBA settings values correctly
-private _suspicionThreshold = ["VS_Undercover_suspicionThreshold", 50] call CBA_settings_fnc_get;
-private _suspicionIncreaseRate = ["VS_Undercover_suspicionIncreaseRate", 1.0] call CBA_settings_fnc_get;
+private _suspicionThreshold = VS_Undercover_suspicionThreshold;
+private _suspicionIncreaseRate = VS_Undercover_suspicionIncreaseRate;
 
 // Function to check if the player is undercover based on their equipment
 private _checkUndercover = {

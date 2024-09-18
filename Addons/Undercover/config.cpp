@@ -29,9 +29,6 @@ class CfgFunctions {
             class interactWithCivilians {
                 description = "Handles interactions with nearby civilians.";
             };
-            class updateSuspicionUI {
-                description = "Updates the custom UI for the suspicion level.";
-            };
         };
     };
 };
