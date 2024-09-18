@@ -16,9 +16,6 @@ class CfgPatches {
     };
 };
 
-// Include dialog definitions
-#include "dialog.hpp"
-
 class CfgFunctions {
     class VS_Undercover {
         class Functions {
