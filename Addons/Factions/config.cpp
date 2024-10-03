@@ -33,7 +33,7 @@ class CfgEditorCategories
   {
     icon="x\VS_C\Core\images\bapmc.paa";
     displayName="Black Aegis - PMC";
-    side=1;
+    side=2;
     priority=1;
   };
 };
