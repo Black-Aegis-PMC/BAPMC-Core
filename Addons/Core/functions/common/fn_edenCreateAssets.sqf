@@ -118,12 +118,12 @@ _entities =
 _sections =
 [
 	[
-		[configfile >> "CfgGroups" >> "West" >> "vs_core_compositions" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
+		[configfile >> "CfgGroups" >> "Indep" >> "vs_core_compositions" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
 		"Command",
 		["description", format ["1: 1IC@%1 1-Actual", _callsign ]]
 	],
 	[
-		[configfile >> "CfgGroups" >> "West" >> "vs_core_compositions" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
+		[configfile >> "CfgGroups" >> "Indep" >> "vs_core_compositions" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
 		"Zeus",
 		["description", format ["1: Zeus@%1", _zeusCallsign]]
 	]
@@ -146,7 +146,7 @@ _last = "";
 // The main sections
 _num = 1;
 for "_i" from 1 to _numberOfSections do {
-	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "vs_core_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
+	create3DENComposition [configfile >> "CfgGroups" >> "Indep" >> "vs_core_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
 	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
 	_ix = 3;
@@ -206,7 +206,7 @@ for "_i" from 1 to _numberOfSections do {
 
 // default Loadouts
 if (_createDefaults) then {
-	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "vs_core_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
+	create3DENComposition [configfile >> "CfgGroups" >> "Indep" >> "vs_core_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
 	set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "vs_cORE_3den_Loadout", true]];
 	_groupComp = get3DENSelected "Object";
 	{

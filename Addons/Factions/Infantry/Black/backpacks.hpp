@@ -66,6 +66,8 @@
      class _xx_KAT_Empty_bloodIV_500 {count=1;name="KAT_Empty_bloodIV_500";};
      class _xx_kat_X_AED {count=1;name="kat_X_AED";};
      class _xx_ACE_suture {count=75;name="ACE_suture";};
+     class _xx_ACE_surgicalKit {count=1;name="ACE_surgicalKit";};
+
     };
     class TransportWeapons{};
   };
