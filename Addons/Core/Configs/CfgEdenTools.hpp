@@ -33,7 +33,7 @@ class display3DEN
 				};
 				class VS_Core_settings {
 					text = "Load BA-PMC Settings";
-					action = "['Are you sure you want to overwrite current settings with VS defaults?', 'Load VS Settings', ['Overwrite', {[] call VS_Core_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
+					action = "['Are you sure you want to overwrite current settings with BA defaults?', 'Load BA Settings', ['Overwrite', {[] call VS_Core_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
 				};
 				class VS_Core_assets {
 					text = "Load BA-PMC Slots & Modules";
@@ -152,7 +152,7 @@ class CfgGroups
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = BLACK_ASTEAMLEADER;
+						vehicle = BLACK_SURGEON;
 						rank = "PRIVATE";
 					};
 					class Unit2{
