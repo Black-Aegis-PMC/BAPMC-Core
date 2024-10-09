@@ -4,7 +4,7 @@
 #define BLACK_MEDIC "BAPMC_Medic"
 #define BLACK_RIFLEMAN "BAPMC_Rifleman"
 #define BLACK_SURGEON "BAPMC_Surgeon"
-
+/*
 #define PACIFIC_ASTEAMLEADER "B_T_Soldier_SL_F"
 #define PACIFIC_TEAMLEADER "B_T_Soldier_TL_F"
 #define PACIFIC_MEDIC "B_T_Medic_F"
@@ -14,7 +14,7 @@
 #define WOODLAND_TEAMLEADER "B_W_Soldier_TL_F"
 #define WOODLAND_MEDIC "B_W_Medic_F"
 #define WOODLAND_RIFLEMAN "B_W_Soldier_F"
-
+*/
 class ctrlMenuStrip;
 class display3DEN
 {
@@ -33,7 +33,7 @@ class display3DEN
 				};
 				class VS_Core_settings {
 					text = "Load BA-PMC Settings";
-					action = "['Are you sure you want to overwrite current settings with VS defaults?', 'Load VS Settings', ['Overwrite', {[] call VS_Core_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
+					action = "['Are you sure you want to overwrite current settings with BA defaults?', 'Load BA Settings', ['Overwrite', {[] call VS_Core_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
 				};
 				class VS_Core_assets {
 					text = "Load BA-PMC Slots & Modules";
@@ -45,7 +45,7 @@ class display3DEN
 };
 class CfgGroups
 {
-	class West {
+	class independent {
 		class VS_Core_compositions {
 			name = "VS";
 			scope = 0;
@@ -54,8 +54,8 @@ class CfgGroups
 				class BLACK_zeus {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = BLACK_ASTEAMLEADER;
@@ -70,8 +70,8 @@ class CfgGroups
 				class BLACK_section {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = BLACK_TEAMLEADER;
@@ -117,8 +117,8 @@ class CfgGroups
 				class BLACK_command {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = BLACK_TEAMLEADER;
@@ -143,19 +143,24 @@ class CfgGroups
 				class BLACK_defaults {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = BLACK_TEAMLEADER;
 						rank = "PRIVATE";
 					};
-					class Unit1{
+					class Unit1 {
+						position[] = {0,-3,0};
+						vehicle = BLACK_SURGEON;
+						rank = "PRIVATE";
+					};
+					class Unit2{
 						position[] = {0,-6,0};
 						vehicle = BLACK_MEDIC;
 						rank = "PRIVATE";
 					};
-					class Unit2 {
+					class Unit3 {
 						position[] = {0,-9,0};
 						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
@@ -164,8 +169,8 @@ class CfgGroups
 				class PACIFIC_zeus {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = PACIFIC_ASTEAMLEADER;
@@ -180,8 +185,8 @@ class CfgGroups
 				class PACIFIC_section {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = PACIFIC_TEAMLEADER;
@@ -227,8 +232,8 @@ class CfgGroups
 				class PACIFIC_command {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = PACIFIC_TEAMLEADER;
@@ -253,8 +258,8 @@ class CfgGroups
 				class PACIFIC_defaults {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = PACIFIC_TEAMLEADER;
@@ -274,8 +279,8 @@ class CfgGroups
 				class WOODLAND_zeus {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = WOODLAND_ASTEAMLEADER;
@@ -290,8 +295,8 @@ class CfgGroups
 				class WOODLAND_section {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = WOODLAND_TEAMLEADER;
@@ -337,8 +342,8 @@ class CfgGroups
 				class WOODLAND_command {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = WOODLAND_TEAMLEADER;
@@ -363,8 +368,8 @@ class CfgGroups
 				class WOODLAND_defaults {
 					name = "";
 					scope = 0;
-					faction = "IND_F";
-					side = 1;
+					faction = "VS_C_BAPMC";
+					side = 2;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = WOODLAND_TEAMLEADER;

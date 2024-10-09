@@ -24,7 +24,6 @@ if (isNull _player) exitWith {
 	false
 };
 
-
 _blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;
 _blacklistRecruit = parseSimpleArray VS_core_arsenal_blacklist_rct + _blacklistPrivate;
 _blacklistCadet = parseSimpleArray VS_core_arsenal_blacklist_cdt + _blacklistRecruit;
