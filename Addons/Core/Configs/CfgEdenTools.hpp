@@ -4,6 +4,9 @@
 #define BLACK_MEDIC "BAPMC_Medic"
 #define BLACK_RIFLEMAN "BAPMC_Rifleman"
 #define BLACK_SURGEON "BAPMC_Surgeon"
+#define BLACK_CADET "BAPMC_Cadet"
+
+
 /*
 #define PACIFIC_ASTEAMLEADER "B_T_Soldier_SL_F"
 #define PACIFIC_TEAMLEADER "B_T_Soldier_TL_F"
@@ -104,12 +107,12 @@ class CfgGroups
 					};
 					class Unit6 {
 						position[] = {1,-6,0};
-						vehicle = BLACK_RIFLEMAN;
+						vehicle = BLACK_CADET;
 						rank = "PRIVATE";
 					};
 					class Unit7 {
 						position[] = {1,-9,0};
-						vehicle = BLACK_RIFLEMAN;
+						vehicle = BLACK_CADET;
 						rank = "PRIVATE";
 					};
 
@@ -163,6 +166,11 @@ class CfgGroups
 					class Unit3 {
 						position[] = {0,-9,0};
 						vehicle = BLACK_RIFLEMAN;
+						rank = "PRIVATE";
+					};
+					class Unit4 {
+						position[] = {0,-9,0};
+						vehicle = BLACK_CADET;
 						rank = "PRIVATE";
 					};
 				};
