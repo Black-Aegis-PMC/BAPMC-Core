@@ -152,7 +152,7 @@ for "_i" from 1 to _numberOfSections do {
 	_ix = 3;
 	{
 		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
-		if (_unitDisplayName == "IC BLACK" && !isFormationLeader _x) then {
+		if (_unitDisplayName == "IC" && !isFormationLeader _x) then {
 			_x set3DENAttribute ["description", "2: 2IC"];
 		} else {
 			if (_x getUnitTrait "Medic") then {
@@ -189,7 +189,7 @@ for "_i" from 1 to _numberOfSections do {
 	} else {
 		{
 			_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
-			if (_unitDisplayName == "IC BLACK" && !isFormationLeader _x) then {
+			if (_unitDisplayName == "IC" && !isFormationLeader _x) then {
 				_x set3DENAttribute ["description", "2: 2IC"];
 			} else {
 				if (_x getUnitTrait "Medic") then {
