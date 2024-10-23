@@ -75,6 +75,72 @@ class cup_smg_mp5sd6;
 class cup_smg_mp7; 
 class cup_smg_p90_black; 
 class cup_smg_ps90_olive; 
+class BAPMC_arifle_acr_dmr_blk_556: cup_arifle_acr_dmr_blk_556
+	{
+    };
+class BAPMC_smg_BallisticShield_MP7: CUP_smg_BallisticShield_MP7
+    {
+    };
+class BAPMC_sgun_m1014: cup_sgun_m1014
+    {
+    };
+class BAPMC_sgun_m1014_solidstock: cup_sgun_m1014_solidstock
+    {
+    };
+class BAPMC_sgun_m1014_vfg: cup_sgun_m1014_vfg
+    {
+    };
+class BAPMC_sgun_m1014_entry: cup_sgun_m1014_entry
+    {
+    };
+class BAPMC_sgun_m1014_entry_vfg: cup_sgun_m1014_entry_vfg
+    {
+    };
+class BAPMC_srifle_m110_kac_black: cup_srifle_m110_kac_black
+    {
+    };
+class BAPMC_srifle_m110_black: cup_srifle_m110_black
+    {
+    };
+class BAPMC_arifle_hk_m27_vfg: cup_arifle_hk_m27_vfg
+    {
+    };
+class BAPMC_arifle_hk_m27: cup_arifle_hk_m27
+    {
+    };
+class BAPMC_arifle_hk_m27_ag36: cup_arifle_hk_m27_ag36
+    {
+    };
+class BAPMC_lmg_mg3_rail: cup_lmg_mg3_rail
+    {
+    };
+class BAPMC_lmg_mg3: cup_lmg_mg3
+    {
+    };
+class BAPMC_smg_mp5a5: cup_smg_mp5a5
+    {
+    };
+class BAPMC_smg_MP5A5_Rail_AFG: CUP_smg_MP5A5_Rail_AFG
+    {
+    };
+class BAPMC_smg_MP5A5_Rail_VFG: CUP_smg_MP5A5_Rail_VFG
+    {
+    };
+class BAPMC_smg_MP5A5_Rail: CUP_smg_MP5A5_Rail
+    {
+    };
+class BAPMC_smg_mp5sd6: cup_smg_mp5sd6
+    {
+    };
+class BAPMC_smg_mp7: cup_smg_mp7
+    {
+    };
+class BAPMC_smg_p90_black: cup_smg_p90_black
+    {
+    };
+class BAPMC_smg_ps90_olive: cup_smg_ps90_olive
+    {
+    };
 // rhs
 class rhs_weap_M107; 
 class rhs_weap_XM2010; 
@@ -82,6 +148,24 @@ class rhs_weap_XM2010_wd;
 class rhs_weap_m32; 
 class rhs_weap_m40a5; 
 class rhsusf_weap_MP7A2; 
+class BAPMC_weap_M107: rhs_weap_M107
+    {
+    };
+class BAPMC_weap_XM2010: rhs_weap_XM2010
+    {
+    };
+class BAPMC_weap_XM2010_wd: rhs_weap_XM2010_wd
+    {
+    };
+class BAPMC_weap_m32: rhs_weap_m32
+    {
+    };
+class BAPMC_weap_m40a5: rhs_weap_m40a5
+    {
+    };
+class BAPMCusf_weap_MP7A2: rhsusf_weap_MP7A2
+    {
+    };
 // sma
 class sma_hk416gl; 
 class sma_hk416vfg; 
@@ -100,4 +184,54 @@ class sma_mk17_16_black;
 class sma_mk16_blackqcb; 
 class sma_mk16_black; 
 class sma_mk16_eglm_black; 
-
+class BAPMC_hk416gl: sma_hk416gl
+    {
+    };
+class BAPMC_hk416vfg: sma_hk416vfg
+    {
+    };
+class BAPMC_hk416afg: sma_hk416afg
+    {
+    };
+class BAPMC_hk416customcqbafgb: sma_hk416customcqbafgb
+    {
+    };
+class BAPMC_hk416glcqb_b: sma_hk416glcqb_b
+    {
+    };
+class BAPMC_hk416customcqbvfgb: sma_hk416customcqbvfgb
+    {
+    };
+class BAPMC_hk417_16in: sma_hk417_16in
+    {
+    };
+class BAPMC_acrblk: sma_acrblk
+    {
+    };
+class BAPMC_acrgl_b: sma_acrgl_b
+    {
+    };
+class BAPMC_minimi_mk3_762tlb: sma_minimi_mk3_762tlb
+    {
+    };
+class BAPMC_minimi_mk3_762tsb: sma_minimi_mk3_762tsb
+    {
+    };
+class BAPMC_mk18afg: sma_mk18afg
+    {
+    };
+class BAPMC_mk18_gl: sma_mk18_gl
+    {
+    };
+class BAPMC_mk17_16_black: sma_mk17_16_black
+    {
+    };
+class BAPMC_mk16_blackqcb: sma_mk16_blackqcb
+    {
+    };
+class BAPMC_mk16_black: sma_mk16_black
+    {
+    };
+class BAPMC_mk16_eglm_black: sma_mk16_eglm_black
+    {
+    };
