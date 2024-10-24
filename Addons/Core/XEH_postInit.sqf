@@ -2,12 +2,19 @@
 License GPL-2.0
 */
 [] spawn {
-	// Suspend the whole damn thing until the required CBA Settings are available
+	// Suspend the script until the required CBA Settings are available
 	waitUntil {
 		sleep 0.5;
 		!(isNil "cba_settings_ready")
 	};
 
+	// Ensure player is initialized before calling limitArsenal function
+	waitUntil { !isNull player && local player && hasInterface };
+
+	// Call vs_core_fnc_limitArsenal after the player is ready
+	[player] call vs_core_fnc_limitArsenal;
+
+	// Server-side logic to handle loadouts
 	if (isServer) then {
 		_loadoutUnits = allUnits select {_x getVariable ["VS_core_isLoadout", false]};
 		VS_core_loadouts = [];
@@ -20,6 +27,7 @@ License GPL-2.0
 		[VS_core_loadouts] remoteExec ["VS_core_fnc_setDefaultLoadouts", 0, true];
 	};
 };
+
 
 [{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
 	["Viking Studios Modules", "Add Barracks Functions",
@@ -89,9 +97,6 @@ player addEventHandler ["Respawn", {
 	[["%1 has just respawned!", name _player], "warning"] remoteExec ["VS_core_fnc_notifyZeus", call VS_core_fnc_getCurators];
 	[format["%1 respawned at: %2. Died at: %3", name _player, serverTime, _player getVariable "VS_core_diedAt"], "core\XEH_postInit.sqf"] call VS_core_fnc_log;
 }];
-
-waitUntil { !isNull player && local player && hasInterface };
-[player] call vs_core_fnc_limitArsenal;
 
 // Pass magazine keybinding
 [
