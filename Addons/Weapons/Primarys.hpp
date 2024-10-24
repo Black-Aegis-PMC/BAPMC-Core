@@ -93,6 +93,7 @@ class cup_smg_mp5sd6;
 class cup_smg_mp7; 
 class cup_smg_p90_black; 
 class cup_smg_ps90_olive; 
+
 class BAPMC_arifle_acr_dmr_blk_556: cup_arifle_acr_dmr_blk_556
 	{
     class CowsSlot : CowsSlotMXM 
@@ -183,6 +184,7 @@ class rhs_weap_XM2010_wd;
 class rhs_weap_m32; 
 class rhs_weap_m40a5; 
 class rhsusf_weap_MP7A2; 
+
 class BAPMC_weap_M107: rhs_weap_M107
     {
     };
@@ -220,6 +222,7 @@ class sma_mk17_16_black;
 class sma_mk16_blackqcb; 
 class sma_mk16_black; 
 class sma_mk16_eglm_black; 
+
 class BAPMC_hk416gl: sma_hk416gl
     {
     class CowsSlot : CowsSlotBase 
