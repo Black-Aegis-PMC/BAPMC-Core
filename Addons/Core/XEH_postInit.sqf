@@ -8,12 +8,6 @@ License GPL-2.0
 		!(isNil "cba_settings_ready")
 	};
 
-	// Ensure player is initialized before calling limitArsenal function
-	waitUntil { !isNull player && local player && hasInterface };
-
-	// Call vs_core_fnc_limitArsenal after the player is ready
-	[player] call vs_core_fnc_limitArsenal;
-
 	// Server-side logic to handle loadouts
 	if (isServer) then {
 		_loadoutUnits = allUnits select {_x getVariable ["VS_core_isLoadout", false]};
@@ -26,6 +20,7 @@ License GPL-2.0
 		publicVariable "VS_core_loadouts";
 		[VS_core_loadouts] remoteExec ["VS_core_fnc_setDefaultLoadouts", 0, true];
 	};
+	[player] call vs_core_fnc_limitArsenal;
 };
 
 
