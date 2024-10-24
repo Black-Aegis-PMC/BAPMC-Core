@@ -1,12 +1,12 @@
 class SlotInfo;
-    class CowsSlot : SlotInfo;
+    class CowsSlot : SlotInfo
     {
     };
-    class CowsSlot : CowsSlotBase  : CowsSlot
+    class CowsSlotBase  : CowsSlot
         {
 	    compatibleItems[] = { "CUP_optic_1P87_RIS", "CUP_optic_1P87_RIS_desert", "CUP_optic_1P87_RIS_woodland", "CUP_optic_Aimpoint_5000", "CUP_optic_MicroT1", "CUP_optic_AC11704_Black", "optic_Yorris", "optic_Aco", "optic_Aco_smg", "CUP_optic_HoloBlack", "CUP_optic_Eotech553_Black", "optic_Holosight", "optic_Holosight_smg", "CUP_optic_ISM1400A7", "CUP_optic_CompM2_Black", "CUP_optic_CompM2_low", "CUP_optic_MARS", "CUP_optic_ZDDot", "CUP_optic_MEPRO", "CUP_optic_OKP_7_rail", "CUP_optic_TrijiconRx01_black", "CUP_optic_VortexRazor_UH1_Black", "CUP_optic_ZeissZPoint", "optic_Hamr"};
         };
-    class CowsSlot : CowsSlotMXM  : CowsSlotBase
+    class CowsSlotMXM  : CowsSlotBase
         {
 	    compatibleItems[] = { "CUP_optic_1P87_RIS", "CUP_optic_1P87_RIS_desert", "CUP_optic_1P87_RIS_woodland", "CUP_optic_Aimpoint_5000", "CUP_optic_MicroT1", "CUP_optic_AC11704_Black", "optic_Yorris", "optic_Aco", "optic_Aco_smg", "CUP_optic_HoloBlack", "CUP_optic_Eotech553_Black", "optic_Holosight", "optic_Holosight_smg", "CUP_optic_ISM1400A7", "CUP_optic_CompM2_Black", "CUP_optic_CompM2_low", "CUP_optic_MARS", "CUP_optic_ZDDot", "CUP_optic_MEPRO", "CUP_optic_OKP_7_rail", "CUP_optic_TrijiconRx01_black", "CUP_optic_VortexRazor_UH1_Black", "CUP_optic_ZeissZPoint", "optic_Hamr", "CUP_optic_1P87_1P90_BLK", "CUP_optic_G33_HWS_BLK", "CUP_optic_AIMM_COMPM2_BLK", "CUP_optic_AIMM_MARS_BLK", "CUP_optic_AIMM_ZDDOT_BLK", "CUP_optic_LeupoldMk4_CQ_T", "CUP_optic_AN_PVS_4", "optic_DMS", "CUP_optic_CWS_NV", "CUP_optic_ElcanM145", "CUP_optic_Elcan", "CUP_optic_Elcan_reflex", "CUP_optic_HensoldtZO", "ACE_optic_MRCO_2D", "CUP_optic_SB_11_4x20_PM", "CUP_optic_SUSAT", "CUP_optic_ACOG_TA01B_Black", "CUP_optic_CWS", "ACE_optic_SOS_2D", "optic_NVS", "CUP_optic_ACOG_TA648_308_Black", "UK3CB_BAF_TA648", ""};
         };
