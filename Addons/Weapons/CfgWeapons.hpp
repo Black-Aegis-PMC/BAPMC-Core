@@ -1,4 +1,4 @@
 class CfgWeapons {
 //primarys
-#include Primarys.hpp
+#include "Primarys.hpp"
 }
