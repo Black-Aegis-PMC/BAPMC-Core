@@ -57,39 +57,6 @@ private _VS_core_settings = [
             // One day this will re-init all arsenals that have this filter set
         },
         true
-    ],
-	[
-        "VS_core_arsenal_blacklist_cdt",
-        "EDITBOX",
-        ["Cadet", "Cadet equipment Restrictions"],
-        ["Viking Studios Arsenal Restrictions", "Blacklist"],
-        "[]",
-        1,
-        {
-        },
-        true
-    ],
-	[
-        "VS_core_arsenal_blacklist_rct",
-        "EDITBOX",
-        ["Recruit", "Recruit equipment Restrictions"],
-        ["Viking Studios Arsenal Restrictions", "Blacklist"],
-        "[]",
-        1,
-        {
-        },
-        true
-    ],
-	[
-        "VS_core_arsenal_blacklist_pvt",
-        "EDITBOX",
-        ["Private", "Private equipment Restrictions"],
-        ["Viking Studios Arsenal Restrictions", "Blacklist"],
-        "[]",
-        1,
-        {
-        },
-        true
     ]
 ];
 
