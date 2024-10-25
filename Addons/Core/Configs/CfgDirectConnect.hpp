@@ -9,7 +9,7 @@ Author:
 ---------------------------------------------------------------------------- */
 
 class CfgMainMenuSpotlight {
-	class bapmc_operations_server {
+	class bapmc_a_operations_server {
 		text = "Main Server";
 		textIsQuote = 0;
 		picture = "\x\VS_C\core\img\bapmc.paa";
@@ -18,14 +18,14 @@ class CfgMainMenuSpotlight {
 		actionText = "Connect";
 		condition = true; //Lies
 	};
-	class bapmc_Dev_server {
+	class bapmc_z_Dev_server {
 		text = "Dev Server";
 		textIsQuote = 0;
 		picture = "\x\VS_C\core\img\bapmc.paa";
 		video = "";
 		action = "connectToServer [""45.92.44.67"", 2402, ""Athena""]"; //This Goes [""IP"", Port, ""Password""], if you dont want the password visible just leave the pasword section empty.
 		actionText = "Connect";
-		condition = true; //Lies
+		condition = false; //set to true in dev
 	};
 };
 
