@@ -9,7 +9,7 @@ Author:
 ---------------------------------------------------------------------------- */
 
 class CfgMainMenuSpotlight {
-	class bapmc_a_operations_server {
+	class bapmc_operations_server {
 		text = "Main Server";
 		textIsQuote = 0;
 		picture = "\x\VS_C\core\img\bapmc.paa";
@@ -18,7 +18,7 @@ class CfgMainMenuSpotlight {
 		actionText = "Connect";
 		condition = true; //Lies
 	};
-	class bapmc_z_Dev_server {
+	class bapmc_Dev_server {
 		text = "Dev Server";
 		textIsQuote = 0;
 		picture = "\x\VS_C\core\img\bapmc.paa";
