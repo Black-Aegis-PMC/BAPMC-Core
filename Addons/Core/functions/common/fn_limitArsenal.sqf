@@ -13,8 +13,9 @@
 	Examples:
 	[player] call vs_core_fnc_limitArsenal;
 
-	Author:
+	Authors:
 	Met
+	Carmichael
 	License GPL-2.0
 ---------------------------------------------------------------------------- */
 params [["_player", player, [objNull]]];
@@ -32,7 +33,7 @@ waitUntil {
 	!(isNil "VS_core_arsenal_blacklist_cdt")
 };
 
-// Parse and concatenate the blacklists
+// Parse and concatenate the blacklists added () around the parsing to make sure arrays are parsed before concantation happens
 _blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;
 _blacklistRecruit = _blacklistPrivate + (parseSimpleArray VS_core_arsenal_blacklist_rct);
 _blacklistCadet = _blacklistRecruit + (parseSimpleArray VS_core_arsenal_blacklist_cdt);
@@ -51,7 +52,6 @@ private _splitName = _playerName splitString ". ";
 // Ensure that the player's name contains a rank, else exit
 if (count _splitName < 2) exitWith {
 	diag_log format ["[vs_core_fnc_limitArsenal] Player name '%1' does not contain a rank.", _playerName];
-	systemChat "No valid rank detected. Arsenal access might be limited.";
 	false
 };
 
@@ -72,7 +72,6 @@ private _blacklistedItems = [];
 // Log if no blacklist is found for the player's rank
 if (_blacklistedItems isEqualTo []) then {
 	diag_log format ["[vs_core_fnc_limitArsenal] No blacklist found for player rank '%1'.", _playerRank];
-	systemChat "No blacklist found for your rank. No items will be removed from the arsenal.";
 };
 
 // Proceed to limit the arsenal if blacklist is available
