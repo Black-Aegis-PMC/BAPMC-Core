@@ -172,172 +172,109 @@ class Cfgvehicles
             uniformclass = "BAPMC_casual_uniform_b_b"
         };
 
-        class BAPMC_casual_uniform_j_b:  PMCA_casual_uniform_j_b
+        class BAPMC_uniform_casual_uniform_j_b:  PMCA_casual_uniform_j_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_casual_uniform_j_b"
         };
 
-        class BAPMC_casual_uniform_t_b:  PMCA_casual_uniform_t_b
+        class BAPMC_uniform_casual_uniform_t_b:  PMCA_casual_uniform_t_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_casual_uniform_t_b"
         };
 
-        class BAPMC_I_B_PMC_Unit_20:  CUP_I_B_PMC_Unit_20
+        class BAPMC_uniform_I_B_PMC_Unit_20:  CUP_I_B_PMC_Unit_20
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "CUP_I_B_PMC_Unit_20"
         };
 
-        class BAPMC_I_B_PMC_Unit_14:  CUP_I_B_PMC_Unit_14
+        class BAPMC_uniform_I_B_PMC_Unit_14:  CUP_I_B_PMC_Unit_14
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "CUP_I_B_PMC_Unit_14"
         };
 
-        class BAPMC_I_B_PMC_Unit_13:  CUP_I_B_PMC_Unit_13
+        class BAPMC_uniform_I_B_PMC_Unit_13:  CUP_I_B_PMC_Unit_13
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "CUP_I_B_PMC_Unit_13"
         };
 
-        class BAPMC_I_B_PMC_Unit_17:  CUP_I_B_PMC_Unit_17
+        class BAPMC_uniform_I_B_PMC_Unit_17:  CUP_I_B_PMC_Unit_17
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "CUP_I_B_PMC_Unit_17"
         };
 
-        class BAPMC_I_B_PMC_Unit_7:  CUP_I_B_PMC_Unit_7
+        class BAPMC_uniform_I_B_PMC_Unit_7:  CUP_I_B_PMC_Unit_7
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "CUP_I_B_PMC_Unit_7"
         };
 
-        class BAPMC_I_B_PMC_Unit_42:  CUP_I_B_PMC_Unit_42
+        class BAPMC_uniform_I_B_PMC_Unit_42:  CUP_I_B_PMC_Unit_42
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "CUP_I_B_PMC_Unit_42"
         };
 
-        class BAPMC_I_B_PMC_Unit_24:  CUP_I_B_PMC_Unit_24
+        class BAPMC_uniform_I_B_PMC_Unit_24:  CUP_I_B_PMC_Unit_24
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "CUP_I_B_PMC_Unit_24"
         };
 
-        class BAPMC_sweater_uniform_b_b:  PMCA_sweater_uniform_b_b
+        class BAPMC_uniform_sweater_uniform_b_b:  PMCA_sweater_uniform_b_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_sweater_uniform_b_b"
         };
 
-        class BAPMC_sweater_uniform_g_b:  PMCA_sweater_uniform_g_b
+        class BAPMC_uniform_sweater_uniform_g_b:  PMCA_sweater_uniform_g_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_sweater_uniform_g_b"
         };
 
-        class BAPMC_sweater_uniform_o_b:  PMCA_sweater_uniform_o_b
+        class BAPMC_uniform_sweater_uniform_o_b:  PMCA_sweater_uniform_o_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_sweater_uniform_o_b"
         };
 
-        class BAPMC_sweater_uniform_t_b:  PMCA_sweater_uniform_t_b
+        class BAPMC_uniform_sweater_uniform_t_b:  PMCA_sweater_uniform_t_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_sweater_uniform_t_b"
         };
 
-        class BAPMC_tanktop_uniform_b_b:  PMCA_tanktop_uniform_b_b
+        class BAPMC_uniform_tanktop_uniform_b_b:  PMCA_tanktop_uniform_b_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_tanktop_uniform_b_b"
         };
 
-        class BAPMC_tanktop_uniform_g_b:  PMCA_tanktop_uniform_g_b
+        class BAPMC_uniform_tanktop_uniform_g_b:  PMCA_tanktop_uniform_g_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_tanktop_uniform_g_b"
         };
 
-        class BAPMC_tanktop_uniform_o_b:  PMCA_tanktop_uniform_o_b
+        class BAPMC_uniform_tanktop_uniform_o_b:  PMCA_tanktop_uniform_o_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_tanktop_uniform_o_b"
         };
 
-        class BAPMC_tee_uniform_b:  PMCA_tee_uniform_b
+        class BAPMC_uniform_tee_uniform_b:  PMCA_tee_uniform_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_tee_uniform_b"
         };
 
-        class BAPMC_cargo_uniform_b_b:  PMCA_cargo_uniform_b_b
+        class BAPMC_uniform_cargo_uniform_b_b:  PMCA_cargo_uniform_b_b
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_cargo_uniform_b_b"
         };
 
-        class BAPMC_cargo_uniform_b_g:  PMCA_cargo_uniform_b_g
+        class BAPMC_uniform_cargo_uniform_b_g:  PMCA_cargo_uniform_b_g
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_cargo_uniform_b_g"
         };
 
-        class BAPMC_cargo_uniform_b_o:  PMCA_cargo_uniform_b_o
+        class BAPMC_uniform_cargo_uniform_b_o:  PMCA_cargo_uniform_b_o
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_cargo_uniform_b_o"
         };
 
-        class BAPMC_cargo_uniform_b_t:  PMCA_cargo_uniform_b_t
+        class BAPMC_uniform_cargo_uniform_b_t:  PMCA_cargo_uniform_b_t
         {;
-            class ItemInfo: ItemInfo
-            {
-                containerclass = Supply30;
-            };
+            uniformclass = "PMCA_cargo_uniform_b_t"
         };
 
 }
