@@ -174,106 +174,106 @@ class Cfgvehicles
 
         class BAPMC_uniform_casual_uniform_j_b:  PMCA_casual_uniform_j_b
         {
-            uniformclass = "PMCA_casual_uniform_j_b";
+            uniformclass = "BAPMC_casual_uniform_j_b";
         };
 
         class BAPMC_uniform_casual_uniform_t_b:  PMCA_casual_uniform_t_b
         {
-            uniformclass = "PMCA_casual_uniform_t_b";
+            uniformclass = "BAPMC_casual_uniform_t_b";
         };
 
         class BAPMC_uniform_I_B_PMC_Unit_20:  CUP_I_B_PMC_Unit_20
         {
-            uniformclass = "CUP_I_B_PMC_Unit_20";
+            uniformclass = "BAPMC_I_B_PMC_Unit_20";
         };
 
         class BAPMC_uniform_I_B_PMC_Unit_14:  CUP_I_B_PMC_Unit_14
         {
-            uniformclass = "CUP_I_B_PMC_Unit_14";
+            uniformclass = "BAPMC_I_B_PMC_Unit_14";
         };
 
         class BAPMC_uniform_I_B_PMC_Unit_13:  CUP_I_B_PMC_Unit_13
         {
-            uniformclass = "CUP_I_B_PMC_Unit_13";
+            uniformclass = "BAPMC_I_B_PMC_Unit_13";
         };
 
         class BAPMC_uniform_I_B_PMC_Unit_17:  CUP_I_B_PMC_Unit_17
         {
-            uniformclass = "CUP_I_B_PMC_Unit_17";
+            uniformclass = "BAPMC_I_B_PMC_Unit_17";
         };
 
         class BAPMC_uniform_I_B_PMC_Unit_7:  CUP_I_B_PMC_Unit_7
         {
-            uniformclass = "CUP_I_B_PMC_Unit_7";
+            uniformclass = "BAPMC_I_B_PMC_Unit_7";
         };
 
         class BAPMC_uniform_I_B_PMC_Unit_42:  CUP_I_B_PMC_Unit_42
         {
-            uniformclass = "CUP_I_B_PMC_Unit_42";
+            uniformclass = "BAPMC_I_B_PMC_Unit_42";
         };
 
         class BAPMC_uniform_I_B_PMC_Unit_24:  CUP_I_B_PMC_Unit_24
         {
-            uniformclass = "CUP_I_B_PMC_Unit_24";
+            uniformclass = "BAPMC_I_B_PMC_Unit_24";
         };
 
         class BAPMC_uniform_sweater_uniform_b_b:  PMCA_sweater_uniform_b_b
         {
-            uniformclass = "PMCA_sweater_uniform_b_b";
+            uniformclass = "BAPMC_sweater_uniform_b_b";
         };
 
         class BAPMC_uniform_sweater_uniform_g_b:  PMCA_sweater_uniform_g_b
         {
-            uniformclass = "PMCA_sweater_uniform_g_b";
+            uniformclass = "BAPMC_sweater_uniform_g_b";
         };
 
         class BAPMC_uniform_sweater_uniform_o_b:  PMCA_sweater_uniform_o_b
         {
-            uniformclass = "PMCA_sweater_uniform_o_b";
+            uniformclass = "BAPMC_sweater_uniform_o_b";
         };
 
         class BAPMC_uniform_sweater_uniform_t_b:  PMCA_sweater_uniform_t_b
         {
-            uniformclass = "PMCA_sweater_uniform_t_b";
+            uniformclass = "BAPMC_sweater_uniform_t_b";
         };
 
         class BAPMC_uniform_tanktop_uniform_b_b:  PMCA_tanktop_uniform_b_b
         {
-            uniformclass = "PMCA_tanktop_uniform_b_b";
+            uniformclass = "BAPMC_tanktop_uniform_b_b";
         };
 
         class BAPMC_uniform_tanktop_uniform_g_b:  PMCA_tanktop_uniform_g_b
         {
-            uniformclass = "PMCA_tanktop_uniform_g_b";
+            uniformclass = "BAPMC_tanktop_uniform_g_b";
         };
 
         class BAPMC_uniform_tanktop_uniform_o_b:  PMCA_tanktop_uniform_o_b
         {
-            uniformclass = "PMCA_tanktop_uniform_o_b";
+            uniformclass = "BAPMC_tanktop_uniform_o_b";
         };
 
         class BAPMC_uniform_tee_uniform_b:  PMCA_tee_uniform_b
         {
-            uniformclass = "PMCA_tee_uniform_b";
+            uniformclass = "BAPMC_tee_uniform_b";
         };
 
         class BAPMC_uniform_cargo_uniform_b_b:  PMCA_cargo_uniform_b_b
         {
-            uniformclass = "PMCA_cargo_uniform_b_b";
+            uniformclass = "BAPMC_cargo_uniform_b_b";
         };
 
         class BAPMC_uniform_cargo_uniform_b_g:  PMCA_cargo_uniform_b_g
         {
-            uniformclass = "PMCA_cargo_uniform_b_g";
+            uniformclass = "BAPMC_cargo_uniform_b_g";
         };
 
         class BAPMC_uniform_cargo_uniform_b_o:  PMCA_cargo_uniform_b_o
         {
-            uniformclass = "PMCA_cargo_uniform_b_o";
+            uniformclass = "BAPMC_cargo_uniform_b_o";
         };
 
         class BAPMC_uniform_cargo_uniform_b_t:  PMCA_cargo_uniform_b_t
         {
-            uniformclass = "PMCA_cargo_uniform_b_t";
+            uniformclass = "BAPMC_cargo_uniform_b_t";
         };
     };
