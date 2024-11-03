@@ -1,0 +1,61 @@
+// primary
+uk3cb_baf_l115a3
+UK3CB_BAF_L115A3_BL
+uk3cb_baf_l115a3_ghillie
+uk3cb_baf_l115a3_bl_ghillie
+uk3cb_baf_l118a1_covert
+uk3cb_baf_l118a1_covert_bl
+uk3cb_baf_l119a1
+uk3cb_baf_l119a1_cqb
+UK3CB_BAF_L119A1_RIS
+UK3CB_BAF_L119A1_UKUGL
+uk3cb_baf_l128a1
+UK3CB_BAF_L129A1
+uk3cb_baf_l7a2
+cup_arifle_acr_dmr_blk_556
+CUP_smg_BallisticShield_MP7
+cup_sgun_m1014 / cup_sgun_m1014_solidstock / cup_sgun_m1014_vfg / cup_sgun_m1014_entry / cup_sgun_m1014_entry_vfg
+cup_srifle_m110_kac_black / cup_srifle_m110_black
+cup_arifle_hk_m27_vfg / cup_arifle_hk_m27 / cup_arifle_hk_m27_ag36
+cup_lmg_mg3_rail / cup_lmg_mg3
+cup_smg_mp5a5 / CUP_smg_MP5A5_Rail_AFG / CUP_smg_MP5A5_Rail_VFG / CUP_smg_MP5A5_Rail
+cup_smg_mp5sd6
+cup_smg_mp7
+cup_smg_p90_black
+cup_smg_ps90_olive
+rhs_weap_M107
+rhs_weap_XM2010 / rhs_weap_XM2010_wd
+rhs_weap_m32
+rhs_weap_m40a5
+rhsusf_weap_MP7A2
+sma_hk416gl
+sma_hk416vfg
+sma_hk416afg
+sma_hk416customcqbafgb
+sma_hk416glcqb_b
+sma_hk416customcqbvfgb
+sma_hk417_16in
+sma_acrblk
+sma_acrgl_b
+sma_minimi_mk3_762tlb
+sma_minimi_mk3_762tsb
+sma_mk18afg
+sma_mk18_gl
+sma_mk17_16_black
+sma_mk16_blackqcb
+sma_mk16_black
+sma_mk16_eglm_black
+
+//Secondarys
+ACE_VMM3 //Metal Detector
+CUP_hgun_Glock17_blk
+CUP_hgun_Colt1911
+CUP_hgun_M9
+
+//Launchers
+UK3CB_BAF_Javelin_Slung_Tube //literally just a tube
+UK3CB_BAF_AT4_CS_AP_Launcher
+launch_MRAWS_green_F / launch_MRAWS_olive_F / launch_MRAWS_sand_F
+CUP_launch_FIM92Stinger
+CUP_launch_NLAW
+rhs_weap_rpg7

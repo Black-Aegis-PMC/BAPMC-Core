@@ -1,6 +1,5 @@
 class CfgPatches{
-//buffer	
-	class Test{
+	class BAPMC_Weapons{
 		name = "Black Aegis - PMC - Weapons";
 		author = "Viking Studios";
 		authors[] = {"Supreme God Ark"};
@@ -20,4 +19,5 @@ class CfgPatches{
 		worlds[] = {};
 	};
 };
-#include "CfgWeapons.hpp"
+
+#include "hpp\CfgWeapons.hpp"
