@@ -59,3 +59,13 @@ launch_MRAWS_green_F / launch_MRAWS_olive_F / launch_MRAWS_sand_F
 CUP_launch_FIM92Stinger
 CUP_launch_NLAW
 rhs_weap_rpg7
+
+
+// Carmichael is a bastard
+'sma_aug_a3_f','sma_aug_eglm','cup_smg_evo','QIN_CZ_BREN2_556_8','QIN_CZ_BREN2_556_14_GL','QIN_CZ_BREN2_556_14','QIN_CZ_BREN2_556_11_GL','QIN_CZ_BREN2_556_11','QIN_CZ_BREN2_762_8','QIN_CZ_BREN2_762_14_GL','QIN_CZ_BREN2_762_14','rhs_weap_g36kv_ag36','rhs_weap_g36kv','rhs_weap_g36c','cup_arifle_dsa_sa58','cup_arifle_dsa_sa58_osw_m203','SMG_01_F','cup_arifle_cz805_a1_coyote','cup_arifle_cz805_gl_coyote','cup_arifle_cz805_a2_blk','SMA_AAC_MPW_9_Black','SMA_AAC_MPW_12_Black'
+CUP_hgun_Duty','CUP_hgun_CZ75','hgun_Rook40_F','CUP_hgun_Phantom'
+
+// im a lovely person
+CUP_hgun_Deagle
+CUP_hgun_SWM327MP
+VKN_SigP226
