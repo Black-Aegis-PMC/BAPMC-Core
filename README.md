@@ -2,9 +2,9 @@
 
 Credits:
 
-GRAD for Trenches, Sling Helmet and Admin messages
-Tinter: For furniture script
-2BNB: For Core and changes to admin messages
-Viking Studios: For Backpack Drones
-SteelShot: For Universal Uniforms
-Champ: For CHVD (Before changes)
+GRAD for Sling Helmet and Admin messages
+Tinter for furniture script
+2BNB for Core and changes to admin messages
+Viking Studios for Backpack Drones
+SteelShot for Universal Uniforms
+Champ for CHVD (Before changes)
