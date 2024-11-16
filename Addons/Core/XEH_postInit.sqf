@@ -23,6 +23,31 @@ License GPL-2.0
 	[player] call vs_core_fnc_limitArsenal;
 };
 
+/* // Not needed while using barracks function in zeus
+[] spawn {
+    while {true} do {
+        sleep 10; // Adjust the interval as needed (e.g., 10 seconds)
+
+        // Apply the limit to all players
+        {
+            [_x] remoteExec ["vs_core_fnc_limitArsenal", _x]; // Executes on each client's machine
+        } forEach allPlayers;
+    };
+};
+*/
+
+//make units doctors
+{
+    [_x] call vs_core_fnc_makeDoctor;
+} forEach allUnits;
+
+// Add event handler to handle new units spawned during the mission
+addMissionEventHandler ["EntityCreated", {
+    params ["_entity"];
+    if (_entity isKindOf "Man") then {
+        [_entity] call vs_core_fnc_makeDoctor;
+    };
+}];
 
 [{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
 	["Viking Studios Modules", "Add Barracks Functions",

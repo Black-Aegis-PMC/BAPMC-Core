@@ -90,6 +90,39 @@ private _VS_core_settings = [
         {
         },
         true
+    ],
+	[
+        "VS_core_arsenal_allowlist_ic",
+        "EDITBOX",
+        ["IC", "IC equipment Additions"],
+        ["Viking Studios Arsenal Restrictions", "Allowlist"],
+        "[]",
+        1,
+        {
+        },
+        true
+    ],
+		[
+        "VS_core_arsenal_allowlist_medic",
+        "EDITBOX",
+        ["Medic", "Medic equipment Additions"],
+        ["Viking Studios Arsenal Restrictions", "Allowlist"],
+        "[]",
+        1,
+        {
+        },
+        true
+    ],
+		[
+        "VS_core_arsenal_allowlist_surgeon",
+        "EDITBOX",
+        ["Surgeon", "Surgeon equipment Additions"],
+        ["Viking Studios Arsenal Restrictions", "Allowlist"],
+        "[]",
+        1,
+        {
+        },
+        true
     ]
 ];
 

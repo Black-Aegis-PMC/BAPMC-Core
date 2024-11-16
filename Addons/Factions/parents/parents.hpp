@@ -1,8 +1,8 @@
-  class B_Soldier_SL_F;
+  class I_Soldier_SL_F;
   class VKN_v_blackops_nicecomm2;
-  class B_medic_F;
+  class I_medic_F;
   class VKN_Kitbag_Black_Medical;
-  class B_Soldier_F;
+  class I_Soldier_F;
   class VKN_Black_Kitbag;
   class EMP_Offroad_Comms;
   class B_Truck_Black_covered_F;

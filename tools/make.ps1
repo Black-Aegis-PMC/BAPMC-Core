@@ -9,8 +9,8 @@ $toolsPath      = "$projectRoot\tools"
 function Is-DevBranch {
     $branch = git rev-parse --abbrev-ref HEAD
 
-    # Detect dev branches
-    if ($branch -match "dev|develop|feature/*") {
+    # Detect non-main branches
+    if ($branch -notmatch "main") {
         return $true
     }
     return $false
@@ -41,6 +41,7 @@ $tag = git describe --tag | ForEach-Object {
 $privateKeyFile = "$cachePath\keys\$modPrefix$tag.biprivatekey"
 $publicKeyFile  = "$buildPath\keys\$modPrefix$tag.bikey"
 $timestamp      = Get-Date -UFormat "%T"
+$include        = "$projectRoot\include"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 function Get-FullFileHash {
@@ -350,7 +351,7 @@ function New-PBO {
             & $armake2 sign $privateKeyFile $binPath
         } else {
             Write-Output -InputObject "  [$timestamp] Updating PBO $component"
-            & $armake build -f -w unquoted-string $fullPath $binPath
+            & $armake build -f -w unquoted-string -i "$projectRoot" -i $include $fullPath $binPath
             & $armake2 sign $privateKeyFile $binPath
         }
     } else {
@@ -361,7 +362,7 @@ function New-PBO {
             & $armake2 sign $privateKeyFile $binPath
         } else {
             Write-Output -InputObject "  [$timestamp] Creating PBO $component"
-            & $armake build -f -w unquoted-string $fullPath $binPath
+            & $armake build -f -w unquoted-string -i "$projectRoot" -i $include $fullPath $binPath
             & $armake2 sign $privateKeyFile $binPath
         }
     }
