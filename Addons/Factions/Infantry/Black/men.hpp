@@ -1,4 +1,4 @@
-  class BAPMC_IC: B_Soldier_SL_F
+  class BAPMC_IC: I_Soldier_SL_F
   {
     faction="VS_C_BAPMC";
     side=2;
@@ -15,7 +15,7 @@
     backpack="VKN_v_blackops_nicecomm2";
   };
 
-  class BAPMC_Surgeon: B_medic_F
+  class BAPMC_Surgeon: I_medic_F
   {
     faction="VS_C_BAPMC";
     side=2;
@@ -32,7 +32,7 @@
     backpack="BAPMC_Surgeon_pack";
   };
 
-  class BAPMC_Medic: B_medic_F
+  class BAPMC_Medic: I_medic_F
   {
     faction="VS_C_BAPMC";
     side=2;
@@ -49,7 +49,7 @@
     backpack="VKN_Kitbag_Black_Medical";
   };
 
-  class BAPMC_Rifleman: B_Soldier_F
+  class BAPMC_Rifleman: I_Soldier_F
   {
     faction="VS_C_BAPMC";
     side=2;
@@ -66,7 +66,7 @@
     backpack="VKN_Black_Kitbag";
   };
 
-  class BAPMC_Cadet: B_Soldier_F
+  class BAPMC_Cadet: I_Soldier_F
   {
     faction="VS_C_BAPMC";
     side=2;

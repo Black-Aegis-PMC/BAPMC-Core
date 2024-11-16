@@ -90,6 +90,17 @@ private _VS_core_settings = [
         {
         },
         true
+    ],
+	[
+        "VS_core_arsenal_allowlist_ic",
+        "EDITBOX",
+        ["IC", "IC equipment Additions"],
+        ["Viking Studios Arsenal Restrictions", "Allowlist"],
+        "[]",
+        1,
+        {
+        },
+        true
     ]
 ];
 

@@ -15,5 +15,5 @@ class CfgFunctions
 			class helPAss_showResult {};
 			class helPAss_start {};
 		};
-	}
+	};
 };
