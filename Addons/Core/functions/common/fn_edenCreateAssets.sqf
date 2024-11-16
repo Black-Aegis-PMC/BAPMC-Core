@@ -89,16 +89,6 @@ _entities =
 		["name", "HC3"]
 	],
 	[
-		["Logic", "HeadlessClient_F", _spawnPos vectorAdd [-2, -3]],
-		["ControlMp", true],
-		["name", "HC4"]
-	],
-	[
-		["Logic", "HeadlessClient_F", _spawnPos vectorAdd [-2, -4]],
-		["ControlMp", true],
-		["name", "HC5"]
-	],
-	[
 		["Object", "I_supplyCrate_F", _spawnPos vectorAdd [-3, 6]],
 		["allowDamage", false],
 		["ArsenalObject", true]
@@ -151,7 +141,7 @@ for "_i" from 1 to _numberOfSections do {
 	_group = get3DENselected "Object" select 0;
 	_ix = 3;
 	{
-		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
+		_unitDisplayName = getText (configOf _x >> "displayName");
 		if (_unitDisplayName == "IC" && !isFormationLeader _x) then {
 			_x set3DENAttribute ["description", "2: 2IC"];
 		} else {
@@ -188,12 +178,13 @@ for "_i" from 1 to _numberOfSections do {
 		_asZeus set3DENAttribute ["name", "zeusTwo"];
 	} else {
 		{
-			_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
+			_unitDisplayName = getText (configOf _x >> "displayName");
 			if (_unitDisplayName == "IC" && !isFormationLeader _x) then {
 				_x set3DENAttribute ["description", "2: 2IC"];
 			} else {
 				if (_x getUnitTrait "Medic") then {
-					_x set3DENAttribute ["description", "3: Medic"];
+					_x set3DENAttribute ["description", "3: Surgeon"];
+					_x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
 				} else {
 					_x set3DENAttribute ["description", "4: Open"];
 				};
@@ -204,13 +195,21 @@ for "_i" from 1 to _numberOfSections do {
 	set3DENSelected [];
 } forEach _sections;
 
+{
+	private _unitDisplayName = getText (configOf _x >> "displayName");
+	if (_unitDisplayName == "Surgeon" || typeOf _x == "BAPMC_Surgeon")
+	    then {
+			_x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
+		};
+} forEach allUnits;
+
 // default Loadouts
 if (_createDefaults) then {
 	create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
 	set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "vs_cORE_3den_Loadout", true]];
 	_groupComp = get3DENSelected "Object";
 	{
-		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
+		_unitDisplayName = getText (configOf _x >> "displayName");
 		_x set3DENAttribute ["vs_cORE_3den_LoadoutName", _unitDisplayName];
 	} forEach _groupComp;
 	set3DENSelected [];

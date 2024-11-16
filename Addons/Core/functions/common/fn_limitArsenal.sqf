@@ -26,6 +26,31 @@ if (isNull _player) exitWith {
     false
 };
 
+private _isIC = (
+    (_player get3DENAttribute "description" isEqualTo "1IC") ||
+    (_player get3DENAttribute "description" isEqualTo "2IC") ||
+	(_player get3DENAttribute "description" isEqualTo "IC") ||
+    (typeOf _player == "BAPMC_IC") ||
+	(_player getUnitTrait "Leader")
+);
+
+private _isMedic = (
+    (_player get3DENAttribute "description" isEqualTo "medic") ||
+    (typeOf _player == "BAPMC_Medic") ||
+	(_player getUnitTrait "Medic")
+);
+
+private _isSurgeon = (
+    (_player get3DENAttribute "description" isEqualTo "Surgeon") ||
+    (typeOf _player == "BAPMC_Surgeon") ||
+	(_player getUnitTrait "Doctor")
+);
+
+private _ICAllowList = parseSimpleArray VS_core_arsenal_allowlist_IC;
+private _MedicAllowList = parseSimpleArray VS_core_arsenal_allowlist_medic;
+private _SurgeonAllowList = parseSimpleArray VS_core_arsenal_allowlist_surgeon;
+private _medicalBlacklist = _SurgeonAllowList + _MedicAllowList;
+
 // Parse and concatenate the blacklists
 _blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;
 _blacklistRecruit = _blacklistPrivate + (parseSimpleArray VS_core_arsenal_blacklist_rct);
@@ -67,17 +92,6 @@ if (_blacklistedItems isEqualTo []) then {
     diag_log format ["[vs_core_fnc_limitArsenal] No blacklist found for player rank '%1'.", _playerRank];
 };
 
-// Check if the player matches IC criteria
-private _isIC = (
-    (_player get3DENAttribute "description" isEqualTo "1IC") ||
-    (_player get3DENAttribute "description" isEqualTo "2IC") ||
-	(_player get3DENAttribute "description" isEqualTo "IC") ||
-    (typeOf _player == "BAPMC_IC")
-);
-
-// Parse additional items to be removed for non-IC players
-private _nonICBlacklist = parseSimpleArray VS_core_arsenal_allowlist_IC;
-
 // Proceed to limit the arsenal if blacklist is available
 if (hasInterface) then {
     // Client-side logic for limiting the arsenal
@@ -87,22 +101,19 @@ if (hasInterface) then {
             [_x, _blacklistedItems, false] call ace_arsenal_fnc_removeVirtualItems;
 
             // If the player is not IC, apply additional restrictions
-            if (!_isIC) then {
-                [_x, _nonICBlacklist, false] call ace_arsenal_fnc_removeVirtualItems;
-                diag_log format ["[vs_core_fnc_limitArsenal] Additional items removed for non-IC player %1.", name _player];
+            if (_isIC) then {
+                [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems;
             };
 
-            diag_log format ["[vs_core_fnc_limitArsenal] Object %1 has ace_arsenal_virtualItems and is having items removed.", _x];
+            if (_isMedic) then {
+                [_x, _SurgeonAllowList, false] call ace_arsenal_fnc_removeVirtualItems;
+            };
+
+            if (!_isSurgeon || !_isMedic) then {
+                [_x, _medicalBlacklist, false] call ace_arsenal_fnc_removeVirtualItems;
+            };
         };
     } forEach allMissionObjects "All";
-
-    // Log successful limitation
-    if (!(_blacklistedItems isEqualTo [])) then {
-        systemChat format ["Arsenal limited according to your rank: %1", _playerRank];
-    };
-    if (!_isIC) then {
-        systemChat "Additional items have been removed as you do not meet IC criteria.";
-    };
 } else {
     // If not on the client, log that this function is being run outside a client context
     diag_log "[vs_core_fnc_limitArsenal] Arsenal limitation attempted on a non-client machine.";

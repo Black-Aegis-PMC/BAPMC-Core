@@ -40,6 +40,7 @@ class CfgFunctions {
 			class Arsenal {};
 			class fullHeal {};
 			class teleport {};
+			class makeDoctor {};
 		};
 
 		class zeus_modules {
