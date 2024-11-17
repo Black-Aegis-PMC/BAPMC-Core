@@ -21,7 +21,7 @@
 	Met
 License GPL-2.0
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Shield", [""]], ["_zeusCallsign", "Olympus", [""]], ["_camo", "BLACK", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", false, [false]]];
+params [["_callsign", "Shield", [""]], ["_zeusCallsign", "Olympus", [""]], ["_camo", "BLACK", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", true, [false]]];
 
 if (_callsign == "") then {
 	_callsign = "Shield";
