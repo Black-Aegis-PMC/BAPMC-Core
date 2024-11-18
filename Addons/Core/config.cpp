@@ -20,6 +20,7 @@ class CfgFunctions {
 	class VS_Core {
 		class common {
 			file = "\x\VS_C\core\functions\common";
+			// From 2bnb
 			class addDeployActions {};
 			class addFullHeal {};
 			class addSpectator {};
@@ -30,7 +31,6 @@ class CfgFunctions {
 			class getDeadPlayers {};
 			class getDeployAnimations {};
 			class isCurator {};
-			class limitArsenal {};
 			class listDeadPlayers {};
 			class notifyZeus {};
 			class setDefaultLoadouts {};
@@ -40,6 +40,8 @@ class CfgFunctions {
 			class Arsenal {};
 			class fullHeal {};
 			class teleport {};
+			//Original
+			class limitArsenal {};
 			class makeDoctor {};
 		};
 

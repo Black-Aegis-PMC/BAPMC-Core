@@ -34,22 +34,28 @@ private _isIC = (
 	(_player getUnitTrait "Leader")
 );
 
+private _medicClass = player getVariable ["ace_medical_medicclass", -1];
+
 private _isMedic = (
     (_player get3DENAttribute "description" isEqualTo "medic") ||
     (typeOf _player == "BAPMC_Medic") ||
-	(_player getUnitTrait "Medic")
+	(_player getUnitTrait "Medic") ||
+    (_medicClass == 1)
+
 );
 
 private _isSurgeon = (
     (_player get3DENAttribute "description" isEqualTo "Surgeon") ||
     (typeOf _player == "BAPMC_Surgeon") ||
-	(_player getUnitTrait "Doctor")
+	(_player getUnitTrait "Doctor") ||
+    (_medicClass == 2)
+
 );
 
 private _ICAllowList = parseSimpleArray VS_core_arsenal_allowlist_IC;
 private _MedicAllowList = parseSimpleArray VS_core_arsenal_allowlist_medic;
 private _SurgeonAllowList = parseSimpleArray VS_core_arsenal_allowlist_surgeon;
-private _medicalBlacklist = _SurgeonAllowList + _MedicAllowList;
+private _surgicalAllowlist = _SurgeonAllowList + _MedicAllowList;
 
 // Parse and concatenate the blacklists
 _blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;
@@ -100,17 +106,21 @@ if (hasInterface) then {
             // Apply rank-based limitation
             [_x, _blacklistedItems, false] call ace_arsenal_fnc_removeVirtualItems;
 
-            // If the player is not IC, apply additional restrictions
+            // If the player is IC, Give extra stuff
             if (_isIC) then {
                 [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems;
             };
 
-            if (_isMedic) then {
-                [_x, _SurgeonAllowList, false] call ace_arsenal_fnc_removeVirtualItems;
+            if (!_isSurgeon || !_isMedic) then {
+                [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_removeVirtualItems;
             };
 
-            if (!_isSurgeon || !_isMedic) then {
-                [_x, _medicalBlacklist, false] call ace_arsenal_fnc_removeVirtualItems;
+            if (_isMedic) then {
+                [_x, _MedicAllowList, false] call ace_arsenal_fnc_addVirtualItems;
+            };
+
+            if (_isSurgeon) then {
+                [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_addVirtualItems;
             };
         };
     } forEach allMissionObjects "All";
