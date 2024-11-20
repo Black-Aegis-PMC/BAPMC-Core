@@ -21,20 +21,23 @@ License GPL-2.0
 		[VS_core_loadouts] remoteExec ["VS_core_fnc_setDefaultLoadouts", 0, true];
 	};
 	[player] call vs_core_fnc_limitArsenal;
+
 };
 
-/* // Not needed while using barracks function in zeus
 [] spawn {
-    while {true} do {
-        sleep 10; // Adjust the interval as needed (e.g., 10 seconds)
+    private _previousMedicalClass = -1;
 
-        // Apply the limit to all players
-        {
-            [_x] remoteExec ["vs_core_fnc_limitArsenal", _x]; // Executes on each client's machine
-        } forEach allPlayers;
+    while {true} do {
+        private _currentMedicalClass = player getVariable ["ace_medical_medicClass", -1];
+
+        if (_currentMedicalClass != _previousMedicalClass) then {
+            _previousMedicalClass = _currentMedicalClass;
+
+            [player] call vs_core_fnc_limitArsenal;
+        };
+        sleep 2;
     };
 };
-*/
 
 //make units doctors
 {
