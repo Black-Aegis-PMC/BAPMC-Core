@@ -10,7 +10,7 @@ class CfgPatches
 };
 class CfgWorldList
 {
-	class bapmc_island_hq{};
+	class bapmc_island_hq {};
 };
 class CfgWorlds
 {
