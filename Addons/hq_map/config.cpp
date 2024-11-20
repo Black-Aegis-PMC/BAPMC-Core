@@ -10,12 +10,12 @@ class CfgPatches
 };
 class CfgWorldList
 {
-	class bapmc_island_hq {};
+	class bapmc_hq {};
 };
 class CfgWorlds
 {
 	class Stratis;
-	class bapmc_island_hq: Stratis
+	class bapmc_hq: Stratis
 	{
 		cutscenes[] = {};
 		description = "Black Aegis Island - HQ";
