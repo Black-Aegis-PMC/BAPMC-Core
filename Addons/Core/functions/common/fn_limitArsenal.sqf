@@ -31,6 +31,11 @@ private _isIC = (
     (_player get3DENAttribute "description" isEqualTo "2IC") ||
 	(_player get3DENAttribute "description" isEqualTo "IC") ||
     (typeOf _player == "BAPMC_IC") ||
+    (typeOf _player == "BAPMC_Helicopter_Pilot") ||
+    (typeOf _player == "BAPMC_Pilot") ||
+    (typeOf _player == "BAPMC_Vic_Crew") ||
+    (typeOf _player == "BAPMC_Helicopter_Crew") ||
+    (typeOf _player == "BAPMC_Fixed_Wing_Crew") ||
 	(_player getUnitTrait "Leader")
 );
 
