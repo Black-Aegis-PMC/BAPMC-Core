@@ -4,6 +4,7 @@
     editorCategory="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Planes";
     side=2;
+    scope=2;
     displayName="C130J Cargo";
     crew="BAPMC_Pilot";
   };
@@ -14,6 +15,7 @@
     editorCategory="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Planes";
     side=2;
+    scope=2;
     displayName="C130J Transport";
     crew="BAPMC_Pilot";
   };
@@ -24,6 +26,7 @@ class BAPMC_AC130U: USAF_AC130U
     editorCategory = "VS_C_BAPMC";
     editorSubcategory = "BAPMC_Planes";
     side = 2;
+    scope=2;
     displayName = "AC-130U Spooky II";
     crew = "BAPMC_Pilot";
     class Turrets: Turrets
@@ -72,6 +75,7 @@ class BAPMC_AC130U: USAF_AC130U
     editorCategory="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Planes";
     side=2;
+    scope=2;
     displayName="KC-135 StratoTanker";
     crew="BAPMC_Pilot";
   };
@@ -82,6 +86,7 @@ class BAPMC_AC130U: USAF_AC130U
     editorCategory="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Jets";
     side=2;
+    scope=2;
     displayName="F-22";
     crew="BAPMC_Pilot";
   };
@@ -92,6 +97,7 @@ class BAPMC_AC130U: USAF_AC130U
     editorCategory="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Jets";
     side=2;
+    scope=2;
     displayName="F-35B Lightning II";
     crew="BAPMC_Pilot";
   };
@@ -102,6 +108,7 @@ class BAPMC_AC130U: USAF_AC130U
     editorCategory="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Jets";
     side=2;
+    scope=2;
     displayName="F-35B Lightning II (Stealth)";
     crew="BAPMC_Pilot";
   };

@@ -3,6 +3,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="IC";
     uniformClass="PMCA_sweater_uniform_b_b";
     weapons[]={"cup_arifle_hk_m27_ag36","CUP_hgun_Glock17_blk","Rangefinder","Put","Throw"};
@@ -21,6 +22,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="Surgeon";
     uniformClass="Black_Black_Camo";
     weapons[]={"cup_arifle_hk_m27","CUP_hgun_Glock17_blk","Put","Throw"};
@@ -39,6 +41,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="Medic";
     uniformClass="PMCA_sweater_uniform_b_b";
     weapons[]={"cup_arifle_hk_m27","CUP_hgun_Glock17_blk","Put","Throw"};
@@ -57,6 +60,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="Rifleman";
     uniformClass="PMCA_sweater_uniform_b_b";
     weapons[]={"cup_arifle_hk_m27","CUP_hgun_Glock17_blk","Put","Throw"};
@@ -75,6 +79,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="Cadet";
     uniformClass="PMCA_casual_uniform_b_b";
     weapons[]={"cup_arifle_hk_m27","CUP_hgun_Glock17_blk","Put","Throw"};
@@ -93,6 +98,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="BAPMC Helicopter Pilot";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -111,6 +117,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="BAPMC Fixed Wing Pilot";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -129,6 +136,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="BAPMC Fixed Wing Crew";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -147,6 +155,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="BAPMC Helicopter Crew";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -165,6 +174,7 @@
     faction="VS_C_BAPMC";
     editorSubcategory = "BAPMC_Men";
     side=2;
+    scope=2;
     displayName="BAPMC Vic Crew";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
