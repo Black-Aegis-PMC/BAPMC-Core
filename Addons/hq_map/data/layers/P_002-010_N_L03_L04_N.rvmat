@@ -69,7 +69,7 @@ class TexGen2
 		pos[]={0,0,0};
 	};
 };
-PixelShaderID="Terrain13";
+PixelShaderID="Terrain6";
 VertexShaderID="Terrain";
 class Stage2
 {
@@ -78,12 +78,12 @@ class Stage2
 };
 class Stage3
 {
-	texture="a3\map_data\gdt_strgreengrass_nopx.paa";
+	texture="a3\map_data\gdt_strforest_pine_nopx.paa";
 	texGen=1;
 };
 class Stage4
 {
-	texture="a3\map_data\gdt_strgreengrass_co.paa";
+	texture="a3\map_data\gdt_strforest_pine_co.paa";
 	texGen=2;
 };
 class Stage5
@@ -99,20 +99,5 @@ class Stage6
 class Stage7
 {
 	texture="a3\map_data\gdt_strconcrete_co.paa";
-	texGen=2;
-};
-class Stage8
-{
-	texture="";
-	texGen=0;
-};
-class Stage9
-{
-	texture="a3\map_data\gdt_strdirt_nopx.paa";
-	texGen=1;
-};
-class Stage10
-{
-	texture="a3\map_data\gdt_strdirt_co.paa";
 	texGen=2;
 };

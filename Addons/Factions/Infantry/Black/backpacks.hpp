@@ -101,3 +101,73 @@
     };
     class TransportWeapons{};
   };
+
+
+  class BAPMC_Helicopter_Pilot_pack: clf_black_prc117g_co
+  {
+    scope=1;
+    class TransportMagazines{};
+    class TransportItems
+    {
+     class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
+     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_ItemAndroid {count=1;name="ItemAndroid";};
+    };
+    class TransportWeapons{};
+  };
+
+
+  class BAPMC_Pilot_pack: clf_black_prc117g_co
+  {
+    scope=1;
+    class TransportMagazines{};
+    class TransportItems
+    {
+     class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
+     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_ItemAndroid {count=1;name="ItemAndroid";};
+    };
+    class TransportWeapons{};
+  };
+
+
+  class BAPMC_Fixed_Wing_Crew_pack: clf_black_prc117g_co
+  {
+    scope=1;
+    class TransportMagazines{};
+    class TransportItems
+    {
+     class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
+     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_ItemAndroid {count=1;name="ItemAndroid";};
+    };
+    class TransportWeapons{};
+  };
+
+
+  class BAPMC_Helicopter_Crew_pack: clf_black_prc117g_co
+  {
+    scope=1;
+    class TransportMagazines{};
+    class TransportItems
+    {
+     class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
+     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_ItemAndroid {count=1;name="ItemAndroid";};
+    };
+    class TransportWeapons{};
+  };
+
+
+  class BAPMC_Vic_Crew_pack: clf_black_prc117g_co
+  {
+    scope=1;
+    class TransportMagazines{};
+    class TransportItems
+    {
+     class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
+     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_ItemAndroid {count=1;name="ItemAndroid";};
+    };
+    class TransportWeapons{};
+  };
