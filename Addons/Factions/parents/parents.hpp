@@ -42,36 +42,15 @@
   class USAF_AC130U_base;
   class USAF_AC130U: USAF_AC130U_base
   {
-    class Turrets
+    class Turrets: Turrets
     {
-      class CopilotTurret
-      {
-
-      };
-      class FlightEngTurret
-      {
-
-      };
-      class IRTurret
-      {
-
-      };
-      class TVTurret
-      {
-
-      };
-      class FCOTurret
-      {
-
-      };
-      class EWOTurret
-      {
-
-      };
-      class NavigatorTurret
-      {
-
-      };
+      class CopilotTurret;
+      class FlightEngTurret;
+      class IRTurret;
+      class TVTurret;
+      class FCOTurret;
+      class EWOTurret;
+      class NavigatorTurret;
     };
   };
   class usaf_kc135;
