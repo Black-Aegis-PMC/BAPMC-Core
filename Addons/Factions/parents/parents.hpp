@@ -35,6 +35,50 @@
   class CUP_B_UH60M_FFV_US;
   class CUP_B_MH60L_DAP_4x_US;
   class CUP_B_MH60L_DAP_2x_US;
-  class CUP_B_C130J_Cargo_GB;
-  class CUP_B_C130J_GB;
+  class USAF_C130J_Cargo;
+  class USAF_C130J;
   class C_Offroad_01_F;
+  class Turrets;
+  class USAF_AC130U_base;
+  class USAF_AC130U: USAF_AC130U_base
+  {
+    class Turrets
+    {
+      class CopilotTurret
+      {
+
+      };
+      class FlightEngTurret
+      {
+
+      };
+      class IRTurret
+      {
+
+      };
+      class TVTurret
+      {
+
+      };
+      class FCOTurret
+      {
+
+      };
+      class EWOTurret
+      {
+
+      };
+      class NavigatorTurret
+      {
+
+      };
+    };
+  };
+  class usaf_kc135;
+  class rhsusf_f22;
+  class CUP_B_F35B_BAF;
+  class CUP_B_F35B_STEALTH_BAF;
+  class UK3CB_BAF_Apache_AH1_Generic_MTP_RM;
+  class I_C_Helipilot_F;
+  class clf_black_prc117g_co;
+  class I_C_Pilot_F;

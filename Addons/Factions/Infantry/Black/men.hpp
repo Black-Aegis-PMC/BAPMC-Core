@@ -1,6 +1,7 @@
   class BAPMC_IC: I_Soldier_SL_F
   {
     faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
     side=2;
     displayName="IC";
     uniformClass="PMCA_sweater_uniform_b_b";
@@ -18,6 +19,7 @@
   class BAPMC_Surgeon: I_medic_F
   {
     faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
     side=2;
     displayName="Surgeon";
     uniformClass="Black_Black_Camo";
@@ -35,6 +37,7 @@
   class BAPMC_Medic: I_medic_F
   {
     faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
     side=2;
     displayName="Medic";
     uniformClass="PMCA_sweater_uniform_b_b";
@@ -52,6 +55,7 @@
   class BAPMC_Rifleman: I_Soldier_F
   {
     faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
     side=2;
     displayName="Rifleman";
     uniformClass="PMCA_sweater_uniform_b_b";
@@ -69,6 +73,7 @@
   class BAPMC_Cadet: I_Soldier_F
   {
     faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
     side=2;
     displayName="Cadet";
     uniformClass="PMCA_casual_uniform_b_b";
@@ -81,4 +86,94 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_H_Ger_M92_Black","VSM_LBT1961_Black","G_Bandanna_blk"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_H_Ger_M92_Black","VSM_LBT1961_Black","G_Bandanna_blk"};
     backpack="VKN_Black_Kitbag";
+  };
+
+  class BAPMC_Helicopter_Pilot: I_C_Helipilot_F
+  {
+    faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
+    side=2;
+    displayName="BAPMC Helicopter Pilot";
+    uniformClass="Uniform_Coveralls_GRANITEB";
+    weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    items[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    respawnItems[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    magazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    respawnMagazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    backpack="BAPMC_Helicopter_Pilot_pack";
+  };
+
+  class BAPMC_Pilot: I_C_Pilot_F
+  {
+    faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
+    side=2;
+    displayName="BAPMC Fixed Wing Pilot";
+    uniformClass="Uniform_Coveralls_GRANITEB";
+    weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    items[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    respawnItems[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    magazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    respawnMagazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_mask_Empire_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_mask_Empire_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    backpack="BAPMC_Pilot_pack";
+  };
+
+  class BAPMC_Fixed_Wing_Crew: I_C_Pilot_F
+  {
+    faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
+    side=2;
+    displayName="BAPMC Fixed Wing Crew";
+    uniformClass="Uniform_Coveralls_GRANITEB";
+    weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    items[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    respawnItems[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    magazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    respawnMagazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","CUP_H_PMC_Cap_Back_EP_Grey","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","CUP_H_PMC_Cap_Back_EP_Grey","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    backpack="BAPMC_Fixed_Wing_Crew_pack";
+  };
+
+  class BAPMC_Helicopter_Crew: I_C_Helipilot_F
+  {
+    faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
+    side=2;
+    displayName="BAPMC Helicopter Crew";
+    uniformClass="Uniform_Coveralls_GRANITEB";
+    weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    items[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    respawnItems[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    magazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    respawnMagazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_mask_Empire_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_mask_Empire_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    backpack="BAPMC_Helicopter_Crew_pack";
+  };
+
+  class BAPMC_Vic_Crew: I_C_Helipilot_F
+  {
+    faction="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Men";
+    side=2;
+    displayName="BAPMC Vic Crew";
+    uniformClass="Uniform_Coveralls_GRANITEB";
+    weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
+    items[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    respawnItems[]={"ACE_SpraypaintBlue","ACE_IR_Strobe_Item","ACE_EarPlugs","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_adenosine","ACE_adenosine","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","kat_chestSeal","ACE_epinephrine","ACE_epinephrine","ACE_morphine","ACE_morphine","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_splint","ACE_splint","ACE_splint","ACE_splint","ACE_MapTools","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_EntrenchingTool","ToolKit","ACE_wirecutter","CUP_NVG_GPNVG_black_WP","ItemAndroid"};
+    magazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    respawnMagazines[]={"kat_Painkiller","kat_Painkiller","acex_intelitems_notepad","acex_intelitems_notepad","acex_intelitems_notepad","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShellBlue","SmokeShell","SmokeShell","SmokeShell","SmokeShell","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
+    linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
+    backpack="BAPMC_Vic_Crew_pack";
   };

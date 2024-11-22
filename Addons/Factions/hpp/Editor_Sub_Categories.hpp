@@ -14,3 +14,15 @@
   {
     displayName="Trucks";
   };
+    class BAPMC_Planes
+  {
+    displayName="Planes";
+  };
+    class BAPMC_Jets
+  {
+    displayName="Jets";
+  };
+    class BAPMC_Men
+  {
+    displayName="Men";
+  };
