@@ -25,12 +25,18 @@ class CfgWorlds
 		previewVideo = "";
 		pictureShot = "";
 		newRoadsShape = "x\vs_c\hq_map\data\roads\roads.shp";
-		ilsDirection[] = { 0, 0.08, 1 };
-		ilsPosition[] = {0, 0};
-		ilsTaxiIn[] = {};
-		ilsTaxiOff[] = {};
-		drawTaxiway = 0;
-		satelliteBlend = 1.0;
+		ilsDirection[] = {-0.13917310096006544411249666330111, 0, 0.99026806874157031508377486734485};
+		ilsPosition[] = {897.274, 3686.55};
+		ilsAltitude = 1.56;
+        ilsTaxiIn[] = {817.151, 3671.482, 817.151, 3671.482};
+        ilsTaxiOff[] = {1110.361, 2137.272, 1027.830, 2125.861, 817.151, 3671.482};
+		drawTaxiway = 1;
+		satelliteBlend = 1;
+		textureLayer = 150;
+		textureGrid = 50;
+		satelliteNormalBlendStart = 100;
+		satelliteNormalBlendEnd = 500;
+		satelliteNormalOnDetail = 1;
 		class SecondaryAirports{};
 		class ReplaceObjects{};
 		class Sounds
