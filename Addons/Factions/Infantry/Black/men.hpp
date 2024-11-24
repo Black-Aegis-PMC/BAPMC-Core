@@ -4,6 +4,7 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
+    scopecurator=2;
     displayName="IC";
     uniformClass="PMCA_sweater_uniform_b_b";
     weapons[]={"cup_arifle_hk_m27_ag36","CUP_hgun_Glock17_blk","Rangefinder","Put","Throw"};
@@ -15,6 +16,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","Rangefinder","VSM_fasthelmet_black","dr_BLKfacp_op","VSM_Facemask_black_Goggles"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","Rangefinder","VSM_fasthelmet_black","dr_BLKfacp_op","VSM_Facemask_black_Goggles"};
     backpack="VKN_v_blackops_nicecomm2";
+    editorPreview = "x\VS_C\Factions\Images\IC.paa";
   };
 
   class BAPMC_Surgeon: I_medic_F
@@ -23,6 +25,7 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
+    scopecurator=2;
     displayName="Surgeon";
     uniformClass="Black_Black_Camo";
     weapons[]={"cup_arifle_hk_m27","CUP_hgun_Glock17_blk","Put","Throw"};
@@ -34,6 +37,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","VKN_B_OPS_Black","VKN_FAPC_Gunner_Black_Medical","VSM_Balaclava2_black_Goggles"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","VKN_B_OPS_Black","VKN_FAPC_Gunner_Black_Medical","VSM_Balaclava2_black_Goggles"};
     backpack="BAPMC_Surgeon_pack";
+    editorPreview = "x\VS_C\Factions\Images\surgeon.paa";
   };
 
   class BAPMC_Medic: I_medic_F
@@ -42,6 +46,7 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
+    scopecurator=2;
     displayName="Medic";
     uniformClass="PMCA_sweater_uniform_b_b";
     weapons[]={"cup_arifle_hk_m27","CUP_hgun_Glock17_blk","Put","Throw"};
@@ -53,6 +58,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","VSM_fasthelmet_black","VKN_FAPC_Gunner_Black_Medical","kat_Armband_Kat_Goggles"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","VSM_fasthelmet_black","VKN_FAPC_Gunner_Black_Medical","kat_Armband_Kat_Goggles"};
     backpack="VKN_Kitbag_Black_Medical";
+    editorPreview = "x\VS_C\Factions\Images\medic.paa";
   };
 
   class BAPMC_Rifleman: I_Soldier_F
@@ -61,6 +67,7 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
+    scopecurator=2;
     displayName="Rifleman";
     uniformClass="PMCA_sweater_uniform_b_b";
     weapons[]={"cup_arifle_hk_m27","CUP_hgun_Glock17_blk","Put","Throw"};
@@ -72,6 +79,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","VSM_fasthelmet_black","dr_BLKfacp_op","VSM_Facemask_black_Goggles"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","VSM_fasthelmet_black","dr_BLKfacp_op","VSM_Facemask_black_Goggles"};
     backpack="VKN_Black_Kitbag";
+    editorPreview = "x\VS_C\Factions\Images\rifleman.paa";
   };
 
   class BAPMC_Cadet: I_Soldier_F
@@ -80,6 +88,7 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
+    scopecurator=2;
     displayName="Cadet";
     uniformClass="PMCA_casual_uniform_b_b";
     weapons[]={"cup_arifle_hk_m27","CUP_hgun_Glock17_blk","Put","Throw"};
@@ -91,6 +100,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_H_Ger_M92_Black","VSM_LBT1961_Black","G_Bandanna_blk"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_H_Ger_M92_Black","VSM_LBT1961_Black","G_Bandanna_blk"};
     backpack="VKN_Black_Kitbag";
+    editorPreview = "x\VS_C\Factions\Images\cadet.paa";
   };
 
   class BAPMC_Helicopter_Pilot: I_C_Helipilot_F
@@ -99,7 +109,8 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
-    displayName="BAPMC Helicopter Pilot";
+    scopecurator=2;
+    displayName="Helicopter Pilot";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
     respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -110,6 +121,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     backpack="BAPMC_Helicopter_Pilot_pack";
+    editorPreview = "x\VS_C\Factions\Images\heli-pilot.paa";
   };
 
   class BAPMC_Pilot: I_C_Pilot_F
@@ -118,7 +130,8 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
-    displayName="BAPMC Fixed Wing Pilot";
+    scopecurator=2;
+    displayName="Fixed Wing Pilot";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
     respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -129,6 +142,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_mask_Empire_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_mask_Empire_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     backpack="BAPMC_Pilot_pack";
+    editorPreview = "x\VS_C\Factions\Images\fw-pilot.paa";
   };
 
   class BAPMC_Fixed_Wing_Crew: I_C_Pilot_F
@@ -137,7 +151,8 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
-    displayName="BAPMC Fixed Wing Crew";
+    scopecurator=2;
+    displayName="Fixed Wing Crew";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
     respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -148,6 +163,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","CUP_H_PMC_Cap_Back_EP_Grey","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","CUP_H_PMC_Cap_Back_EP_Grey","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     backpack="BAPMC_Fixed_Wing_Crew_pack";
+    editorPreview = "x\VS_C\Factions\Images\fw-crew.paa";
   };
 
   class BAPMC_Helicopter_Crew: I_C_Helipilot_F
@@ -156,7 +172,8 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
-    displayName="BAPMC Helicopter Crew";
+    scopecurator=2;
+    displayName="Helicopter Crew";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
     respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -167,6 +184,7 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_mask_Empire_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_visor_mask_Empire_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     backpack="BAPMC_Helicopter_Crew_pack";
+    editorPreview = "x\VS_C\Factions\Images\heli-pilot.paa";
   };
 
   class BAPMC_Vic_Crew: I_C_Helipilot_F
@@ -175,7 +193,8 @@
     editorSubcategory = "BAPMC_Men";
     side=2;
     scope=2;
-    displayName="BAPMC Vic Crew";
+    scopecurator=2;
+    displayName="Vic Crew";
     uniformClass="Uniform_Coveralls_GRANITEB";
     weapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
     respawnWeapons[]={"cup_smg_evo","CUP_hgun_Duty","CUP_LRTV","Put","Throw"};
@@ -186,4 +205,5 @@
     linkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     respawnLinkedItems[]={"ItemMap","ItemCompass","ACE_Altimeter","TFAR_anprc152","ItemGPS","CUP_LRTV","rhsusf_hgu56p_black","UK3CB_V_Pilot_Vest_Black","VKN_shemagh_black"};
     backpack="BAPMC_Vic_Crew_pack";
+    editorPreview = "x\VS_C\Factions\Images\vic-crew.paa";
   };

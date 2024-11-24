@@ -5,6 +5,7 @@
     editorSubcategory = "BAPMC_Cars_Armed";
     side=2;
     scope=2;
+    scopecurator=2;
     displayName="Armoured SUV";
     hiddenSelectionsTextures[]={"cup\wheeledvehicles\cup_wheeledvehicles_suv\data\suv_armored_body_co.paa"};
     crew="BAPMC_Rifleman";
@@ -17,6 +18,7 @@
     editorSubcategory = "BAPMC_Cars_Armed";
     side=2;
     scope=2;
+    scopecurator=2;
     displayName="LMG 4WD";
     hiddenSelectionsTextures[]={"cup\wheeledvehicles\cup_wheeledvehicles_offroad_02\data\pmc_offroad_02_ext_black_co.paa","cup\wheeledvehicles\cup_wheeledvehicles_offroad_02\data\pmc_offroad_02_ext_black_co.paa","cup\wheeledvehicles\cup_wheeledvehicles_offroad_02\data\pmc_offroad_02_int_black_co.paa","cup\wheeledvehicles\cup_wheeledvehicles_offroad_02\data\pmc_offroad_02_int_black_co.paa"};
     crew="BAPMC_Rifleman";
@@ -29,6 +31,7 @@
     editorSubcategory = "BAPMC_Cars_Armed";
     side=2;
     scope=2;
+    scopecurator=2;
     displayName="AT 4WD";
     hiddenSelectionsTextures[]={"cup\wheeledvehicles\cup_wheeledvehicles_offroad_02\data\pmc_offroad_02_ext_black_co.paa","cup\wheeledvehicles\cup_wheeledvehicles_offroad_02\data\pmc_offroad_02_ext_black_co.paa","cup\wheeledvehicles\cup_wheeledvehicles_offroad_02\data\pmc_offroad_02_int_black_co.paa","cup\wheeledvehicles\cup_wheeledvehicles_offroad_02\data\pmc_offroad_02_int_black_co.paa"};
     crew="BAPMC_Rifleman";

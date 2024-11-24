@@ -5,7 +5,11 @@
 #define BLACK_RIFLEMAN "BAPMC_Rifleman"
 #define BLACK_SURGEON "BAPMC_Surgeon"
 #define BLACK_CADET "BAPMC_Cadet"
-
+#define BLACK_PILOT "BAPMC_Pilot"
+#define BLACK_HELIPILOT "BAPMC_Helicopter_Pilot"
+#define BLACK_FWCREW "BAPMC_Fixed_Wing_Crew"
+#define BLACK_HELICREW "BAPMC_Helicopter_Crew"
+#define BLACK_VICCREW "BAPMC_Vic_Crew"
 
 /*
 #define PACIFIC_ASTEAMLEADER "B_T_Soldier_SL_F"
@@ -143,6 +147,101 @@ class CfgGroups
 						rank = "PRIVATE";
 					};
 				};
+				class BLACK_Helicopter {
+					name = "";
+					scope = 0;
+					faction = "VS_C_BAPMC";
+					side = 2;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = BLACK_HELIPILOT;
+						rank = "PRIVATE";
+					};
+					class Unit1 {
+						position[] = {0,-3,0};
+						vehicle = BLACK_HELICREW;
+						rank = "PRIVATE";
+					};
+					class Unit2{
+						position[] = {0,-6,0};
+						vehicle = BLACK_HELICREW;
+						rank = "PRIVATE";
+					};
+				};
+				class BLACK_JET {
+					name = "";
+					scope = 0;
+					faction = "VS_C_BAPMC";
+					side = 2;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = BLACK_PILOT;
+						rank = "PRIVATE";
+					};
+				};
+				class BLACK_PLANE {
+					name = "";
+					scope = 0;
+					faction = "VS_C_BAPMC";
+					side = 2;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = BLACK_PILOT;
+						rank = "PRIVATE";
+					};
+					class Unit1 {
+						position[] = {0,-3,0};
+						vehicle = BLACK_PILOT;
+						rank = "PRIVATE";
+					};
+				};
+				class BLACK_Gunship {
+					name = "";
+					scope = 0;
+					faction = "VS_C_BAPMC";
+					side = 2;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = BLACK_PILOT;
+						rank = "PRIVATE";
+					};
+					class Unit1 {
+						position[] = {0,-3,0};
+						vehicle = BLACK_FWCREW;
+						rank = "PRIVATE";
+					};
+					class Unit2{
+						position[] = {0,-6,0};
+						vehicle = BLACK_FWCREW;
+						rank = "PRIVATE";
+					};
+					class Unit3{
+						position[] = {0,-9,0};
+						vehicle = BLACK_FWCREW;
+						rank = "PRIVATE";
+					};
+				};
+				class BLACK_VIC {
+					name = "";
+					scope = 0;
+					faction = "VS_C_BAPMC";
+					side = 2;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = BLACK_VICCREW;
+						rank = "PRIVATE";
+					};
+					class Unit1 {
+						position[] = {0,-3,0};
+						vehicle = BLACK_VICCREW;
+						rank = "PRIVATE";
+					};
+					class Unit2{
+						position[] = {0,-6,0};
+						vehicle = BLACK_VICCREW;
+						rank = "PRIVATE";
+					};
+				};
 				class BLACK_defaults {
 					name = "";
 					scope = 0;
@@ -171,6 +270,31 @@ class CfgGroups
 					class Unit4 {
 						position[] = {0,-9,0};
 						vehicle = BLACK_CADET;
+						rank = "PRIVATE";
+					};
+					class Unit5 {
+						position[] = {0,-12,0};
+						vehicle = BLACK_PILOT;
+						rank = "PRIVATE";
+					};
+					class Unit4 {
+						position[] = {0,-15,0};
+						vehicle = BLACK_HELIPILOT;
+						rank = "PRIVATE";
+					};
+					class Unit4 {
+						position[] = {0,-18,0};
+						vehicle = BLACK_FWCREW;
+						rank = "PRIVATE";
+					};
+					class Unit4 {
+						position[] = {0,-21,0};
+						vehicle = BLACK_HELICREW;
+						rank = "PRIVATE";
+					};
+					class Unit4 {
+						position[] = {0,-24,0};
+						vehicle = BLACK_VICCREW;
 						rank = "PRIVATE";
 					};
 				};

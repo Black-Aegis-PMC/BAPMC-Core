@@ -1,38 +1,54 @@
 /* ----------------------------------------------------------------------------
-	Function: vs_core_fnc_edenCreateAssets
+    Function: vs_core_fnc_edenCreateAssets
 
-	Description:
-	Creates mission slots, modules and markers.
+    Description:
+    Creates mission slots, modules, and markers.
 
-	Parameters:
-	0: _callsign - The platoon callsign that all sections will use <String>
-	1: _zeusCallsign - The callsign that HQ will use <String>
-	2: _camo - The camo the units will use <String>
-	3: _numberOfSections - The number of sections to spawn <Number>
-	4: _createDefaults - Whether to create a section to use as default loadout units <Bool>
+    Parameters:
+    0: _callsign - The platoon callsign that all sections will use <String>
+    1: _zeusCallsign - The callsign that HQ will use <String>
+    2: _camo - The camo the units will use <String>
+    3: _numberOfSections - The number of sections to spawn <Number>
+    4: _crewedVehicles - Number of crewed vehicles to spawn <Number>
+    5: _helicopters - Number of helicopters to spawn <Number>
+    6: _jets - Number of jets to spawn <Number>
+    7: _gunships - Number of gunships to spawn <Number>
+    8: _planes - Number of planes to spawn <Number>
+    9: _createDefaults - Whether to create a section to use as default loadout units <Bool>
 
-	Returns:
-	Nothing.
+    Returns:
+    Nothing.
 
-	Examples:
-	["Odin", "Valhalla", "BLACK", 3, false] call vs_core_fnc_edenCreateAssets;
+    Examples:
+    ["Odin", "Valhalla", "BLACK", 3, 2, 2, 1, 1, 1, true] call vs_core_fnc_edenCreateAssets;
 
-	Author:
-	Met
+    Author:
+    Met
 License GPL-2.0
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Shield", [""]], ["_zeusCallsign", "Olympus", [""]], ["_camo", "BLACK", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", true, [false]]];
+params [
+    ["_callsign", "Shield", [""]],
+    ["_zeusCallsign", "Olympus", [""]],
+    ["_camo", "BLACK", [""]],
+    ["_numberOfSections", 3, [0]],
+    ["_crewedVehicles", 0, [0]],
+    ["_helicopters", 0, [0]],
+    ["_jets", 0, [0]],
+    ["_gunships", 0, [0]],
+    ["_planes", 0, [0]],
+    ["_createDefaults", true, [true]]
+];
 
 if (_callsign == "") then {
-	_callsign = "Shield";
+    _callsign = "Shield";
 };
 
 if (_zeusCallsign == "") then {
-	_zeusCallsign = "Olympus";
+    _zeusCallsign = "Olympus";
 };
 
 if (_camo == "") then {
-	_camo = "BLACK";
+    _camo = "BLACK";
 };
 
 _camo = toUpper _camo;
@@ -40,12 +56,17 @@ _nameZeus = format ["%1_zeus", _camo];
 _nameSection = format ["%1_section", _camo];
 _nameCommand = format ["%1_command", _camo];
 _nameDefaults = format ["%1_defaults", _camo];
+_nameHelicopter = format ["%1_Helicopter", _camo];
+_nameJet = format ["%1_JET", _camo];
+_namePlane = format ["%1_PLANE", _camo];
+_nameGunship = format ["%1_Gunship", _camo];
+_nameVic = format ["%1_VIC", _camo];
 
 _centralPos = screenToWorld [0.5, 0.5];
 _camPos = [getPosATL get3DENCamera select 0, getPosATL get3DENCamera select 1, 0];
 _spawnPos = _centralPos;
 if (_centralPos distance _camPos > 500) then {
-	_spawnPos = _camPos;
+    _spawnPos = _camPos;
 };
 
 _entities =
@@ -203,14 +224,171 @@ for "_i" from 1 to _numberOfSections do {
 		};
 } forEach allUnits;
 
-// default Loadouts
-if (_createDefaults) then {
-	create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
-	set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "vs_cORE_3den_Loadout", true]];
-	_groupComp = get3DENSelected "Object";
-	{
-		_unitDisplayName = getText (configOf _x >> "displayName");
-		_x set3DENAttribute ["vs_cORE_3den_LoadoutName", _unitDisplayName];
-	} forEach _groupComp;
-	set3DENSelected [];
+// Initialize vehicle position counter
+_numVehicle = _num;
+
+// Spawn crewed vehicle crews
+for "_i" from 1 to _crewedVehicles do {
+    create3DENComposition [
+        configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameVic,
+        _spawnPos vectorAdd [_numVehicle, 0, 0]
+    ];
+    set3DENAttributes [
+        [get3DENSelected "Group", "groupID", format ["1-%1 Crew", _i]],
+        [get3DENSelected "Object", "ControlMP", true]
+    ];
+    _group = get3DENSelected "Object" select 0;
+    // Get all units in the group
+    _units = units _group;
+    _leader = leader _group;
+    // Set description for the leader (Commander)
+    _leader set3DENAttribute ["description", format ["1: Commander@Guardian %2", _i]];
+    // Remove leader from units array to get the other units
+    _otherUnits = _units - [_leader];
+    // Assign descriptions to other units
+    if (count _otherUnits >= 1) then {
+        (_otherUnits select 0) set3DENAttribute ["description", "2: Driver"];
+    };
+    if (count _otherUnits >= 2) then {
+        (_otherUnits select 1) set3DENAttribute ["description", "3: Gunner"];
+    };
+    set3DENSelected [];
+    _numVehicle = _numVehicle + 2;
 };
+
+
+
+// Initialize helicopter position counter
+_numHelicopter = _numVehicle;
+
+// Spawn helicopter crews
+for "_i" from 1 to _helicopters do {
+    create3DENComposition [
+        configfile >> "CfgGroups" >> "Independent" >> "VS_Core_compositions" >> "infantry" >> _nameHelicopter,
+        _spawnPos vectorAdd [_numHelicopter, 0, 0]
+    ];
+    set3DENAttributes [
+        [get3DENSelected "Group", "groupID", format ["Helicopter %1", _i]],
+        [get3DENSelected "Object", "ControlMP", true]
+    ];
+    _group = get3DENSelected "Object" select 0;
+    // Get all units in the group
+    _units = units _group;
+    _leader = leader _group;
+    // Set description for the leader (Helicopter Pilot)
+    _leader set3DENAttribute ["description", format ["1: Helicopter Pilot@Chariot 1-%2", _i]];
+    // Remove leader from units array to get the other units
+    _otherUnits = _units - [_leader];
+    // Assign description "Helicopter Crew" to other units
+    _crewIndex = 2;
+    {
+        _x set3DENAttribute ["description", format ["%1: Helicopter Crew", _crewIndex]];
+        _crewIndex = _crewIndex + 1;
+    } forEach _otherUnits;
+    set3DENSelected [];
+    _numHelicopter = _numHelicopter + 2;
+};
+
+
+// Initialize gunship position counter
+_numGunship = _numHelicopter;
+
+// Spawn gunship crews
+for "_i" from 1 to _gunships do {
+    create3DENComposition [
+        configfile >> "CfgGroups" >> "Independent" >> "VS_Core_compositions" >> "infantry" >> _nameGunship,
+        _spawnPos vectorAdd [_numGunship, 0, 0]
+    ];
+    set3DENAttributes [
+        [get3DENSelected "Group", "groupID", format ["Gunship %1", _i]],
+        [get3DENSelected "Object", "ControlMP", true]
+    ];
+    _group = get3DENSelected "Object" select 0;
+    // Get all units in the group
+    _units = units _group;
+    _leader = leader _group;
+    // Set description for the leader (Gunship Pilot)
+    _leader set3DENAttribute ["description", format ["1: Gunship Pilot@Chariot 2-%2", _i]];
+    // Remove leader from units array to get the other units
+    _otherUnits = _units - [_leader];
+    // Assign description "Crew" to other units
+    _crewIndex = 2;
+    {
+        _x set3DENAttribute ["description", format ["%1: Gunship Crew", _crewIndex]];
+        _crewIndex = _crewIndex + 1;
+    } forEach _otherUnits;
+    set3DENSelected [];
+    _numGunship = _numGunship + 2;
+};
+
+
+// Initialize plane position counter
+_numPlane = _numGunship;
+
+// Spawn plane crews
+for "_i" from 1 to _planes do {
+    create3DENComposition [
+        configfile >> "CfgGroups" >> "Independent" >> "VS_Core_compositions" >> "infantry" >> _namePlane,
+        _spawnPos vectorAdd [_numPlane, 0, 0]
+    ];
+    set3DENAttributes [
+        [get3DENSelected "Group", "groupID", format ["Plane %1", _i]],
+        [get3DENSelected "Object", "ControlMP", true]
+    ];
+    _group = get3DENSelected "Object" select 0;
+    // Get all units in the group
+    _units = units _group;
+    _leader = leader _group;
+    // Set description for the leader (Plane Pilot)
+    _leader set3DENAttribute ["description", format ["1: Plane Pilot@Chariot 3-%2", _i]];
+    // Remove leader from units array to get the other units
+    _otherUnits = _units - [_leader];
+    // Assign description "Crew" to other units
+    _crewIndex = 2;
+    {
+        _x set3DENAttribute ["description", format ["%1: Plane Crew", _crewIndex]];
+        _crewIndex = _crewIndex + 1;
+    } forEach _otherUnits;
+    set3DENSelected [];
+    _numPlane = _numPlane + 2;
+};
+
+// Initialize jet position counter
+_numJet = _numPlane;
+
+// Spawn jet pilots
+for "_i" from 1 to _jets do {
+    create3DENComposition [
+        configfile >> "CfgGroups" >> "Independent" >> "VS_Core_compositions" >> "infantry" >> _nameJet,
+        _spawnPos vectorAdd [_numJet, 0, 0]
+    ];
+    set3DENAttributes [
+        [get3DENSelected "Group", "groupID", format ["Jet %1", _i]],
+        [get3DENSelected "Object", "ControlMP", true]
+    ];
+    _group = get3DENSelected "Object" select 0;
+    // Set description for the leader (Jet Pilot)
+    leader _group set3DENAttribute ["description", format ["1: Jet Pilot@Chariot 4-%2", _i]];
+    set3DENSelected [];
+    _numJet = _numJet + 2;
+};
+
+// Default Loadouts
+if (_createDefaults) then {
+    create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
+    set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "vs_cORE_3den_Loadout", true]];
+    _groupComp = get3DENSelected "Object";
+    {
+        _unitDisplayName = getText (configOf _x >> "displayName");
+        _x set3DENAttribute ["vs_cORE_3den_LoadoutName", _unitDisplayName];
+    } forEach _groupComp;
+    set3DENSelected [];
+};
+
+// Adjust medic class for surgeons
+{
+    private _unitDisplayName = getText (configOf _x >> "displayName");
+    if (_unitDisplayName == "Surgeon" || typeOf _x == "BAPMC_Surgeon") then {
+        _x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
+    };
+} forEach allUnits;
