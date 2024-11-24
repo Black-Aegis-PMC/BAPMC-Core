@@ -268,32 +268,32 @@ class CfgGroups
 						rank = "PRIVATE";
 					};
 					class Unit4 {
-						position[] = {0,-9,0};
+						position[] = {1,0,0};
 						vehicle = BLACK_CADET;
 						rank = "PRIVATE";
 					};
 					class Unit5 {
-						position[] = {0,-12,0};
+						position[] = {1,-3,0};
 						vehicle = BLACK_PILOT;
 						rank = "PRIVATE";
 					};
-					class Unit4 {
-						position[] = {0,-15,0};
+					class Unit6 {
+						position[] = {1,-6,0};
 						vehicle = BLACK_HELIPILOT;
 						rank = "PRIVATE";
 					};
-					class Unit4 {
-						position[] = {0,-18,0};
+					class Unit7 {
+						position[] = {1,-9,0};
 						vehicle = BLACK_FWCREW;
 						rank = "PRIVATE";
 					};
-					class Unit4 {
-						position[] = {0,-21,0};
+					class Unit8 {
+						position[] = {2,0,0};
 						vehicle = BLACK_HELICREW;
 						rank = "PRIVATE";
 					};
-					class Unit4 {
-						position[] = {0,-24,0};
+					class Unit9 {
+						position[] = {2,-3,0};
 						vehicle = BLACK_VICCREW;
 						rank = "PRIVATE";
 					};

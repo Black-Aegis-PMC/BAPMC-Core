@@ -9,7 +9,7 @@
     1: _zeusCallsign - The callsign that HQ will use <String>
     2: _camo - The camo the units will use <String>
     3: _numberOfSections - The number of sections to spawn <Number>
-    4: _crewedVehicles - Number of crewed vehicles to spawn <Number>
+    4: _ifvCrew - Number of crewed vehicles to spawn <Number>
     5: _helicopters - Number of helicopters to spawn <Number>
     6: _jets - Number of jets to spawn <Number>
     7: _gunships - Number of gunships to spawn <Number>
@@ -31,7 +31,8 @@ params [
     ["_zeusCallsign", "Olympus", [""]],
     ["_camo", "BLACK", [""]],
     ["_numberOfSections", 3, [0]],
-    ["_crewedVehicles", 0, [0]],
+    ["_ifvCrew", 0, [0]],
+    ["_tankCrew", 0, [0]],
     ["_helicopters", 0, [0]],
     ["_jets", 0, [0]],
     ["_gunships", 0, [0]],
@@ -158,7 +159,7 @@ _last = "";
 _num = 1;
 for "_i" from 1 to _numberOfSections do {
 	create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
-	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
+	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
 	_ix = 3;
 	{
@@ -178,7 +179,7 @@ for "_i" from 1 to _numberOfSections do {
 			};
 		};
 	} forEach units _group;
-	leader _group set3DENAttribute ["description", format ["1: 1IC@%1 1-%2", _callsign, _i]];
+	leader _group set3DENAttribute ["description", format ["1: 1IC@%1 %2", _callsign, _i]];
 	set3DENSelected [];
 	_num = _num + 2;
 };
@@ -225,16 +226,16 @@ for "_i" from 1 to _numberOfSections do {
 } forEach allUnits;
 
 // Initialize vehicle position counter
-_numVehicle = _num;
+_numIFV = _num;
 
 // Spawn crewed vehicle crews
-for "_i" from 1 to _crewedVehicles do {
+for "_i" from 1 to _ifvCrew do {
     create3DENComposition [
         configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameVic,
-        _spawnPos vectorAdd [_numVehicle, 0, 0]
+        _spawnPos vectorAdd [_numIFV, 0, 0]
     ];
     set3DENAttributes [
-        [get3DENSelected "Group", "groupID", format ["1-%1 Crew", _i]],
+        [get3DENSelected "Group", "groupID", format ["Guardian-%1 Crew", _i]],
         [get3DENSelected "Object", "ControlMP", true]
     ];
     _group = get3DENSelected "Object" select 0;
@@ -242,7 +243,7 @@ for "_i" from 1 to _crewedVehicles do {
     _units = units _group;
     _leader = leader _group;
     // Set description for the leader (Commander)
-    _leader set3DENAttribute ["description", format ["1: Commander@Guardian %2", _i]];
+    _leader set3DENAttribute ["description", format ["1: Commander@Guardian %1", _i]];
     // Remove leader from units array to get the other units
     _otherUnits = _units - [_leader];
     // Assign descriptions to other units
@@ -253,13 +254,43 @@ for "_i" from 1 to _crewedVehicles do {
         (_otherUnits select 1) set3DENAttribute ["description", "3: Gunner"];
     };
     set3DENSelected [];
-    _numVehicle = _numVehicle + 2;
+    _numIFV = _numIFV + 2;
 };
 
+// Initialize vehicle position counter
+_numTank = _numIFV;
 
+// Spawn crewed vehicle crews
+for "_i" from 1 to _tankCrew do {
+    create3DENComposition [
+        configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameVic,
+        _spawnPos vectorAdd [_numTank, 0, 0]
+    ];
+    set3DENAttributes [
+        [get3DENSelected "Group", "groupID", format ["Titan-%1 Crew", _i]],
+        [get3DENSelected "Object", "ControlMP", true]
+    ];
+    _group = get3DENSelected "Object" select 0;
+    // Get all units in the group
+    _units = units _group;
+    _leader = leader _group;
+    // Set description for the leader (Commander)
+    _leader set3DENAttribute ["description", format ["1: Commander@Titan %1", _i]];
+    // Remove leader from units array to get the other units
+    _otherUnits = _units - [_leader];
+    // Assign descriptions to other units
+    if (count _otherUnits >= 1) then {
+        (_otherUnits select 0) set3DENAttribute ["description", "2: Driver"];
+    };
+    if (count _otherUnits >= 2) then {
+        (_otherUnits select 1) set3DENAttribute ["description", "3: Gunner"];
+    };
+    set3DENSelected [];
+    _numTank = _numTank + 2;
+};
 
 // Initialize helicopter position counter
-_numHelicopter = _numVehicle;
+_numHelicopter = _numTank;
 
 // Spawn helicopter crews
 for "_i" from 1 to _helicopters do {
@@ -268,7 +299,7 @@ for "_i" from 1 to _helicopters do {
         _spawnPos vectorAdd [_numHelicopter, 0, 0]
     ];
     set3DENAttributes [
-        [get3DENSelected "Group", "groupID", format ["Helicopter %1", _i]],
+        [get3DENSelected "Group", "groupID", format ["Chariot %1", _i]],
         [get3DENSelected "Object", "ControlMP", true]
     ];
     _group = get3DENSelected "Object" select 0;
@@ -276,13 +307,13 @@ for "_i" from 1 to _helicopters do {
     _units = units _group;
     _leader = leader _group;
     // Set description for the leader (Helicopter Pilot)
-    _leader set3DENAttribute ["description", format ["1: Helicopter Pilot@Chariot 1-%2", _i]];
+    _leader set3DENAttribute ["description", format ["1: Pilot@Chariot %1", _i]];
     // Remove leader from units array to get the other units
     _otherUnits = _units - [_leader];
     // Assign description "Helicopter Crew" to other units
     _crewIndex = 2;
     {
-        _x set3DENAttribute ["description", format ["%1: Helicopter Crew", _crewIndex]];
+        _x set3DENAttribute ["description", format ["%1: Crew", _crewIndex]];
         _crewIndex = _crewIndex + 1;
     } forEach _otherUnits;
     set3DENSelected [];
@@ -300,7 +331,7 @@ for "_i" from 1 to _gunships do {
         _spawnPos vectorAdd [_numGunship, 0, 0]
     ];
     set3DENAttributes [
-        [get3DENSelected "Group", "groupID", format ["Gunship %1", _i]],
+        [get3DENSelected "Group", "groupID", format ["Hydra  %1", _i]],
         [get3DENSelected "Object", "ControlMP", true]
     ];
     _group = get3DENSelected "Object" select 0;
@@ -308,13 +339,13 @@ for "_i" from 1 to _gunships do {
     _units = units _group;
     _leader = leader _group;
     // Set description for the leader (Gunship Pilot)
-    _leader set3DENAttribute ["description", format ["1: Gunship Pilot@Chariot 2-%2", _i]];
+    _leader set3DENAttribute ["description", format ["1: Pilot@Hydra  %1", _i]];
     // Remove leader from units array to get the other units
     _otherUnits = _units - [_leader];
     // Assign description "Crew" to other units
     _crewIndex = 2;
     {
-        _x set3DENAttribute ["description", format ["%1: Gunship Crew", _crewIndex]];
+        _x set3DENAttribute ["description", format ["%1: Crew", _crewIndex]];
         _crewIndex = _crewIndex + 1;
     } forEach _otherUnits;
     set3DENSelected [];
@@ -332,7 +363,7 @@ for "_i" from 1 to _planes do {
         _spawnPos vectorAdd [_numPlane, 0, 0]
     ];
     set3DENAttributes [
-        [get3DENSelected "Group", "groupID", format ["Plane %1", _i]],
+        [get3DENSelected "Group", "groupID", format ["Hermes %1", _i]],
         [get3DENSelected "Object", "ControlMP", true]
     ];
     _group = get3DENSelected "Object" select 0;
@@ -340,13 +371,13 @@ for "_i" from 1 to _planes do {
     _units = units _group;
     _leader = leader _group;
     // Set description for the leader (Plane Pilot)
-    _leader set3DENAttribute ["description", format ["1: Plane Pilot@Chariot 3-%2", _i]];
+    _leader set3DENAttribute ["description", format ["1: Pilot@Hermes %1", _i]];
     // Remove leader from units array to get the other units
     _otherUnits = _units - [_leader];
     // Assign description "Crew" to other units
     _crewIndex = 2;
     {
-        _x set3DENAttribute ["description", format ["%1: Plane Crew", _crewIndex]];
+        _x set3DENAttribute ["description", format ["%1: Crew", _crewIndex]];
         _crewIndex = _crewIndex + 1;
     } forEach _otherUnits;
     set3DENSelected [];
@@ -363,19 +394,19 @@ for "_i" from 1 to _jets do {
         _spawnPos vectorAdd [_numJet, 0, 0]
     ];
     set3DENAttributes [
-        [get3DENSelected "Group", "groupID", format ["Jet %1", _i]],
+        [get3DENSelected "Group", "groupID", format ["Icarus  %1", _i]],
         [get3DENSelected "Object", "ControlMP", true]
     ];
     _group = get3DENSelected "Object" select 0;
     // Set description for the leader (Jet Pilot)
-    leader _group set3DENAttribute ["description", format ["1: Jet Pilot@Chariot 4-%2", _i]];
+    leader _group set3DENAttribute ["description", format ["1: Pilot@Icarus  %1", _i]];
     set3DENSelected [];
     _numJet = _numJet + 2;
 };
 
 // Default Loadouts
 if (_createDefaults) then {
-    create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
+    create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_numJet + 2, 3, 0]];
     set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "vs_cORE_3den_Loadout", true]];
     _groupComp = get3DENSelected "Object";
     {
