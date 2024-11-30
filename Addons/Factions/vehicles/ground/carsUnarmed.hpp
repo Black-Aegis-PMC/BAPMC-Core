@@ -1,4 +1,4 @@
-  class BAPMC_Comms_Offroad: EMP_Offroad_Comms
+  class BAPMC_Comms_Offroad: UK3CB_ION_I_Desert_Offroad_Comms
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";

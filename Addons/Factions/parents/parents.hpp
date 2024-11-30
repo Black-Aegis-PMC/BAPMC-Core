@@ -1,7 +1,7 @@
   class I_Soldier_SL_F;
   class I_medic_F;
   class I_Soldier_F;
-  class EMP_Offroad_Comms;
+  class UK3CB_ION_I_Desert_Offroad_Comms;
   class RHS_MELB_AH6M;
   class RHS_MELB_MH6M;
   class UK3CB_CW_US_B_LATE_UH60M;
