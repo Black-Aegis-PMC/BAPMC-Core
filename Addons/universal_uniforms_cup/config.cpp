@@ -42,6 +42,7 @@ class CfgPatches
                             "CUP_Creatures_Military_USArmy",
                             "CUP_Creatures_Military_HIL",
                             "CUP_Creatures_Military_Ukraine"};
+        skipWhenMissingDependencies = 1;
     };
 };
 

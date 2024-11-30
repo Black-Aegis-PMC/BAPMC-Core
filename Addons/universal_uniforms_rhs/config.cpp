@@ -24,6 +24,7 @@ class CfgPatches
         requiredVersion = 2.16;
         requiredAddons[] = {"universal_uniforms", "rhs_c_troops",     "rhsusf_c_troops",
                             "rhs_cti_insurgents", "rhsgref_c_troops", "rhssaf_c_troops"};
+        skipWhenMissingDependencies = 1;
     };
 };
 

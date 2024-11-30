@@ -29,6 +29,7 @@ class CfgPatches
                             "A3_Characters_F_Tank",   "A3_Characters_F_Tank_Uniforms",
                             "A3_Characters_F_Enoch",  "A3_Characters_F_Oldman",
                             "A3_Characters_F_AoW"};
+        skipWhenMissingDependencies = 1;
     };
 };
 
