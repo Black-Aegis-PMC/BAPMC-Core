@@ -1,4 +1,4 @@
-  class BAPMC_IC_pack: VKN_v_blackops_nicecomm2
+  class BAPMC_IC_pack: unv_black_big_rt1523g
   {
     scope=1;
     class TransportMagazines
@@ -20,7 +20,7 @@
   };
 
 
-  class BAPMC_Surgeon_pack: VKN_Kitbag_Black_Medical
+  class BAPMC_Surgeon_pack: UK3CB_ION_B_B_RIF_MED_BLK
   {
     scope=1;
     class TransportMagazines
@@ -52,7 +52,7 @@
   };
 
 
-  class BAPMC_Medic_pack: VKN_Kitbag_Black_Medical
+  class BAPMC_Medic_pack: UK3CB_ION_B_B_RIF_MED_BLK
   {
     scope=1;
     class TransportMagazines{};
@@ -73,25 +73,37 @@
   };
 
 
-  class BAPMC_Rifleman_pack: VKN_Black_Kitbag
-  {
-    scope=1;
-    class TransportMagazines{};
-    class TransportItems{};
-    class TransportWeapons{};
-  };
-
-
-  class BAPMC_Cadet_pack: VKN_Black_Kitbag
+  class BAPMC_Rifleman_pack: UK3CB_ION_B_B_RIF_BLK_01
   {
     scope=1;
     class TransportMagazines
     {
      class _xx_tsp_breach_popper_auto_mag {count=2;magazine="tsp_breach_popper_auto_mag";};
      class _xx_tsp_flashbang_m84 {count=2;magazine="tsp_flashbang_m84";};
-     class _xx_CUP_HandGrenade_M67 {count=2;magazine="CUP_HandGrenade_M67";};
+     class _xx_rhs_mag_m67 {count=2;magazine="rhs_mag_m67";};
      class _xx_SmokeShell {count=2;magazine="SmokeShell";};
-     class _xx_CUP_30Rnd_556x45_Stanag_Mk16_black {count=4;magazine="CUP_30Rnd_556x45_Stanag_Mk16_black";};
+     class _xx_rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger {count=4;magazine="rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger";};
+    };
+    class TransportItems
+    {
+     class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
+     class _xx_ACE_EntrenchingTool {count=1;name="ACE_EntrenchingTool";};
+     class _xx_tsp_lockpick {count=1;name="tsp_lockpick";};
+    };
+    class TransportWeapons{};
+  };
+
+
+  class BAPMC_Cadet_pack: UK3CB_ION_B_B_RIF_BLK_01
+  {
+    scope=1;
+    class TransportMagazines
+    {
+     class _xx_tsp_breach_popper_auto_mag {count=2;magazine="tsp_breach_popper_auto_mag";};
+     class _xx_tsp_flashbang_m84 {count=2;magazine="tsp_flashbang_m84";};
+     class _xx_rhs_mag_m67 {count=2;magazine="rhs_mag_m67";};
+     class _xx_SmokeShell {count=2;magazine="SmokeShell";};
+     class _xx_rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger {count=4;magazine="rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger";};
     };
     class TransportItems
     {
@@ -110,7 +122,7 @@
     class TransportItems
     {
      class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
-     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_USP_GPNVG18_WP_CB2_BLK {count=1;name="USP_GPNVG18_WP_CB2_BLK";};
      class _xx_ItemAndroid {count=1;name="ItemAndroid";};
     };
     class TransportWeapons{};
@@ -124,7 +136,7 @@
     class TransportItems
     {
      class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
-     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_USP_GPNVG18_WP_CB2_BLK {count=1;name="USP_GPNVG18_WP_CB2_BLK";};
      class _xx_ItemAndroid {count=1;name="ItemAndroid";};
     };
     class TransportWeapons{};
@@ -138,7 +150,7 @@
     class TransportItems
     {
      class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
-     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_USP_GPNVG18_WP_CB2_BLK {count=1;name="USP_GPNVG18_WP_CB2_BLK";};
      class _xx_ItemAndroid {count=1;name="ItemAndroid";};
     };
     class TransportWeapons{};
@@ -152,7 +164,7 @@
     class TransportItems
     {
      class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
-     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_USP_GPNVG18_WP_CB2_BLK {count=1;name="USP_GPNVG18_WP_CB2_BLK";};
      class _xx_ItemAndroid {count=1;name="ItemAndroid";};
     };
     class TransportWeapons{};
@@ -166,7 +178,7 @@
     class TransportItems
     {
      class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
-     class _xx_CUP_NVG_GPNVG_black_WP {count=1;name="CUP_NVG_GPNVG_black_WP";};
+     class _xx_USP_GPNVG18_WP_CB2_BLK {count=1;name="USP_GPNVG18_WP_CB2_BLK";};
      class _xx_ItemAndroid {count=1;name="ItemAndroid";};
     };
     class TransportWeapons{};
