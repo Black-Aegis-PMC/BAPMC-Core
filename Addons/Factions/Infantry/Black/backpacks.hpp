@@ -1,4 +1,4 @@
-  class BAPMC_IC_pack: unv_black_big_rt1523g
+  class BAPMC_IC_pack: tfw_ilbe_blade_black
   {
     scope=1;
     class TransportMagazines
@@ -115,7 +115,7 @@
   };
 
 
-  class BAPMC_Helicopter_Pilot_pack: clf_black_prc117g_co
+  class BAPMC_Helicopter_Pilot_pack: UK3CB_B_I_Backpack_Radio_Chem
   {
     scope=1;
     class TransportMagazines{};
@@ -129,7 +129,7 @@
   };
 
 
-  class BAPMC_Pilot_pack: clf_black_prc117g_co
+  class BAPMC_Pilot_pack: UK3CB_B_I_Backpack_Radio_Chem
   {
     scope=1;
     class TransportMagazines{};
@@ -143,7 +143,7 @@
   };
 
 
-  class BAPMC_Fixed_Wing_Crew_pack: clf_black_prc117g_co
+  class BAPMC_Fixed_Wing_Crew_pack: UK3CB_B_I_Backpack_Radio_Chem
   {
     scope=1;
     class TransportMagazines{};
@@ -157,7 +157,7 @@
   };
 
 
-  class BAPMC_Helicopter_Crew_pack: clf_black_prc117g_co
+  class BAPMC_Helicopter_Crew_pack: UK3CB_B_I_Backpack_Radio_Chem
   {
     scope=1;
     class TransportMagazines{};
@@ -171,7 +171,7 @@
   };
 
 
-  class BAPMC_Vic_Crew_pack: clf_black_prc117g_co
+  class BAPMC_Vic_Crew_pack: UK3CB_B_I_Backpack_Radio_Chem
   {
     scope=1;
     class TransportMagazines{};
