@@ -45,8 +45,8 @@
   class rhsusf_f22;
   class UK3CB_BAF_Apache_AH1_Generic_MTP_RM;
   class I_C_Helipilot_F;
-  class clf_black_prc117g_co;
   class I_C_Pilot_F;
   class UK3CB_ION_B_B_RIF_MED_BLK;
   class UK3CB_ION_B_B_RIF_BLK_01;
-  class unv_black_big_rt1523g;
+  class tfw_ilbe_blade_black;
+  class UK3CB_B_I_Backpack_Radio_Chem;

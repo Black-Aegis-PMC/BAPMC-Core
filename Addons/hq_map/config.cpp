@@ -23,7 +23,7 @@ class CfgWorlds
 		author = "Amateur-God";
 		icon = "x\vs_c\hq_map\img\bapmc.paa";
 		previewVideo = "";
-		pictureShot = "";
+		pictureShot = "x\vs_c\hq_map\img\bapmc.paa";
 		newRoadsShape = "x\vs_c\hq_map\data\roads\roads.shp";
 		ilsDirection[] = {-0.13917310096006544411249666330111, 0, 0.99026806874157031508377486734485};
 		ilsPosition[] = {897.274, 3686.55};
@@ -34,9 +34,13 @@ class CfgWorlds
 		satelliteBlend = 1;
 		textureLayer = 150;
 		textureGrid = 50;
-		satelliteNormalBlendStart = 100;
+		satelliteNormalBlendStart = 10;
 		satelliteNormalBlendEnd = 500;
 		satelliteNormalOnDetail = 1;
+		class OutsideTerrain
+		{
+			enableTerrainSynth = 0;
+		};
 		class SecondaryAirports{};
 		class ReplaceObjects{};
 		class Sounds
