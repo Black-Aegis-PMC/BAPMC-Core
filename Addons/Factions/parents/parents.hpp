@@ -48,5 +48,5 @@
   class I_C_Pilot_F;
   class UK3CB_ION_B_B_RIF_MED_BLK;
   class UK3CB_ION_B_B_RIF_BLK_01;
-  class tfw_ilbe_blade_black;
-  class UK3CB_B_I_Backpack_Radio_Chem;
+  class B_SSU_RadioBag_MCAM_Black;
+  class B_SSU_RadioBag_Black;
