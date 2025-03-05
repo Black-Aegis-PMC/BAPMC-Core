@@ -1,6 +1,6 @@
   class BAPMC_IC_pack: B_SSU_RadioBag_Black
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_acex_intelitems_notepad {count=5;magazine="acex_intelitems_notepad";};
@@ -25,7 +25,7 @@
 
   class BAPMC_Surgeon_pack: UK3CB_ION_B_B_RIF_MED_BLK
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_kat_Carbonate {count=1;magazine="kat_Carbonate";};
@@ -74,7 +74,7 @@
 
   class BAPMC_Medic_pack: UK3CB_ION_B_B_RIF_MED_BLK
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_kat_Carbonate {count=1;magazine="kat_Carbonate";};
@@ -116,7 +116,7 @@
 
   class BAPMC_Rifleman_pack: UK3CB_ION_B_B_RIF_BLK_01
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_rhs_mag_m67 {count=2;magazine="rhs_mag_m67";};
@@ -139,7 +139,7 @@
 
   class BAPMC_Cadet_pack: UK3CB_ION_B_B_RIF_BLK_01
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_rhs_mag_m67 {count=2;magazine="rhs_mag_m67";};
@@ -162,7 +162,7 @@
 
   class BAPMC_Helicopter_Pilot_pack: B_SSU_RadioBag_MCAM_Black
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_UK3CB_BAF_SmokeShell {count=5;magazine="UK3CB_BAF_SmokeShell";};
@@ -181,7 +181,7 @@
 
   class BAPMC_Pilot_pack: B_SSU_RadioBag_MCAM_Black
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_UK3CB_BAF_SmokeShell {count=5;magazine="UK3CB_BAF_SmokeShell";};
@@ -200,7 +200,7 @@
 
   class BAPMC_Fixed_Wing_Crew_pack: B_SSU_RadioBag_MCAM_Black
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_UK3CB_BAF_SmokeShell {count=5;magazine="UK3CB_BAF_SmokeShell";};
@@ -219,7 +219,7 @@
 
   class BAPMC_Helicopter_Crew_pack: B_SSU_RadioBag_MCAM_Black
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_UK3CB_BAF_SmokeShell {count=5;magazine="UK3CB_BAF_SmokeShell";};
@@ -238,7 +238,7 @@
 
   class BAPMC_Vic_Crew_pack: B_SSU_RadioBag_MCAM_Black
   {
-    scope=1;
+    scope=2;
     class TransportMagazines
     {
      class _xx_UK3CB_BAF_SmokeShell {count=5;magazine="UK3CB_BAF_SmokeShell";};
