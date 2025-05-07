@@ -22,6 +22,29 @@
     class TransportWeapons{};
   };
 
+  class BAPMC_IC_pack_Alt: UK3CB_CSAT_U_O_B_UMBTS_RADIO
+  {
+    scope=2;
+    class TransportMagazines
+    {
+     class _xx_acex_intelitems_notepad {count=5;magazine="acex_intelitems_notepad";};
+     class _xx_kat_Caffeine {count=1;magazine="kat_Caffeine";};
+    };
+    class TransportItems
+    {
+     class _xx_ACE_IR_Strobe_Item {count=1;name="ACE_IR_Strobe_Item";};
+     class _xx_tsp_lockpick {count=1;name="tsp_lockpick";};
+     class _xx_VS_C_AR2_Item {count=1;name="VS_C_AR2_Item";};
+     class _xx_ACE_CableTie {count=5;name="ACE_CableTie";};
+     class _xx_ACE_elasticBandage {count=30;name="ACE_elasticBandage";};
+     class _xx_ACE_packingBandage {count=20;name="ACE_packingBandage";};
+     class _xx_ACE_M26_Clacker {count=1;name="ACE_M26_Clacker";};
+     class _xx_ACE_wirecutter {count=1;name="ACE_wirecutter";};
+     class _xx_ACE_UAVBattery {count=1;name="ACE_UAVBattery";};
+     class _xx_ACE_EntrenchingTool {count=1;name="ACE_EntrenchingTool";};
+    };
+    class TransportWeapons{};
+  };
 
   class BAPMC_Surgeon_pack: UK3CB_ION_B_B_RIF_MED_BLK
   {

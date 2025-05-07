@@ -50,3 +50,4 @@
   class UK3CB_ION_B_B_RIF_BLK_01;
   class B_SSU_RadioBag_MCAM_Black;
   class B_SSU_RadioBag_Black;
+  class UK3CB_CSAT_U_O_B_UMBTS_RADIO;
