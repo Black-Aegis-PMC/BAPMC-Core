@@ -287,7 +287,7 @@ function Remove-ObsoleteFiles {
     $addon = $pboName.Replace($modPrefix, '').Replace('.pbo', '')
     $sourcePath = "$projectRoot\addons\$addon"
 
-    if (Select-String -Pattern "optional_" -InputObject $pboName -SimpleMatch -Quiet) {
+    if (Select-String -Pattern "PreBuilt_" -InputObject $pboName -SimpleMatch -Quiet) {
         $addon = $pboName.Replace($modPrefix + "optional_", '')
         $sourcePath = "$projectRoot\optionals\$addon"
     }
@@ -311,7 +311,7 @@ function New-PBO {
 
     $otherPrefix = ""
     if ($prebuilt) {
-        $otherPrefix = "optional_"
+        $otherPrefix = "PreBuilt_"
     }
 
     $component = $source.Name
@@ -424,16 +424,16 @@ function Main {
         New-Item -Path "$buildPath\addons" -ItemType "directory" -Force | Out-Null
         New-Item -Path "$projectRoot\optionals" -ItemType "directory" -Force | Out-Null
 
+        foreach ($component in Get-ChildItem -Path "$buildPath\addons\*.pbo") {
+            Remove-ObsoleteFiles -addonPbo $component
+        }
+
         foreach ($component in Get-ChildItem -File -Path "$projectRoot\optionals") {
             New-PBO -Source $component -Prebuilt $True
         }
 
         foreach ($component in Get-ChildItem -Directory -Path "$projectRoot\addons") {
             New-PBO -Source $component
-        }
-
-        foreach ($component in Get-ChildItem -Path "$buildPath\addons\*.pbo") {
-            Remove-ObsoleteFiles -addonPbo $component
         }
 
         Remove-Item -Path "$buildPath\*.tmp"
