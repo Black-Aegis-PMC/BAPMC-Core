@@ -84,15 +84,3 @@
     displayName="KC-135 StratoTanker";
     crew="BAPMC_Pilot";
   };
-
-  class BAPMC_F22: rhsusf_f22
-  {
-    faction="VS_C_BAPMC";
-    editorCategory="VS_C_BAPMC";
-    editorSubcategory = "BAPMC_Jets";
-    side=2;
-    scope=2;
-    scopecurator=2;
-    displayName="F-22";
-    crew="BAPMC_Pilot";
-  };

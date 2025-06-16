@@ -64,8 +64,8 @@ private _surgicalAllowlist = _SurgeonAllowList + _MedicAllowList;
 
 // Parse and concatenate the blacklists
 _blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;
-_blacklistRecruit = _blacklistPrivate + (parseSimpleArray VS_core_arsenal_blacklist_rct);
-_blacklistCadet = _blacklistRecruit + (parseSimpleArray VS_core_arsenal_blacklist_cdt);
+_blacklistRecruit = parseSimpleArray VS_core_arsenal_blacklist_rct;
+_blacklistCadet = parseSimpleArray VS_core_arsenal_blacklist_cdt;
 
 // Define ranks and their corresponding blacklists
 private _ranks = [
@@ -111,7 +111,11 @@ if (hasInterface) then {
             // Apply rank-based limitation
             [_x, _blacklistedItems, false] call ace_arsenal_fnc_removeVirtualItems;
 
-            // If the player is IC, Give extra stuff
+            // If the player is IC, Give extra stuff and remove stuff for non ICs (idiot proofing arsenal issues)
+            if (!_isIC) then {
+                [_x, _ICAllowList, false] call ace_arsenal_fnc_removeVirtualItems;
+            };
+
             if (_isIC) then {
                 [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems;
             };

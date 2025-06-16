@@ -23,7 +23,7 @@
     ["Odin", "Valhalla", "BLACK", 3, 2, 2, 1, 1, 1, true] call vs_core_fnc_edenCreateAssets;
 
     Author:
-    Met
+    Met & Amateur-God
 License GPL-2.0
 ---------------------------------------------------------------------------- */
 params [
@@ -159,27 +159,28 @@ _last = "";
 _num = 1;
 for "_i" from 1 to _numberOfSections do {
 	create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
-	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
+	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["Shield %1", _i]], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
-	_ix = 3;
+	_ix = 1;
 	{
 		_unitDisplayName = getText (configOf _x >> "displayName");
 		if (_unitDisplayName == "IC" && !isFormationLeader _x) then {
-			_x set3DENAttribute ["description", "2: 2IC"];
+			_x set3DENAttribute ["description", format ["%1: Team Leader", _ix]];
 		} else {
 			if (_x getUnitTrait "Medic") then {
-				_x set3DENAttribute ["description", "3: Medic"];
+				_x set3DENAttribute ["description", format ["%1: Combat Medic", _ix]];
 			} else {
-				if (_ix <= 6) then {
-					_x set3DENAttribute ["description", format ["%1: Open", _ix]];
+				if (_ix == 3 || _ix == 7) then {
+					_x set3DENAttribute ["description", format ["%1: Specialist", _ix]];
 				} else {
 					_x set3DENAttribute ["description", format ["%1: Rifleman", _ix]];
 				};
-				_ix = _ix + 1;
+
 			};
 		};
+    _ix = _ix + 1;
 	} forEach units _group;
-	leader _group set3DENAttribute ["description", format ["1: 1IC@%1 %2", _callsign, _i]];
+	leader _group set3DENAttribute ["description", format ["1: Section Leader@%1 %2", _callsign, _i]];
 	set3DENSelected [];
 	_num = _num + 2;
 };
@@ -208,7 +209,7 @@ for "_i" from 1 to _numberOfSections do {
 					_x set3DENAttribute ["description", "3: Surgeon"];
 					_x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
 				} else {
-					_x set3DENAttribute ["description", "4: Open"];
+					_x set3DENAttribute ["description", "4: Specialist"];
 				};
 			};
 		} forEach units _group;

@@ -1,21 +1,42 @@
   class I_Soldier_SL_F;
   class I_medic_F;
   class I_Soldier_F;
-  class UK3CB_ION_I_Desert_Offroad_Comms;
-  class RHS_MELB_AH6M;
-  class RHS_MELB_MH6M;
-  class UK3CB_CW_US_B_LATE_UH60M;
-  class RHS_UH60M_MEV2;
-  class UK3CB_ION_B_Desert_Bell412_Utility;
-  class UK3CB_ION_B_Desert_Bell412_Armed;
-  class UK3CB_ION_B_Desert_Bell412_Armed_AT;
-  class RAF_Chinook_Transport;
-  class UK3CB_ION_I_Urban_SUV_Armed;
-  class UK3CB_ION_I_Urban_SUV_Armoured;
-  class UK3CB_ION_I_Urban_Pickup;
-  class UK3CB_ION_B_Winter_Transit_Service;
-  class UK3CB_ION_B_Winter_Transit_Transport;
-  class UK3CB_ION_B_Winter_Transit_Cargo;
+  class EMP_Offroad_Comms;
+  class B_Heli_Light_01_dynamicLoadout_F;
+  class B_Heli_Light_01_F;
+  class B_UH60L_F;
+  class B_UH60L_base_F;
+  class B_MH60L_F: B_UH60L_base_F
+  {
+  		class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+			class RightDoorGun;
+    };
+  };
+  class B_HH60A_gray_doors_F: B_MH60L_F
+  {
+  		class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+			class RightDoorGun;
+    };
+  };
+  class B_UH60L_med_F: B_UH60L_F
+  {
+  		class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+			class RightDoorGun;
+    };
+  };
+  class UK3CB_BAF_Wildcat_AH1_TRN_8A;
+  class UK3CB_BAF_Wildcat_AH1_8_Armed;
+  class UK3CB_BAF_Wildcat_AH1_CAS_8C;
+  class B_Heli_Transport_03_unarmed_F;
   class B_T_Truck_01_covered_F;
   class B_T_Truck_01_Repair_F;
   class B_T_Truck_01_mover_F;
@@ -42,12 +63,38 @@
     };
   };
   class usaf_kc135;
-  class rhsusf_f22;
   class UK3CB_BAF_Apache_AH1_Generic_MTP_RM;
   class I_C_Helipilot_F;
   class I_C_Pilot_F;
-  class UK3CB_ION_B_B_RIF_MED_BLK;
-  class UK3CB_ION_B_B_RIF_BLK_01;
-  class B_SSU_RadioBag_MCAM_Black;
-  class B_SSU_RadioBag_Black;
-  class UK3CB_CSAT_U_O_B_UMBTS_RADIO;
+  class B_SSU_Kitbag_Black;
+  class USP_REEBOW_3DAP_ACC9_BLK;
+  class USP_45L_RUCKSACK;
+  class UK3CB_BAF_Panther_GPMG_Green_A;
+  class DAR_M1151WoodlandUA;
+  class DAR_M1167Woodland;
+  class DAR_M1152Woodland;
+  class DAR_M115_MK19Woodland;
+  class DAR_M1151Woodland;
+  class UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_B;
+  class UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_B;
+  class UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Green_B;
+  class UK3CB_BAF_LandRover_WMIK_GMG_FFR_Green_B;
+  class UK3CB_BAF_Jackal2_L111A1_W;
+  class UK3CB_BAF_Husky_Passenger_HMG_Green;
+  class UK3CB_BAF_Husky_Passenger_GPMG_Green;
+  class UK3CB_BAF_Husky_Passenger_GMG_Green;
+  class DAR_M1152;
+  class DAR_M1151;
+  class DAR_M1151_Deploy;
+  class DAR_M115_MK19;
+  class DAR_M1165_GMV;
+  class DAR_M1167;
+  class UK3CB_BAF_Panther_GPMG_Sand_A;
+  class UK3CB_BAF_LandRover_WMIK_Milan_FFR_Sand_A;
+  class UK3CB_BAF_LandRover_WMIK_HMG_FFR_Sand_A;
+  class UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Sand_A;
+  class UK3CB_BAF_LandRover_WMIK_GMG_FFR_Sand_A;
+  class UK3CB_BAF_Jackal2_L111A1_D;
+  class UK3CB_BAF_Husky_Passenger_HMG_Sand;
+  class UK3CB_BAF_Husky_Passenger_GPMG_Sand;
+  class UK3CB_BAF_Husky_Passenger_GMG_Sand;

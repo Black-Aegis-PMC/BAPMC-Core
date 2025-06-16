@@ -1,36 +1,41 @@
-  class BAPMC_CH146: UK3CB_ION_B_Desert_Bell412_Utility
+  class BAPMC_Wildcat: UK3CB_BAF_Wildcat_AH1_TRN_8A
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
     side=2;
     scope=2;
     scopecurator=2;
-    displayName="CH-146";
+    displayName="Wildcat";
     crew="BAPMC_Helicopter_Pilot";
+    vehicleClass = "BAPMC_helicopters";
   };
 
-  class BAPMC_CH146_AT: UK3CB_ION_B_Desert_Bell412_Armed_AT
+  class BAPMC_Wildcat_AT: UK3CB_BAF_Wildcat_AH1_CAS_8C
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
     side=2;
     scope=2;
     scopecurator=2;
-    displayName="CH146 AT";
+    displayName="Wildcat AT";
     crew="BAPMC_Helicopter_Pilot";
+    typicalCargo[] = {"BAPMC_Helicopter_Crew"};
+    vehicleClass = "BAPMC_helicopters";
   };
 
-  class BAPMC_CH146_Armed: UK3CB_ION_B_Desert_Bell412_Armed
+  class BAPMC_Wildcat_Armed: UK3CB_BAF_Wildcat_AH1_8_Armed
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
     side=2;
     scope=2;
     scopecurator=2;
-    displayName="CH146 Armed";
+    displayName="Wildcat Armed";
     crew="BAPMC_Helicopter_Pilot";
+    typicalCargo[] = {"BAPMC_Helicopter_Crew"};
+    vehicleClass = "BAPMC_helicopters";
   };
-  class BAPMC_AH6M_Littlebird: RHS_MELB_AH6M
+  class BAPMC_AH6M_Littlebird: B_Heli_Light_01_dynamicLoadout_F
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
@@ -38,11 +43,11 @@
     scope=2;
     scopecurator=2;
     displayName="AH6M Littlebird";
-    hiddenSelectionsTextures[]={"rhsusf\addons\rhsusf_melb\data\melb_ext_co.paa","rhsusf\addons\rhsusf_melb\data\decals\sn\blank_ca.paa"};
     crew="BAPMC_Helicopter_Pilot";
+    vehicleClass = "BAPMC_helicopters";
   };
 
-  class BAPMC_MH6M_Littlebird: RHS_MELB_MH6M
+  class BAPMC_MH6M_Littlebird: B_Heli_Light_01_F
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
@@ -50,30 +55,92 @@
     scope=2;
     scopecurator=2;
     displayName="MH6M Littlebird";
-    hiddenSelectionsTextures[]={"rhsusf\addons\rhsusf_melb\data\melb_ext_co.paa","rhsusf\addons\rhsusf_melb\data\decals\sn\blank_ca.paa"};
     crew="BAPMC_Helicopter_Pilot";
+    vehicleClass = "BAPMC_helicopters";
   };
 
-  class BAPMC_UH60M: UK3CB_CW_US_B_LATE_UH60M
+  class BAPMC_HH60A: B_HH60A_gray_doors_F
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
     side=2;
     scope=2;
     scopecurator=2;
-    displayName="UH60M";
+    displayName="HH60A (Black Hawk)";
     crew="BAPMC_Helicopter_Pilot";
+    typicalCargo[] = {"BAPMC_Helicopter_Crew"};
+    vehicleClass = "BAPMC_helicopters";
+		class Turrets: Turrets
+		{
+			class CopilotTurret: CopilotTurret
+			{
+        gunnerType = "BAPMC_Helicopter_Pilot";
+			};
+      class MainTurret: MainTurret
+		  {
+        gunnerType = "BAPMC_Helicopter_Crew";
+		  };
+		  class RightDoorGun: RightDoorGun
+		  {
+        gunnerType = "BAPMC_Helicopter_Crew";
+		  };
+    };
   };
 
-  class BAPMC_UH60M_Medevac: RHS_UH60M_MEV2
+  class BAPMC_MH60L_F: B_MH60L_F
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
     side=2;
     scope=2;
     scopecurator=2;
-    displayName="UH60M Medevac FFV";
+    displayName="MH60L (Spec Ops Black Hawk)";
     crew="BAPMC_Helicopter_Pilot";
+    typicalCargo[] = {"BAPMC_Helicopter_Crew"};
+    vehicleClass = "BAPMC_helicopters";
+		class Turrets: Turrets
+		{
+			class CopilotTurret: CopilotTurret
+			{
+        gunnerType = "BAPMC_Helicopter_Pilot";
+			};
+      class MainTurret: MainTurret
+		  {
+        gunnerType = "BAPMC_Helicopter_Crew";
+		  };
+		  class RightDoorGun: RightDoorGun
+		  {
+        gunnerType = "BAPMC_Helicopter_Crew";
+		  };
+    };
+  };
+
+  class BAPMC_UH60M_Medevac: B_UH60L_med_F
+  {
+    faction="VS_C_BAPMC";
+    editorCategory="VS_C_BAPMC";
+    side=2;
+    scope=2;
+    scopecurator=2;
+    displayName="UH60M Medevac";
+    crew="BAPMC_Helicopter_Pilot";
+    typicalCargo[] = {"BAPMC_Helicopter_Crew"};
+    vehicleClass = "BAPMC_helicopters";
+		class Turrets: Turrets
+		{
+			class CopilotTurret: CopilotTurret
+			{
+        gunnerType = "BAPMC_Helicopter_Pilot";
+			};
+      class MainTurret: MainTurret
+		  {
+        gunnerType = "BAPMC_Helicopter_Crew";
+		  };
+		  class RightDoorGun: RightDoorGun
+		  {
+        gunnerType = "BAPMC_Helicopter_Crew";
+		  };
+    };
   };
   class BAPMC_AH1_Apache: UK3CB_BAF_Apache_AH1_Generic_MTP_RM
   {
@@ -84,9 +151,10 @@
     scopecurator=2;
     displayName="AH-1 Apache";
     crew="BAPMC_Helicopter_Pilot";
+    vehicleClass = "BAPMC_helicopters";
   };
 
-  class BAPMC_Chinook: RAF_Chinook_Transport
+  class BAPMC_Chinook: B_Heli_Transport_03_unarmed_F
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
@@ -95,4 +163,6 @@
     scopecurator=2;
     displayName="CH-47 (Chinook)";
     crew="BAPMC_Helicopter_Pilot";
+    typicalCargo[] = {"BAPMC_Helicopter_Crew"};
+    vehicleClass = "BAPMC_helicopters";
   };

@@ -86,12 +86,12 @@ class CfgGroups
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = BLACK_ASTEAMLEADER;
+						vehicle = BLACK_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-6,0};
-						vehicle = BLACK_MEDIC;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
@@ -101,17 +101,17 @@ class CfgGroups
 					};
 					class Unit4 {
 						position[] = {1,0,0};
-						vehicle = BLACK_RIFLEMAN;
+						vehicle = BLACK_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit5 {
 						position[] = {1,-3,0};
-						vehicle = BLACK_RIFLEMAN;
+						vehicle = BLACK_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit6 {
 						position[] = {1,-6,0};
-						vehicle = BLACK_CADET;
+						vehicle = BLACK_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit7 {

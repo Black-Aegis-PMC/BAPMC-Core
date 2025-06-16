@@ -287,16 +287,97 @@ function Remove-ObsoleteFiles {
     $addon = $pboName.Replace($modPrefix, '').Replace('.pbo', '')
     $sourcePath = "$projectRoot\addons\$addon"
 
+    # This logic is preserved from your script to correctly identify the source path for prebuilt/optional files
     if (Select-String -Pattern "PreBuilt_" -InputObject $pboName -SimpleMatch -Quiet) {
         $addon = $pboName.Replace($modPrefix + "optional_", '')
         $sourcePath = "$projectRoot\optionals\$addon"
     }
 
+    # If the source folder/file no longer exists, the built PBO is obsolete
     if (!(Test-Path -Path $sourcePath)) {
-        if ($PSCmdlet.ShouldProcess("$buildPath\addons\$pboName", "Remove obsolete PBO")) {
-            Remove-Item -Path "$buildPath\addons\$pboName"
-            Remove-Item -Path "$buildPath\addons\$($pboName).$modPrefix$tag.bisign" -ErrorAction SilentlyContinue
-            Write-Output -InputObject "  [$timestamp] Deleting obsolete PBO $pboName"
+        if ($PSCmdlet.ShouldProcess($pboName, "Remove obsolete PBO and any associated signatures/keys")) {
+
+            # --- 1. Attempt to find all associated .bisign files for the obsolete PBO ---
+            # Added -ErrorAction SilentlyContinue for extra safety
+            $obsoleteBisigns = Get-ChildItem -Path "$buildPath\addons" -Filter "$pboName.*.bisign" -ErrorAction SilentlyContinue
+
+            # --- 2. NEW: Only run signature/key analysis IF signatures were found ---
+            if ($obsoleteBisigns) {
+
+                # --- 2a. Determine which BIKEYs might become obsolete ---
+                $allBisignsInBuild = Get-ChildItem -Path "$buildPath\addons" -Filter "*.bisign"
+                # This is now safe because $obsoleteBisigns is guaranteed not to be null
+                $remainingBisigns = Compare-Object -ReferenceObject $allBisignsInBuild -DifferenceObject $obsoleteBisigns -PassThru | Where-Object { $_.SideIndicator -eq "<=" }
+
+                # Extract the key names used by the obsolete signatures
+                $keyNamesFromObsolete = $obsoleteBisigns | ForEach-Object {
+                    $parts = $_.Name.Split('.')
+                    if ($parts.Count -ge 3) { $parts[-2] } # The key name is the second to last part
+                } | Select-Object -Unique
+
+                # --- 2b. Remove obsolete BIKEYs if they are no longer used by other files ---
+                foreach ($keyName in $keyNamesFromObsolete) {
+                    $isKeyInUse = $remainingBisigns | Where-Object { $_.Name -match "\.$keyName\.bisign$" }
+
+                    if (-not $isKeyInUse) {
+                        $bikeyPath = Join-Path -Path "$buildPath\keys" -ChildPath "$keyName.bikey"
+                        if (Test-Path $bikeyPath) {
+                            Write-Output -InputObject "  [$timestamp] Deleting obsolete, unused BIKEY: $keyName.bikey"
+                            Remove-Item -Path $bikeyPath -Force
+                        }
+                    }
+                }
+
+                # --- 2c. Remove the obsolete BISIGN files ---
+                Write-Output -InputObject "  [$timestamp] Deleting obsolete BISIGN(s) for $pboName"
+                Remove-Item -Path $obsoleteBisigns.FullName -Force
+            }
+
+            # --- 3. Always remove the obsolete PBO file itself ---
+            Write-Output -InputObject "  [$timestamp] Deleting obsolete PBO: $pboName"
+            Remove-Item -Path $addonPbo.FullName -Force
+        }
+    }
+}
+
+function Handle-PrebuiltFiles {
+    $sourceDir = "$projectRoot\optionals"
+    $destAddonsDir = "$buildPath\addons"
+    $destKeysDir = "$buildPath\keys"
+
+    if (-not (Test-Path $sourceDir)) {
+        return
+    }
+
+    Write-Output -InputObject "  [$timestamp] Handling all prebuilt files from: $sourceDir"
+
+    # --- 1. Copy all PBO files to 'addons' ---
+    $pboFiles = Get-ChildItem -Path $sourceDir -Filter *.pbo
+    if ($pboFiles) {
+        Write-Output "Copying all PBOs to addons..."
+        foreach ($file in $pboFiles) {
+            Write-Output "    -> Copying PBO to addons: $($file.Name)"
+            Copy-Item -Path $file.FullName -Destination $destAddonsDir -Force
+        }
+    }
+
+    # --- 2. Copy all .bisign files to 'addons' ---
+    $bisignFiles = Get-ChildItem -Path $sourceDir -Filter *.bisign
+    if ($bisignFiles) {
+        Write-Output "Copying all BISIGNs to addons..."
+        foreach ($file in $bisignFiles) {
+            Write-Output "    -> Copying BISIGN to addons: $($file.Name)"
+            Copy-Item -Path $file.FullName -Destination $destAddonsDir -Force
+        }
+    }
+
+    # --- 3. Copy all .bikey files to 'keys' ---
+    $bikeyFiles = Get-ChildItem -Path $sourceDir -Filter *.bikey
+    if ($bikeyFiles) {
+        Write-Output "Copying all BIKEYs to keys folder..."
+        foreach ($file in $bikeyFiles) {
+            Write-Output "    -> Copying BIKEY to keys folder: $($file.Name)"
+            Copy-Item -Path $file.FullName -Destination $destKeysDir -Force
         }
     }
 }
@@ -305,29 +386,17 @@ function New-PBO {
     param(
         [Parameter(Mandatory=$True)]
         $Source,
-        $Parent = "addons",
-        $Prebuilt = $False
+        $Parent = "addons"
     )
-
-    $otherPrefix = ""
-    if ($prebuilt) {
-        $otherPrefix = "PreBuilt_"
-    }
 
     $component = $source.Name
     $fullPath  = $source.FullName
     $hash      = Get-Hash -Path $fullPath | Select-Object -ExpandProperty Hash
-    $binPath   = "$buildPath\$Parent\$modPrefix$otherPrefix$component"
-
-    # If it's a directory, then it doesn't have it's own extension, so add it
-    if (!($prebuilt)) {
-        $binPath = $binPath + ".pbo"
-    }
+    $binPath   = "$buildPath\$Parent\$modPrefix$component.pbo"
 
     if (Test-Path -Path "$cachePath\addons\$component") {
         $cachedHash = Get-Content -Path "$cachePath\addons\$component"
-
-        if ($hash -eq $cachedHash -And @(Test-Path -Path $binPath)) {
+        if ($hash -eq $cachedHash -And (Test-Path -Path $binPath)) {
             if (!(Test-Path -Path "$binPath.$modPrefix$tag.bisign")) {
                 Write-Output -InputObject "  [$timestamp] Updating bisign for $component"
                 & $armake2 sign $privateKeyFile $binPath
@@ -343,35 +412,19 @@ function New-PBO {
     }
 
     if (Test-Path -Path $binPath) {
-        Remove-Item -Path $binPath
-
-        if ($prebuilt) {
-            Write-Output -InputObject "  [$timestamp] Updating pre-built PBO $component"
-            Copy-Item -Path $fullPath -Destination $binPath -Force
-            & $armake2 sign $privateKeyFile $binPath
-        } else {
-            Write-Output -InputObject "  [$timestamp] Updating PBO $component"
-            & $armake build -f -w unquoted-string -i "$projectRoot" -i $include $fullPath $binPath
-            & $armake2 sign $privateKeyFile $binPath
-        }
+        Remove-Item -Path $binPath -Force
+        Write-Output -InputObject "  [$timestamp] Updating PBO $component"
     } else {
-
-        if ($prebuilt) {
-            Write-Output -InputObject "  [$timestamp] Copying pre-built PBO $component"
-            Copy-Item -Path $fullPath -Destination $binPath -Force
-            & $armake2 sign $privateKeyFile $binPath
-        } else {
-            Write-Output -InputObject "  [$timestamp] Creating PBO $component"
-            & $armake build -f -w unquoted-string -i "$projectRoot" -i $include $fullPath $binPath
-            & $armake2 sign $privateKeyFile $binPath
-        }
+        Write-Output -InputObject "  [$timestamp] Creating PBO $component"
     }
+
+    & $armake build -f -w unquoted-string -i "$projectRoot" -i $include $fullPath $binPath
+    & $armake2 sign $privateKeyFile $binPath
 
     if ($LastExitCode -ne 0) {
         Write-Error -Message "[$timestamp] Failed to create PBO $component."
     }
 
-    # Store this for later comparisons
     $hash | Out-File -FilePath "$cachePath\addons\$component" -NoNewline
 }
 
@@ -428,9 +481,7 @@ function Main {
             Remove-ObsoleteFiles -addonPbo $component
         }
 
-        foreach ($component in Get-ChildItem -File -Path "$projectRoot\optionals") {
-            New-PBO -Source $component -Prebuilt $True
-        }
+        Handle-PrebuiltFiles
 
         foreach ($component in Get-ChildItem -Directory -Path "$projectRoot\addons") {
             New-PBO -Source $component

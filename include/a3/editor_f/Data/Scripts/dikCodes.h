@@ -177,5 +177,5 @@
  */
 #define DIK_CIRCUMFLEX      DIK_PREVTRACK       /* Japanese keyboard */
 
-#endif
+#endif /* DIK_ESCAPE */
 

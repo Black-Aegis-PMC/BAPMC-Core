@@ -1,0 +1,45 @@
+private _drone=_this select 0;
+private _target=_this select 1;
+private _speed=40;
+//_speed=speed _drone;
+if((count _this)>2)then{_speed=_this select 2};
+private _minDistanceToTarget=.1;
+if((count _this)>3)then{_minDistanceToTarget=_this select 3};
+private _AP=FALSE;
+private _crocus=FALSE;
+if((toUpper(typeOf _drone))in["B_CROCUS_AT","O_CROCUS_AT","I_CROCUS_AT"])then{
+	_crocus=TRUE;
+	_speed=15;
+};
+if((toUpper(typeOf _drone))in["B_CROCUS_AP","O_CROCUS_AP","I_CROCUS_AP"])then{
+	_crocus=TRUE;
+	_AP=TRUE;
+	_speed=15;
+	_minDistanceToTarget=1;
+};
+if(ddtDebug)then{systemChat format["FPV attack speed: %1",_speed]};
+_drone setCombatMode"BLUE";
+_drone setBehaviour"CARELESS";
+private _targetVelocity=[];
+while{!isNull _drone && {!isNull _target}}do{
+	if((count(crew _drone))<1)exitWith{};
+	//if(isNull _drone || {isNull _target} || {getPosASLVisual _drone distance _targetPos <= _minDistanceToTarget})exitWith{};
+	if(isNull _drone || {isNull _target})exitWith{};
+	private _currentPos=getPosASLVisual _drone;
+	private _targetPos=getPosASLVisual _target;
+	//private _currentPos=getPosWorldVisual _drone;
+	//private _targetPos=getPosWorldVisual _target;
+	if(((getPosASLVisual _drone)distance _targetPos)<=_minDistanceToTarget)exitWith{};
+	private _forwardVector=vectorNormalized(_targetPos vectorDiff _currentPos);
+	private _rightVector=(_forwardVector vectorCrossProduct[0,0,1])vectorMultiply -1;
+	private _upVector=_forwardVector vectorCrossProduct _rightVector;
+	_targetVelocity=_forwardVector vectorMultiply _speed;
+	_drone setVelocity _targetVelocity;
+	sleep .3;
+	if(isNull _drone)exitWith{};
+	_drone setVectorDirAndUp[_forwardVector,_upVector];
+};
+if(isNull _drone)exitWith{};
+_drone setFuel 0;
+if!(_crocus)exitWith{};
+_drone call DB_fnc_fpv_onDestroy;

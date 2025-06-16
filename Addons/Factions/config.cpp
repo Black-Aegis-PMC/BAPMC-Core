@@ -43,6 +43,14 @@ class CfgEditorSubcategories
   #include "hpp\Editor_Sub_Categories.hpp"
 };
 
+class CfgVehicleClasses
+{
+	class BAPMC_helicopters
+	{
+		displayname="Black Aegis - PMC Helicopters";
+	};
+};
+
 class cfgVehicles {
     #include "parents\parents.hpp"
     #include "Infantry\Black\men.hpp"
@@ -50,7 +58,11 @@ class cfgVehicles {
     #include "vehicles\Air\helis.hpp"
     #include "vehicles\Air\planes.hpp"
     #include "vehicles\ground\carsArmed.hpp"
+    #include "vehicles\ground\wdl\carsArmedWdl.hpp"
+    #include "vehicles\ground\desert\carsArmedDes.hpp"
     #include "vehicles\ground\carsUnarmed.hpp"
+    #include "vehicles\ground\wdl\carsUnarmedWdl.hpp"
+    #include "vehicles\ground\desert\carsUnarmedDes.hpp"
     #include "vehicles\ground\vans.hpp"
     #include "vehicles\ground\trucks.hpp"
 };
