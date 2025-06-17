@@ -38,6 +38,12 @@ class CfgUnitInsignia
         author="Amateur-God (Carmichael)";
         texture="x\VS_C\Custom_Patches\data\carmichael_alt.paa";
     };
+    class BAPMC_P_Carmichael_C
+    {
+        displayName="Carmichael Alt 2";
+        author="Amateur-God (Carmichael)";
+        texture="x\VS_C\Custom_Patches\data\carmichael_alt_2.paa";
+    };
 	class BAPMC_P_Fallon_A
 	{
 		displayName="Fallon";
