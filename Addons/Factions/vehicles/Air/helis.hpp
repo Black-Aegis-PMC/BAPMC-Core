@@ -2,6 +2,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -14,6 +15,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -27,6 +29,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -39,6 +42,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -51,6 +55,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -63,6 +68,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -91,6 +97,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -119,6 +126,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -146,6 +154,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;
@@ -158,6 +167,7 @@
   {
     faction="VS_C_BAPMC";
     editorCategory="VS_C_BAPMC";
+    editorSubcategory = "BAPMC_Helicopters";
     side=2;
     scope=2;
     scopecurator=2;

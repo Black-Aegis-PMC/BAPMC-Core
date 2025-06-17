@@ -8,7 +8,7 @@ class CfgPatches {
 		version = 1.0;
 		versionAr[] = {1,0,0,0};
 		versionStr = "v1.0.0";
-		requiredAddons[] = {"A3_Modules_F","cba_settings","ace_arsenal","3DEN"};
+		requiredAddons[] = {"A3_Modules_F","cba_settings","ace_arsenal","3DEN","BAPMC_Factions"};
 		units[] = {};
 		weapons[] = {};
 		magazines[] = {};

@@ -38,6 +38,10 @@
   {
     displayName="Jets";
   };
+    class BAPMC_Helicopters
+  {
+    displayName="Helicopters";
+  };
     class BAPMC_Men
   {
     displayName="Men";
