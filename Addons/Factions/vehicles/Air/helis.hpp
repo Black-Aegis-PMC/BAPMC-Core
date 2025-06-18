@@ -81,6 +81,9 @@
 			class CopilotTurret: CopilotTurret
 			{
         gunnerType = "BAPMC_Helicopter_Pilot";
+        showHMD = 1;
+        weapons[] = {"Laserdesignator_mounted"}; // Add Laser Designator
+        magazines[] = {"Laserbatteries"};
 			};
       class MainTurret: MainTurret
 		  {
@@ -110,6 +113,9 @@
 			class CopilotTurret: CopilotTurret
 			{
         gunnerType = "BAPMC_Helicopter_Pilot";
+        showHMD = 1;
+        weapons[] = {"Laserdesignator_mounted"}; // Add Laser Designator
+        magazines[] = {"Laserbatteries"};
 			};
       class MainTurret: MainTurret
 		  {
@@ -139,6 +145,9 @@
 			class CopilotTurret: CopilotTurret
 			{
         gunnerType = "BAPMC_Helicopter_Pilot";
+        showHMD = 1;
+        weapons[] = {"Laserdesignator_mounted"}; // Add Laser Designator
+        magazines[] = {"Laserbatteries"};
 			};
       class MainTurret: MainTurret
 		  {

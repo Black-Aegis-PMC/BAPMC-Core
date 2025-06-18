@@ -98,3 +98,33 @@
   class UK3CB_BAF_Husky_Passenger_HMG_Sand;
   class UK3CB_BAF_Husky_Passenger_GPMG_Sand;
   class UK3CB_BAF_Husky_Passenger_GMG_Sand;
+
+  class DEGA_ArmoredSUV_Base;
+  class DEGA_ArmoredSUV_PMC: DEGA_ArmoredSUV_Base
+  {
+    class Turrets: Turrets
+    {
+      class MainTurret;
+      class CargoTurret_1;
+      class CargoTurret_2;
+      class CargoTurret_3;
+      class CargoTurret_4;
+      class CargoTurret_5;
+      class CargoTurret_6;
+      class CargoTurret_7;
+    };
+  };
+  class DEGA_GunArmoredSUV_PMC: DEGA_ArmoredSUV_Base
+  {
+    class Turrets: Turrets
+    {
+      class MainTurret;
+      class CargoTurret_1;
+      class CargoTurret_2;
+      class CargoTurret_3;
+      class CargoTurret_4;
+      class CargoTurret_5;
+      class CargoTurret_6;
+      class CargoTurret_7;
+    };
+  };

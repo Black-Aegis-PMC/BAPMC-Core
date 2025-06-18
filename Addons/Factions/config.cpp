@@ -37,6 +37,7 @@ class CfgPatches {
       "ace_huntir",
       "ace_explosives",
       "A3_Weapons_F_Items",
+      "DEGA_Vehicles_Suv"
     };
     units[] = {
       "BAPMC_Transport_Truck",
@@ -115,7 +116,8 @@ class CfgPatches {
       "BAPMC_Men",
       "VS_C_BAPMC",
       "BAPMC_helicopters",
-
+      "BAPMC_GunArmoredSUV",
+      "BAPMC_ArmoredSUV"
     };
     weapons[]={};
 		magazines[] = {};

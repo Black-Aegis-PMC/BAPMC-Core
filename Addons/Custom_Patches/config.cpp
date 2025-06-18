@@ -92,4 +92,16 @@ class CfgUnitInsignia
         author="Amateur-God (Carmichael)";
         texture="x\VS_C\Custom_Patches\data\retsof.paa";
     };
+    class BAPMC_P_Snow_A
+    {
+        displayName="Snow";
+        author="Amateur-God (Carmichael)";
+        texture="x\VS_C\Custom_Patches\data\snow.paa";
+    };
+    class BAPMC_P_Racket_A
+    {
+        displayName="Racket";
+        author="Amateur-God (Carmichael)";
+        texture="x\VS_C\Custom_Patches\data\racket.paa";
+    };
 };

@@ -1,0 +1,1 @@
+_handle = [] execVM "\Marbit_Turret_Enhanced\functions\inputText.sqf";
