@@ -75,5 +75,5 @@
         dontCreateAI = 0;
       };
 		};
-    animationList[] = {"rearseats_source",1,"gun_hide_source",1};
+    animationList[] = {"rearseats_source",1,"gun_hide_source",1,"lightbar_hide_source",1};
   };

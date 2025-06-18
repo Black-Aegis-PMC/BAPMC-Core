@@ -87,7 +87,22 @@
   class DAR_M1151;
   class DAR_M1151_Deploy;
   class DAR_M115_MK19;
-  class DAR_M1165_GMV;
+  class DAR_HMMWV_Base;
+  class DAR_M1165_GMV: DAR_HMMWV_Base
+  {
+    class AnimationSources: AnimationSources
+    {
+			class muzzle2_source;
+			class muzzle2_source_rot;
+			class ReloadAnim;
+			class ReloadMagazine;
+			class Gatling;
+    };
+  	class Turrets: Turrets
+		{
+			class MainTurret;
+    };
+  };
   class DAR_M1167;
   class UK3CB_BAF_Panther_GPMG_Sand_A;
   class UK3CB_BAF_LandRover_WMIK_Milan_FFR_Sand_A;
@@ -98,7 +113,6 @@
   class UK3CB_BAF_Husky_Passenger_HMG_Sand;
   class UK3CB_BAF_Husky_Passenger_GPMG_Sand;
   class UK3CB_BAF_Husky_Passenger_GMG_Sand;
-
   class DEGA_ArmoredSUV_Base;
   class DEGA_ArmoredSUV_PMC: DEGA_ArmoredSUV_Base
   {

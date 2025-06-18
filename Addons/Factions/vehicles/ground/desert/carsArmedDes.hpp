@@ -45,6 +45,28 @@ class BAPMC_DAR_M1165_GMV: DAR_M1165_GMV
     displayName = "M1165 GMV";
     crew = "BAPMC_Rifleman";
     typicalCargo[] = {"BAPMC_Rifleman"};
+	class AnimationSources: AnimationSources
+	{
+		class Gatling
+		{
+			source = "revolving";
+			weapon = "DEGA_LMG_Minigun_Suv";
+		};
+    };
+  	class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+            {
+                weapons[] = {"DEGA_LMG_Minigun_Suv"};
+                soundServo[] = {"db-40",1.0};
+                stabilizedInAxes = "StabilizedInAxesNone";
+                gunBeg = "muzzle_1";
+                gunEnd = "chamber_1";
+                magazines[] = {"2000Rnd_65x39_Belt_Tracer_Red",
+                               "2000Rnd_65x39_Belt_Tracer_Red",
+                               "2000Rnd_65x39_Belt_Tracer_Red"};
+            };
+    };
 };
 class BAPMC_DAR_M1167: DAR_M1167
 {
