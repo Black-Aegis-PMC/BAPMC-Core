@@ -48,12 +48,6 @@ class CfgUnitInsignia
 	{
 		displayName="Fallon";
 		author="Amateur-God (Carmichael)";
-		texture="x\VS_C\Custom_Patches\data\fallon.paa";
-	};
-	class BAPMC_P_Fallon_B
-	{
-		displayName="Fallon Alt";
-		author="Amateur-God (Carmichael)";
 		texture="x\VS_C\Custom_Patches\data\fallon_alt.paa";
 	};
 	class BAPMC_P_Jackal_A

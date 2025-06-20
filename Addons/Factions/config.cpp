@@ -117,7 +117,21 @@ class CfgPatches {
       "VS_C_BAPMC",
       "BAPMC_helicopters",
       "BAPMC_GunArmoredSUV",
-      "BAPMC_ArmoredSUV"
+      "BAPMC_ArmoredSUV",
+      "BAPMC_Mavik_Base",
+      "BAPMC_mavik_3",
+      "BAPMC_mavik_3T",
+      "BAPMC_MQ9",
+      "BAPMC_Mavik3T_Base",
+      "BAPMC_foxhound_lppv_tes",
+      "BAPMC_lcvpmk5_viv",
+      "BAPMC_lcvpmk5_1",
+      "BAPMC_Static_Rapier_FSC_Launcher",
+      "BAPMC_Static_Rapier_FSC_Blindfire",
+      "BAPMC_Static_Rapier_FSC_Dagger",
+      "BAPMC_F_35C",
+      "BAPMC_F_35C_S",
+      "BAPMC_aircraft_tug"
     };
     weapons[]={};
 		magazines[] = {};
@@ -160,12 +174,32 @@ class CfgVehicleClasses
 	};
 };
 
+class SensorTemplatePassiveRadar;
+class SensorTemplateAntiRadiation;
+class SensorTemplateActiveRadar;
+class SensorTemplateIR;
+class SensorTemplateVisual;
+class SensorTemplateMan;
+class SensorTemplateLaser;
+class SensorTemplateNV;
+class SensorTemplateDataLink;
+class DefaultVehicleSystemsDisplayManagerLeft
+{
+	class components;
+};
+class DefaultVehicleSystemsDisplayManagerRight
+{
+	class components;
+};
+
 class cfgVehicles {
     #include "parents\parents.hpp"
     #include "Infantry\Black\men.hpp"
     #include "Infantry\Black\backpacks.hpp"
     #include "vehicles\Air\helis.hpp"
     #include "vehicles\Air\planes.hpp"
+    #include "vehicles\Air\jets.hpp"
+    #include "vehicles\Air\drones.hpp"
     #include "vehicles\ground\carsArmed.hpp"
     #include "vehicles\ground\wdl\carsArmedWdl.hpp"
     #include "vehicles\ground\desert\carsArmedDes.hpp"
@@ -174,6 +208,8 @@ class cfgVehicles {
     #include "vehicles\ground\desert\carsUnarmedDes.hpp"
     #include "vehicles\ground\vans.hpp"
     #include "vehicles\ground\trucks.hpp"
+    #include "vehicles\ground\statics\aa.hpp"
+    #include "vehicles\sea\landingCraft.hpp"
 };
 
 class CfgFunctions {
