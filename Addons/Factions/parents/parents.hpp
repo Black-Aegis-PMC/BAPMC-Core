@@ -1,3 +1,26 @@
+	class Helicopter_Base_F;
+	class UAV_01_base_F: Helicopter_Base_F
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret;
+		};
+		class HitPoints: HitPoints
+		{
+			class HitHRotor;
+			class HitHull;
+		};
+		class AnimationSources;
+		class EventHandlers;
+		class ViewOptics;
+		class ViewPilot;
+		class Components;
+		class ACE_Actions: ACE_Actions
+		{
+			class ACE_MainActions: ACE_MainActions{};
+		};
+		class Components;
+	};
   class I_Soldier_SL_F;
   class I_medic_F;
   class I_Soldier_F;
@@ -142,3 +165,13 @@
       class CargoTurret_7;
     };
   };
+class rksla3_foxhound_lppv_tes;
+class F_35C;
+class F_35C_S;
+class USAF_MQ9;
+class rksla3_aircraft_tug_opfor;
+class rksla3_lcvpmk5_viv;
+class rksla3_lcvpmk5_1;
+class RKSLA3_Static_Rapier_FSC_Blindfire;
+class RKSLA3_Static_Rapier_FSC_Dagger;
+class RKSLA3_Static_Rapier_FSC_Launcher;
