@@ -1,3 +1,26 @@
+	class Helicopter_Base_F;
+	class UAV_01_base_F: Helicopter_Base_F
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret;
+		};
+		class HitPoints: HitPoints
+		{
+			class HitHRotor;
+			class HitHull;
+		};
+		class AnimationSources;
+		class EventHandlers;
+		class ViewOptics;
+		class ViewPilot;
+		class Components;
+		class ACE_Actions: ACE_Actions
+		{
+			class ACE_MainActions: ACE_MainActions{};
+		};
+		class Components;
+	};
   class I_Soldier_SL_F;
   class I_medic_F;
   class I_Soldier_F;
@@ -87,7 +110,22 @@
   class DAR_M1151;
   class DAR_M1151_Deploy;
   class DAR_M115_MK19;
-  class DAR_M1165_GMV;
+  class DAR_HMMWV_Base;
+  class DAR_M1165_GMV: DAR_HMMWV_Base
+  {
+    class AnimationSources: AnimationSources
+    {
+			class muzzle2_source;
+			class muzzle2_source_rot;
+			class ReloadAnim;
+			class ReloadMagazine;
+			class Gatling;
+    };
+  	class Turrets: Turrets
+		{
+			class MainTurret;
+    };
+  };
   class DAR_M1167;
   class UK3CB_BAF_Panther_GPMG_Sand_A;
   class UK3CB_BAF_LandRover_WMIK_Milan_FFR_Sand_A;
@@ -98,7 +136,6 @@
   class UK3CB_BAF_Husky_Passenger_HMG_Sand;
   class UK3CB_BAF_Husky_Passenger_GPMG_Sand;
   class UK3CB_BAF_Husky_Passenger_GMG_Sand;
-
   class DEGA_ArmoredSUV_Base;
   class DEGA_ArmoredSUV_PMC: DEGA_ArmoredSUV_Base
   {
@@ -128,3 +165,13 @@
       class CargoTurret_7;
     };
   };
+class rksla3_foxhound_lppv_tes;
+class F_35C;
+class F_35C_S;
+class USAF_MQ9;
+class rksla3_aircraft_tug_opfor;
+class rksla3_lcvpmk5_viv;
+class rksla3_lcvpmk5_1;
+class RKSLA3_Static_Rapier_FSC_Blindfire;
+class RKSLA3_Static_Rapier_FSC_Dagger;
+class RKSLA3_Static_Rapier_FSC_Launcher;

@@ -22,6 +22,21 @@
                     exceptions[] = {"isNotOnMap","isNotInside", "isNotSwimming","isNotSitting"};
                     icon = ""; // icontodo
 				};
+                    class Mavik_3_Unpack {
+                    displayName = "Deploy Mavik-3";
+                    condition = """VS_C_Mavik_3_Item"" in backpackItems _player";
+                    statement = "_player call VS_C_Drone_fnc_Mavik3_Create";
+                    exceptions[] = {"isNotOnMap","isNotInside", "isNotSwimming","isNotSitting"};
+                    icon = ""; // icontodo
+                    };
+                    class Mavik_3T_Unpack
+                    {
+                    displayName = "Deploy Mavik-3T";
+                    condition = """VS_C_Mavik_3T_Item"" in backpackItems _player";
+                    statement = "_player call VS_C_Drone_fnc_Mavik3T_Create";
+                    exceptions[] = {"isNotOnMap","isNotInside", "isNotSwimming","isNotSitting"};
+                    icon = ""; // icontodo
+                    };
 			};
 		};
 	};

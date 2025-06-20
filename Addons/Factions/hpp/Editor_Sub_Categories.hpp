@@ -46,3 +46,19 @@
   {
     displayName="Men";
   };
+  class BAPMC_Drones
+  {
+    displayName="Drones";
+  };
+  class BAPMC_Airbase_Support
+  {
+    displayName="Airbase Support";
+  };
+  class BAPMC_Air_Defence
+  {
+    displayName="Air Defence";
+  };
+  class BAPMC_Naval
+  {
+    displayName="Naval";
+  };
