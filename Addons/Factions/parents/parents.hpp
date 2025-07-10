@@ -27,33 +27,142 @@
   class EMP_Offroad_Comms;
   class B_Heli_Light_01_dynamicLoadout_F;
   class B_Heli_Light_01_F;
-  class B_UH60L_F;
-  class B_UH60L_base_F;
-  class B_MH60L_F: B_UH60L_base_F
+  class vtx_H60_base;
+  class vtx_HH60: vtx_H60_base
   {
-  		class Turrets: Turrets
+  	class Turrets: Turrets
 		{
 			class CopilotTurret;
 			class MainTurret;
 			class RightDoorGun;
+      class troop_commander;
+      class CargoTurret_01;
+      class CargoTurret_02;
+      class CargoTurret_03;
+      class CargoTurret_04;
+      class CargoTurret_05;
+      class CargoTurret_06;
+      class CargoTurret_11;
+      class CargoTurret_14;
+      class CargoTurret_15;
     };
   };
-  class B_HH60A_gray_doors_F: B_MH60L_F
+  class vtx_MH60M: vtx_H60_base
   {
-  		class Turrets: Turrets
+    class Turrets: Turrets
 		{
 			class CopilotTurret;
 			class MainTurret;
 			class RightDoorGun;
+      class troop_commander;
+      class CargoTurret_01;
+      class CargoTurret_02;
+      class CargoTurret_03;
+      class CargoTurret_04;
+      class CargoTurret_05;
+      class CargoTurret_06;
+      class CargoTurret_11;
+      class CargoTurret_14;
+      class CargoTurret_15;
     };
   };
-  class B_UH60L_med_F: B_UH60L_F
+  class vtx_UH60M_MEDEVAC: vtx_H60_base
   {
-  		class Turrets: Turrets
+  	class Turrets: Turrets
 		{
 			class CopilotTurret;
 			class MainTurret;
 			class RightDoorGun;
+      class troop_commander;
+      class CargoTurret_01;
+      class CargoTurret_02;
+      class CargoTurret_03;
+      class CargoTurret_04;
+      class CargoTurret_05;
+      class CargoTurret_06;
+      class CargoTurret_11;
+      class CargoTurret_14;
+      class CargoTurret_15;
+      class LeftWindow;
+      class RightWindow;
+    };
+  };
+  class vtx_MH60M_DAP: vtx_H60_base
+  {
+  	class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+			class RightDoorGun;
+      class CargoTurret_01;
+      class CargoTurret_02;
+      class CargoTurret_03;
+      class CargoTurret_04;
+      class CargoTurret_05;
+      class CargoTurret_06;
+      class CargoTurret_11;
+      class CargoTurret_14;
+      class CargoTurret_15;
+    };
+  };
+  class vtx_MH60M_DAP_MLASS: vtx_H60_base
+  {
+  	class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+			class RightDoorGun;
+      class CargoTurret_01;
+      class CargoTurret_02;
+      class CargoTurret_03;
+      class CargoTurret_04;
+      class CargoTurret_05;
+      class CargoTurret_06;
+      class CargoTurret_11;
+      class CargoTurret_14;
+      class CargoTurret_15;
+    };
+  };
+  class vtx_UH60M_SLICK: vtx_H60_base
+  {
+  	class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+			class RightDoorGun;
+      class CargoTurret_01;
+      class CargoTurret_02;
+      class CargoTurret_03;
+      class CargoTurret_04;
+    };
+  };
+  class fza_ah64base;
+  class fza_ah64d_b1: fza_ah64base
+  {
+  	class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+
+    };
+  };
+  class TF373_SOAR_MH47G_Base;
+  class TF373_SOAR_MH47G: TF373_SOAR_MH47G_Base
+  {
+  	class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+      class backcrew;
+      class CoPilotObs;
+      class HoistOperator;
+      class loadmaster;
+      class RampSeatL;
+      class RampSeatR;
+      class RightDoorGun;
+      class TroopCommander;
+      class Window_M240_Left;
+      class Window_M240_Right;
     };
   };
   class UK3CB_BAF_Wildcat_AH1_TRN_8A;
@@ -89,7 +198,6 @@
   class UK3CB_BAF_Apache_AH1_Generic_MTP_RM;
   class I_C_Helipilot_F;
   class I_C_Pilot_F;
-  class B_SSU_Kitbag_Black;
   class USP_REEBOW_3DAP_ACC9_BLK;
   class USP_45L_RUCKSACK;
   class UK3CB_BAF_Panther_GPMG_Green_A;
@@ -175,3 +283,8 @@ class rksla3_lcvpmk5_1;
 class RKSLA3_Static_Rapier_FSC_Blindfire;
 class RKSLA3_Static_Rapier_FSC_Dagger;
 class RKSLA3_Static_Rapier_FSC_Launcher;
+class UK3CB_BAF_Merlin_HC4_18_GPMG;
+class UK3CB_BAF_Merlin_HC4_24;
+class UK3CB_BAF_Merlin_HC4_32;
+class UK3CB_BAF_Merlin_HC4_CSAR;
+class B_Kitbag_mcamo;

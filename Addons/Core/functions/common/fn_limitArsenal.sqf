@@ -57,10 +57,11 @@ private _isSurgeon = (
 
 );
 
-private _ICAllowList = parseSimpleArray VS_core_arsenal_allowlist_IC;
+private _ICList = parseSimpleArray VS_core_arsenal_allowlist_IC;
 private _MedicAllowList = parseSimpleArray VS_core_arsenal_allowlist_medic;
 private _SurgeonAllowList = parseSimpleArray VS_core_arsenal_allowlist_surgeon;
 private _surgicalAllowlist = _SurgeonAllowList + _MedicAllowList;
+private _ICAllowList = __blacklistPrivate + _blacklistRecruit + _blacklistCadet + _ICList;
 
 // Parse and concatenate the blacklists
 _blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;

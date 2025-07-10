@@ -1,3 +1,11 @@
+	class BAPMC_Kitbag: B_Kitbag_mcamo
+	{
+		author = "Amateur-God";
+		scope = 2;
+		displayName = "Kitbag (Black)";
+		picture = "x\VS_C\Factions\Infantry\Black\Data\BAPMC_Icon_Kitbag.paa";
+		hiddenSelectionsTextures[] = {"x\VS_C\Factions\Infantry\Black\Data\BAPMC_Kitbag.paa"};
+	};
   class BAPMC_IC_pack: USP_REEBOW_3DAP_ACC9_BLK
   {
     scope=2;
@@ -115,7 +123,7 @@
   };
 
 
-  class BAPMC_Rifleman_pack: B_SSU_Kitbag_Black
+  class BAPMC_Rifleman_pack: BAPMC_Kitbag
   {
     scope=2;
     class TransportMagazines
@@ -131,7 +139,7 @@
   };
 
 
-  class BAPMC_Cadet_pack: B_SSU_Kitbag_Black
+  class BAPMC_Cadet_pack: BAPMC_Kitbag
   {
     scope=2;
     class TransportMagazines
@@ -157,6 +165,7 @@
      class _xx_ACE_EntrenchingTool {count=1;name="ACE_EntrenchingTool";};
     };
     class TransportWeapons{};
+ 		hiddenSelectionsTextures[] = {""};
   };
 
 
@@ -171,6 +180,7 @@
      class _xx_ACE_EntrenchingTool {count=1;name="ACE_EntrenchingTool";};
     };
     class TransportWeapons{};
+ 		hiddenSelectionsTextures[] = {""};
   };
 
 

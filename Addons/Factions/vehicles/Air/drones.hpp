@@ -45,12 +45,12 @@ class BAPMC_Mavik_Base: UAV_01_base_F
 		washDownStrength = "0.25f";
 		killFriendlyExpCoef = 0.1;
 		accuracy = 1.5;
-		camouflage = 0.5;
+		camouflage = 0.2;
 		audible = 0.1;
 		armor = 0.5;
 		cost = 20000;
-		altFullForce = 1000;
-		altNoForce = 2000;
+		altFullForce = 5000;
+		altNoForce = 6500;
 		epeImpulseDamageCoef = 5;
 		fuelExplosionPower = 0;
 		vehicleClass = "Autonomous";
@@ -100,7 +100,7 @@ class BAPMC_Mavik_Base: UAV_01_base_F
 			};
 		};
 		startDuration = 3;
-		maxSpeed = 100;
+		maxSpeed = 75;
 		precision = 15;
 		steerAheadSimul = 0.5;
 		steerAheadPlan = 0.7;
@@ -328,15 +328,56 @@ class BAPMC_Mavik_Base: UAV_01_base_F
 			};
 		};
 		class Turrets {};
-		class Components: Components
+		class Components
 		{
-			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+			class TransportCountermeasuresComponent {};
+			class VehicleSystemsDisplayManagerComponentLeft
 			{
-				class components{};
+				componentType = "VehicleSystemsDisplayManager";
+				left = 1;
+				defaultDisplay = "EmptyDisplay";
+				x = "(profilenamespace getvariable [""IGUI_GRID_CUSTOMINFOLEFT_X"",	(safezoneX + 0.5 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
+				y = "(profilenamespace getvariable [""IGUI_GRID_CUSTOMINFOLEFT_Y"",	(safezoneY + safezoneH - 21 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25))])";
+				class Components
+				{
+					class EmptyDisplay
+					{
+						componentType = "EmptyDisplayComponent";
+					};
+					class MinimapDisplay
+					{
+						componentType = "MinimapDisplayComponent";
+						resource = "RscCustomInfoAirborneMiniMap";
+					};
+					class UAVDisplay
+					{
+						componentType = "UAVFeedDisplayComponent";
+					};
+				};
 			};
-			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+			class VehicleSystemsDisplayManagerComponentRight
 			{
-				class components{};
+				componentType = "VehicleSystemsDisplayManager";
+				right = 1;
+				defaultDisplay = "EmptyDisplay";
+				x = "(profilenamespace getvariable [""IGUI_GRID_CUSTOMINFORIGHT_X"",	((safezoneX + safezoneW) - (		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40)) + 0.5 * 			(			((safezoneW / safezoneH) min 1.2) / 40)))])";
+				y = "(profilenamespace getvariable [""IGUI_GRID_CUSTOMINFORIGHT_Y"",	(safezoneY + safezoneH - 21 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25))])";
+				class Components
+				{
+					class EmptyDisplay
+					{
+						componentType = "EmptyDisplayComponent";
+					};
+					class MinimapDisplay
+					{
+						componentType = "MinimapDisplayComponent";
+						resource = "RscCustomInfoAirborneMiniMap";
+					};
+					class UAVDisplay
+					{
+						componentType = "UAVFeedDisplayComponent";
+					};
+				};
 			};
 		};
 	};
