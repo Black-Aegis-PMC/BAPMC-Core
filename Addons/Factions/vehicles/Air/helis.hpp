@@ -488,19 +488,8 @@
     scopecurator=2;
     displayName="AH-64D Apache Longbow B1";
     crew="BAPMC_Helicopter_Pilot";
-    typicalCargo[] = {"BAPMC_Helicopter_Crew"};
+    typicalCargo[] = {"BAPMC_Helicopter_Pilot"};
     vehicleClass = "BAPMC_helicopters";
-    class Turrets: Turrets
-    {
-      class CopilotTurret: CopilotTurret
-      {
-        gunnerType = "BAPMC_Helicopter_Pilot";
-      };
-      class MainTurret: MainTurret
-      {
-        gunnerType = "BAPMC_Helicopter_Pilot";
-      };
-    };
   };
   class BAPMC_Chinook: TF373_SOAR_MH47G
   {
@@ -525,10 +514,6 @@
         gunnerType = "BAPMC_Helicopter_Crew";
       };
       class backcrew: backcrew
-      {
-        gunnerType = "BAPMC_Helicopter_Crew";
-      };
-      class CoPilotObs: CoPilotObs
       {
         gunnerType = "BAPMC_Helicopter_Crew";
       };

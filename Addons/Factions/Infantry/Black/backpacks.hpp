@@ -165,7 +165,7 @@
      class _xx_ACE_EntrenchingTool {count=1;name="ACE_EntrenchingTool";};
     };
     class TransportWeapons{};
- 		hiddenSelectionsTextures[] = {""};
+ 		hiddenSelectionsTextures[] = {"","",""};
   };
 
 
@@ -180,7 +180,7 @@
      class _xx_ACE_EntrenchingTool {count=1;name="ACE_EntrenchingTool";};
     };
     class TransportWeapons{};
- 		hiddenSelectionsTextures[] = {""};
+ 		hiddenSelectionsTextures[] = {"","",""};
   };
 
 

@@ -136,16 +136,7 @@
       class CargoTurret_04;
     };
   };
-  class fza_ah64base;
-  class fza_ah64d_b1: fza_ah64base
-  {
-  	class Turrets: Turrets
-		{
-			class CopilotTurret;
-			class MainTurret;
-
-    };
-  };
+  class fza_ah64d_b1;
   class TF373_SOAR_MH47G_Base;
   class TF373_SOAR_MH47G: TF373_SOAR_MH47G_Base
   {
