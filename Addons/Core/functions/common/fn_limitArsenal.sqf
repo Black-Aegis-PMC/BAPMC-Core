@@ -34,11 +34,21 @@ private _isIC = (
     (_description in ["1: Section Leader", "5: Team Leader"]) ||
     (_type in [
         "BAPMC_IC",
+    ])
+);
+
+private _isPilot = (
+    (_type in [
         "BAPMC_Helicopter_Pilot",
         "BAPMC_Pilot",
-        "BAPMC_Vic_Crew",
         "BAPMC_Helicopter_Crew",
         "BAPMC_Fixed_Wing_Crew"
+    ])
+);
+
+private _isVicCrew = (
+    (_type in [
+        "BAPMC_Vic_Crew",
     ])
 );
 
@@ -61,10 +71,15 @@ private _blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;
 private _blacklistRecruit = parseSimpleArray VS_core_arsenal_blacklist_rct;
 private _blacklistCadet = parseSimpleArray VS_core_arsenal_blacklist_cdt;
 private _ICList = parseSimpleArray VS_core_arsenal_allowlist_IC;
+private _SurgeonList = parseSimpleArray VS_core_arsenal_allowlist_surgeon;
+private _pilotList = parseSimpleArray VS_core_arsenal_allowlist_pilot;
+private _vicCrewList = parseSimpleArray VS_core_arsenal_allowlist_vicCrew;
 private _MedicAllowList = parseSimpleArray VS_core_arsenal_allowlist_medic;
-private _SurgeonAllowList = parseSimpleArray VS_core_arsenal_allowlist_surgeon;
-private _surgicalAllowlist = _SurgeonAllowList + _MedicAllowList;
+private _surgicalAllowlist = _SurgeonList + _MedicAllowList;
 private _ICAllowList = _blacklistPrivate + _blacklistRecruit + _blacklistCadet + _ICList;
+private _pilotAllowList = _ICAllowList + _pilotList;
+private _vicCrewAllowList = _ICAllowList + _vicCrewList;
+private _ICPilotVicCrewList = _ICList + _pilotList + _vicCrewList;
 
 // Define ranks and their corresponding blacklists
 private _ranks = [
@@ -110,11 +125,24 @@ if (hasInterface) then {
             // 1. Apply the initial rank-based blacklist to everyone
             [_x, _blacklistedItems, false] call ace_arsenal_fnc_removeVirtualItems;
 
-            // 2. Handle IC gear
-            if (_isIC) then {
-                [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems;
+            // 2. Handle Command, Pilot, and Crew gear (hierarchical check)
+            // First, remove all possible special items from everyone.
+            [_x, _ICPilotVicCrewList, false] call ace_arsenal_fnc_removeVirtualItems;
+
+            // Then, add back the correct items based on the player's specific role.
+            if (_isPilot) then {
+                // Give pilots their specific list
+                [_x, _pilotAllowList, false] call ace_arsenal_fnc_addVirtualItems;
             } else {
-                [_x, _ICList, false] call ace_arsenal_fnc_removeVirtualItems;
+                if (_isVicCrew) then {
+                    // If not a pilot, check if they are vehicle crew
+                    [_x, _vicCrewAllowList, false] call ace_arsenal_fnc_addVirtualItems;
+                } else {
+                    if (_isIC) then {
+                        // If not pilot or crew, check if they are ground command
+                        [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems;
+                    };
+                };
             };
 
             // 3. Handle Medical gear (remove all first, then add back based on role)
