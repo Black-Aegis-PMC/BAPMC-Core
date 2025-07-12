@@ -15,7 +15,7 @@
 
     Authors:
     Met
-    Carmichael
+    Amateur-God (Carmichael)
     License GPL-2.0
 ---------------------------------------------------------------------------- */
 params [["_player", player, [objNull]]];
@@ -26,47 +26,45 @@ if (isNull _player) exitWith {
     false
 };
 
+private _description = _player get3DENAttribute "description";
+private _type = typeOf _player;
+private _medicClass = _player getVariable ["ace_medical_medicclass", -1];
+
 private _isIC = (
-    (_player get3DENAttribute "description" isEqualTo "1IC") ||
-    (_player get3DENAttribute "description" isEqualTo "2IC") ||
-	(_player get3DENAttribute "description" isEqualTo "IC") ||
-    (typeOf _player == "BAPMC_IC") ||
-    (typeOf _player == "BAPMC_Helicopter_Pilot") ||
-    (typeOf _player == "BAPMC_Pilot") ||
-    (typeOf _player == "BAPMC_Vic_Crew") ||
-    (typeOf _player == "BAPMC_Helicopter_Crew") ||
-    (typeOf _player == "BAPMC_Fixed_Wing_Crew") ||
-	(_player getUnitTrait "Leader")
+    (_description in ["1: Section Leader", "5: Team Leader"]) ||
+    (_type in [
+        "BAPMC_IC",
+        "BAPMC_Helicopter_Pilot",
+        "BAPMC_Pilot",
+        "BAPMC_Vic_Crew",
+        "BAPMC_Helicopter_Crew",
+        "BAPMC_Fixed_Wing_Crew"
+    ])
 );
 
-private _medicClass = player getVariable ["ace_medical_medicclass", -1];
-
 private _isMedic = (
-    (_player get3DENAttribute "description" isEqualTo "medic") ||
-    (typeOf _player == "BAPMC_Medic") ||
-	(_player getUnitTrait "Medic") ||
+    (_description in ["medic"]) ||
+    (_type in ["BAPMC_Medic"]) ||
+    (_player getUnitTrait "Medic") ||
     (_medicClass == 1)
-
 );
 
 private _isSurgeon = (
-    (_player get3DENAttribute "description" isEqualTo "Surgeon") ||
-    (typeOf _player == "BAPMC_Surgeon") ||
-	(_player getUnitTrait "Doctor") ||
+    (_description in ["Surgeon"]) ||
+    (_type in ["BAPMC_Surgeon"]) ||
+    (_player getUnitTrait "Doctor") ||
     (_medicClass == 2)
-
 );
 
+// Parse and concatenate the blacklists
+private _blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;
+private _blacklistRecruit = parseSimpleArray VS_core_arsenal_blacklist_rct;
+private _blacklistCadet = parseSimpleArray VS_core_arsenal_blacklist_cdt;
 private _ICList = parseSimpleArray VS_core_arsenal_allowlist_IC;
 private _MedicAllowList = parseSimpleArray VS_core_arsenal_allowlist_medic;
 private _SurgeonAllowList = parseSimpleArray VS_core_arsenal_allowlist_surgeon;
 private _surgicalAllowlist = _SurgeonAllowList + _MedicAllowList;
-private _ICAllowList = __blacklistPrivate + _blacklistRecruit + _blacklistCadet + _ICList;
-
-// Parse and concatenate the blacklists
-_blacklistPrivate = parseSimpleArray VS_core_arsenal_blacklist_pvt;
-_blacklistRecruit = parseSimpleArray VS_core_arsenal_blacklist_rct;
-_blacklistCadet = parseSimpleArray VS_core_arsenal_blacklist_cdt;
+private _ICAllowList = _blacklistPrivate + _blacklistRecruit + _blacklistCadet + _ICList;
 
 // Define ranks and their corresponding blacklists
 private _ranks = [
@@ -109,28 +107,25 @@ if (hasInterface) then {
     // Client-side logic for limiting the arsenal
     {
         if (!isNil { _x getVariable "ace_arsenal_virtualItems" }) then {
-            // Apply rank-based limitation
+            // 1. Apply the initial rank-based blacklist to everyone
             [_x, _blacklistedItems, false] call ace_arsenal_fnc_removeVirtualItems;
 
-            // If the player is IC, Give extra stuff and remove stuff for non ICs (idiot proofing arsenal issues)
-            if (!_isIC) then {
-                [_x, _ICAllowList, false] call ace_arsenal_fnc_removeVirtualItems;
-            };
-
+            // 2. Handle IC gear
             if (_isIC) then {
                 [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems;
+            } else {
+                [_x, _ICList, false] call ace_arsenal_fnc_removeVirtualItems;
             };
 
-            if (!_isSurgeon || !_isMedic) then {
-                [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_removeVirtualItems;
-            };
-
-            if (_isMedic) then {
-                [_x, _MedicAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-            };
+            // 3. Handle Medical gear (remove all first, then add back based on role)
+            [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_removeVirtualItems;
 
             if (_isSurgeon) then {
                 [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_addVirtualItems;
+            } else {
+                if (_isMedic) then {
+                    [_x, _MedicAllowList, false] call ace_arsenal_fnc_addVirtualItems;
+                };
             };
         };
     } forEach allMissionObjects "All";
