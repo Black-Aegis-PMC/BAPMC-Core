@@ -111,34 +111,18 @@ private _masterBlacklist = _blacklistedItems + _generalBlacklist;
 
 // Proceed to limit the arsenal if blacklist is available
 if (hasInterface) then {
-    {
         if (!isNil { _x getVariable "ace_arsenal_virtualItems" }) then {
             // 1. Apply Blacklist (Optimized)
             [_x, _masterBlacklist, false] call ace_arsenal_fnc_removeVirtualItems;
 
-            // 2. Handle All Roles Hierarchically
-            if (_isPilot) then {
-                [_x, _pilotAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-            } else {
-                if (_isVicCrew) then {
-                    [_x, _vicCrewAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-                } else {
-                    if (_isIC) then {
-                        [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-                    } else {
-                        if (_isSurgeon) then {
-                            [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_addVirtualItems;
-                        } else {
-                            if (_isMedic) then {
-                                [_x, _MedicAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-                            };
-                        };
-                    };
-                };
-            };
-        };
-    } forEach allMissionObjects "All";
-} else {
+            // 2. Handle Role Allowlists
+            if (_isPilot) then { [_x, _pilotAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
+            if (_isVicCrew) then { [_x, _vicCrewAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
+            if (_isIC) then { [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
+            if (_isSurgeon) then { [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_addVirtualItems; };
+            if (_isMedic) then { [_x, _MedicAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
+        } forEach allMissionObjects "All";
+    } else {
     // If not on the client, log that this function is being run outside a client context
     diag_log "[vs_core_fnc_limitArsenal] Arsenal limitation attempted on a non-client machine.";
 };
