@@ -339,6 +339,143 @@ function Remove-ObsoleteFiles {
         }
     }
 }
+function Get-PboPrefix {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$True)]
+        [string]$AddonPath
+    )
+    $prefixFile = Join-Path -Path $AddonPath -ChildPath '$PBOPREFIX$'
+    if (Test-Path $prefixFile) {
+        $prefix = (Get-Content -Path $prefixFile -Raw).Trim()
+        return ($prefix -replace '^["''\s]*(.*?)["''\s]*$','$1')
+    }
+    return $null
+}
+
+function Find-AllDependencies {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$True)]
+        [string]$FilePath,
+        [string]$AddonRootPath,
+        [string]$AddonPboPrefix,
+        [ref]$processedFiles
+    )
+
+    $filesToFind = @()
+    if (-not (Test-Path $FilePath) -or ($processedFiles.Value -contains $FilePath)) {
+        return $filesToFind
+    }
+
+    $processedFiles.Value += $FilePath
+    $content = Get-Content -Path $FilePath
+
+    # --- REGEX PATTERNS ---
+    $includeRegex = "#include\s*`"(.*?)\`";"
+    $assignmentRegex = "\w+\s*=\s*`"(.*?)\`";"
+    $initRegex = "init\s*=\s*`"(.*?)\`";"
+    $innerPathRegex = "'(.*?)'"
+    $functionClassRegex = "class\s+(\w+)\s*{};"
+
+    # --- Process #include directives ---
+    foreach ($line in ($content | Select-String -Pattern $includeRegex)) {
+        $foundPath = $line.Matches.Groups[1].Value.Replace("/", "\")
+        $fullLocalPath = Join-Path -Path $AddonRootPath -ChildPath $foundPath
+        $filesToFind += $fullLocalPath
+        $filesToFind += Find-AllDependencies -FilePath $fullLocalPath -AddonRootPath $AddonRootPath -AddonPboPrefix $AddonPboPrefix -processedFiles ([ref]$processedFiles.Value)
+    }
+
+    # --- Process general assignments (file = "...", texture = "...") ---
+    foreach ($line in ($content | Select-String -Pattern $assignmentRegex)) {
+        $foundPath = $line.Matches.Groups[1].Value.Replace("/", "\")
+        if ($foundPath.StartsWith($AddonPboPrefix)) {
+            $relativePath = $foundPath.Substring($AddonPboPrefix.Length).TrimStart("\")
+            $fullLocalPath = Join-Path -Path $AddonRootPath -ChildPath $relativePath
+
+
+            if ($foundPath -notlike "*.*") {
+                # Find all nested class definitions and add them to the list
+                $startLineIndex = [array]::IndexOf($content, $line.Line)
+                if ($startLineIndex -ne -1) {
+                    for ($i = $startLineIndex + 1; $i -lt $content.Count; $i++) {
+                        $nestedLine = $content[$i]
+                        if ($nestedLine -match $functionClassRegex) {
+                            $functionName = $matches[1]
+                            $expectedFile = Join-Path -Path $fullLocalPath -ChildPath "fn_$functionName.sqf"
+                            $filesToFind += $expectedFile
+                        }
+                        if ($nestedLine -match "};") { break }
+                    }
+                }
+                # Fallback to get all existing .sqf files in the folder if no nested classes are found.
+                $filesToFind += Get-ChildItem -Path $fullLocalPath -Filter "*.sqf" -Recurse | Select-Object -ExpandProperty FullName
+            } else {
+                # This is a file reference with an extension.
+                $filesToFind += $fullLocalPath
+            }
+        }
+    }
+
+    # --- Process specific 'init' assignments ---
+    foreach ($line in ($content | Select-String -Pattern $initRegex)) {
+        $innerMatch = $line.Matches[0].Groups[1].Value | Select-String -Pattern $innerPathRegex
+        if ($innerMatch) {
+            $foundPath = $innerMatch.Matches.Groups[1].Value.Replace("/", "\")
+            if ($foundPath.StartsWith($AddonPboPrefix)) {
+                $relativePath = $foundPath.Substring($AddonPboPrefix.Length).TrimStart("\")
+                $fullLocalPath = Join-Path -Path $AddonRootPath -ChildPath $relativePath
+                $filesToFind += $fullLocalPath
+            }
+        }
+    }
+
+    return $filesToFind | Select-Object -Unique
+}
+
+function Validate-AddonFiles {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$True)]
+        [string]$AddonPath
+    )
+
+    $configPath = Join-Path -Path $AddonPath -ChildPath "config.cpp"
+    if (-not (Test-Path $configPath)) {
+        Write-Warning "[$timestamp] Skipping validation for '$AddonPath'. No config.cpp found."
+        return
+    }
+
+    $pboPrefix = Get-PboPrefix -AddonPath $AddonPath
+    if (-not $pboPrefix) {
+        Write-Warning "[$timestamp] Skipping validation for '$AddonPath'. Could not find $PBOPREFIX$ file."
+        return
+    }
+
+    Write-Output "[$timestamp] Validating all file dependencies (prefix: '$pboPrefix') starting from: $configPath"
+
+    $processedFiles = @()
+    $referencedFiles = Find-AllDependencies -FilePath $configPath -AddonRootPath $AddonPath -AddonPboPrefix $pboPrefix -processedFiles ([ref]$processedFiles)
+
+    $missingFiles = @()
+
+    foreach ($file in $referencedFiles) {
+        if (-not (Test-Path $file)) {
+            $missingFiles += $file
+        }
+    }
+
+    if ($missingFiles.Count -gt 0) {
+        Write-Host "" # Add a blank line for readability
+        Write-Host "[$timestamp] Critical error: The following files are missing from addon '$AddonPath' as referenced in its configuration files:" -ForegroundColor Red
+        $missingFiles | ForEach-Object { Write-Host " - $_" -ForegroundColor Red }
+        Write-Host ""
+        Write-Host "Build failed." -ForegroundColor Red
+        exit 1
+    }
+
+    Write-Output "[$timestamp] All referenced files for '$AddonPath' found."
+}
 
 function Handle-PrebuiltFiles {
     $sourceDir = "$projectRoot\optionals"
@@ -482,6 +619,16 @@ function Main {
         }
 
         Handle-PrebuiltFiles
+
+        # Get all addon directories first
+        $addonComponents = Get-ChildItem -Directory -Path "$projectRoot\addons"
+
+        Write-Output "[$timestamp] Starting pre-build file validation..."
+        foreach ($component in $addonComponents) {
+            Validate-AddonFiles -AddonPath $component.FullName
+        }
+        Write-Output "[$timestamp] Pre-build file validation complete. All referenced files found."
+
 
         foreach ($component in Get-ChildItem -Directory -Path "$projectRoot\addons") {
             New-PBO -Source $component
