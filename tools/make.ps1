@@ -353,6 +353,52 @@ function Get-PboPrefix {
     return $null
 }
 
+function Strip-Comments {
+    [CmdletBinding()]
+    param(
+        # Change Mandatory to $False to allow empty input
+        [Parameter(Mandatory=$False)]
+        [string[]]$Content
+    )
+
+    # --- NEW: Handle empty or null input gracefully ---
+    if (-not $Content) {
+        return @() # Return an empty array
+    }
+    # --- END NEW ---
+
+    $inCommentBlock = $false
+    $cleanedContent = @()
+
+    foreach ($line in $Content) {
+        $trimmedLine = $line.Trim()
+
+        # Check for multi-line comment start/end
+        if ($trimmedLine.StartsWith("/*")) {
+            $inCommentBlock = $true
+            if ($trimmedLine.EndsWith("*/")) {
+                $inCommentBlock = $false
+            }
+            continue
+        }
+        if ($inCommentBlock) {
+            if ($trimmedLine.EndsWith("*/")) {
+                $inCommentBlock = $false
+            }
+            continue
+        }
+
+        # Check for single-line comments
+        if ($trimmedLine.StartsWith("//")) {
+            continue
+        }
+
+        # If we get here, the line is not a comment.
+        $cleanedContent += $line
+    }
+    return $cleanedContent
+}
+
 function Find-AllDependencies {
     [CmdletBinding()]
     param(
@@ -370,6 +416,7 @@ function Find-AllDependencies {
 
     $processedFiles.Value += $FilePath
     $content = Get-Content -Path $FilePath
+    $content = Strip-Comments -Content $content
 
     # --- REGEX PATTERNS ---
     $includeRegex = "#include\s*`"(.*?)\`";"
