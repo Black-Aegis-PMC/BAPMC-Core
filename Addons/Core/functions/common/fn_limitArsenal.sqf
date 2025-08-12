@@ -78,7 +78,6 @@ private _ICAllowList = parseSimpleArray VS_core_arsenal_allowlist_IC;
 private _surgicalAllowlist = _SurgeonList + _MedicAllowList;
 private _pilotAllowList = _ICAllowList + _pilotList;
 private _vicCrewAllowList = _ICAllowList + _vicCrewList;
-private _generalBlacklist = _pilotAllowList + _vicCrewList + _surgicalAllowlist;
 
 // Get the player's name in lowercase and split by the first period (.)
 private _playerName = toLower name _player;
@@ -107,22 +106,44 @@ if (_blacklistedItems isEqualTo []) then {
     diag_log format ["[vs_core_fnc_limitArsenal] No blacklist found for player rank '%1'.", _playerRank];
 };
 
-private _masterBlacklist = _blacklistedItems + _generalBlacklist;
 
 // Proceed to limit the arsenal if blacklist is available
 if (hasInterface) then {
+    // Client-side logic for limiting the arsenal
+    {
         if (!isNil { _x getVariable "ace_arsenal_virtualItems" }) then {
-            // 1. Apply Blacklist (Optimized)
-            [_x, _masterBlacklist, false] call ace_arsenal_fnc_removeVirtualItems;
+            // Apply rank-based limitation
+            [_x, _blacklistedItems, true] call ace_arsenal_fnc_removeVirtualItems;
 
-            // 2. Handle Role Allowlists
-            if (_isPilot) then { [_x, _pilotAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
-            if (_isVicCrew) then { [_x, _vicCrewAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
-            if (_isIC) then { [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
-            if (_isSurgeon) then { [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_addVirtualItems; };
-            if (_isMedic) then { [_x, _MedicAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
-        } forEach allMissionObjects "All";
-    } else {
+            // If the player is IC, Give extra stuff and remove stuff for non ICs (idiot proofing arsenal issues)
+            if (!_isIC) then {
+                [_x, _ICAllowList, true] call ace_arsenal_fnc_removeVirtualItems;
+            };
+
+            if (_isIC) then {
+                [_x, _ICAllowList, true] call ace_arsenal_fnc_addVirtualItems;
+            };
+
+            if (!_isSurgeon || !_isMedic) then {
+                [_x, _surgicalAllowlist, true] call ace_arsenal_fnc_removeVirtualItems;
+            };
+
+            if (_isMedic) then {
+                [_x, _MedicAllowList, true] call ace_arsenal_fnc_addVirtualItems;
+            };
+
+            if (_isSurgeon) then {
+                [_x, _surgicalAllowlist, true] call ace_arsenal_fnc_addVirtualItems;
+            };
+            if (_isPilot) then {
+                [_x, _pilotAllowList, true] call ace_arsenal_fnc_addVirtualItems;
+            };
+            if (_isVicCrew) then {
+                [_x, _vicCrewAllowList, true] call ace_arsenal_fnc_addVirtualItems;
+            };
+        };
+    } forEach allMissionObjects "All";
+} else {
     // If not on the client, log that this function is being run outside a client context
     diag_log "[vs_core_fnc_limitArsenal] Arsenal limitation attempted on a non-client machine.";
 };
