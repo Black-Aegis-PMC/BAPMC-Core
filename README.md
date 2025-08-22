@@ -19,7 +19,6 @@ moe for the moe pilot stuff
 DAR/Richard. D for the HMMVWs
 marty, fat lurch, rusher and charles rabbit for Turret Enhanced Pluse
 fat lurch for fries for all
-rksl for all RKSL mods which are licensed under https://eula.rkslstudios.info
 LAR for F-35C lightning II released under https://creativecommons.org/licenses/by-nc-sa/3.0/
 lesh for leshs towing
 sam and darkwater for crocus, uav jammer, mavic, rpg-30, verba and wp fix
