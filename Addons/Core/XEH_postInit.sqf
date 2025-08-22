@@ -20,23 +20,6 @@ License GPL-2.0
 		publicVariable "VS_core_loadouts";
 		[VS_core_loadouts] remoteExec ["VS_core_fnc_setDefaultLoadouts", 0, true];
 	};
-	[player] call vs_core_fnc_limitArsenal;
-
-};
-
-[] spawn {
-    private _previousMedicalClass = -1;
-
-    while {true} do {
-        private _currentMedicalClass = player getVariable ["ace_medical_medicClass", -1];
-
-        if (_currentMedicalClass != _previousMedicalClass) then {
-            _previousMedicalClass = _currentMedicalClass;
-
-            [player] call vs_core_fnc_limitArsenal;
-        };
-        sleep 2;
-    };
 };
 
 //make units doctors

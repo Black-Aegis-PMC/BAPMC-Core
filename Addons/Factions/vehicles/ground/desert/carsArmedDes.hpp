@@ -188,15 +188,3 @@ class BAPMC_UK3CB_BAF_Husky_Passenger_GMG_Sand: UK3CB_BAF_Husky_Passenger_GMG_Sa
     crew = "BAPMC_Rifleman";
     typicalCargo[] = {"BAPMC_Rifleman"};
 };
-class BAPMC_foxhound_lppv_tes: rksla3_foxhound_lppv_tes
-{
-    faction = "VS_C_BAPMC";
-    editorCategory = "VS_C_BAPMC";
-    editorSubcategory = "BAPMC_Cars_Armed_Des";
-    side = 2;
-    scope = 2;
-    scopecurator = 2;
-    displayName = "Foxhound LPPV TES";
-    crew = "BAPMC_Rifleman";
-    typicalCargo[] = {"BAPMC_Rifleman"};
-};

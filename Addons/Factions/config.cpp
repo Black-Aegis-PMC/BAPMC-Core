@@ -128,11 +128,6 @@ class CfgPatches {
       "BAPMC_MQ9",
       "BAPMC_Mavik3T_Base",
       "BAPMC_foxhound_lppv_tes",
-      "BAPMC_lcvpmk5_viv",
-      "BAPMC_lcvpmk5_1",
-      "BAPMC_Static_Rapier_FSC_Launcher",
-      "BAPMC_Static_Rapier_FSC_Blindfire",
-      "BAPMC_Static_Rapier_FSC_Dagger",
       "BAPMC_F_35C",
       "BAPMC_F_35C_S",
       "BAPMC_aircraft_tug",
@@ -223,8 +218,6 @@ class cfgVehicles {
     #include "vehicles\ground\desert\carsUnarmedDes.hpp"
     #include "vehicles\ground\vans.hpp"
     #include "vehicles\ground\trucks.hpp"
-    #include "vehicles\ground\statics\aa.hpp"
-    #include "vehicles\sea\landingCraft.hpp"
 };
 
 class CfgFunctions {

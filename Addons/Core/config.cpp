@@ -41,7 +41,6 @@ class CfgFunctions {
 			class fullHeal {};
 			class teleport {};
 			//Original
-			class limitArsenal {};
 			class makeDoctor {};
 		};
 
