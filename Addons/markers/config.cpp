@@ -9,7 +9,7 @@ class CfgPatches
         version = 1.0;
         versionAr[] = {1,0,0,0};
         versionStr = "v1.0.0";
-        units[] = {};
+        units[] = {"VS_BA_Flag", "VS_BA_Flag_Alt", "VS_BA_Mkr_Dragon", "VS_BA_Mkr_Havoc"};
         weapons[] = {};
         magazines[] = {};
         ammo[] = {};
