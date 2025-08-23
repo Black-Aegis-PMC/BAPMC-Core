@@ -3,7 +3,7 @@ class CfgPatches {
 		// Addon identity
 		name = "Black Aegis - PMC - Factions";
 		author = "Viking Studios";
-		authors[] = {"Amateur-god"};
+		authors[] = {"Amateur-god", "Welshy"};
 		url = "https://discord.gg/bkdGvUNFbb";
 		version = 1.0;
 		versionAr[] = {1,0,0,0};

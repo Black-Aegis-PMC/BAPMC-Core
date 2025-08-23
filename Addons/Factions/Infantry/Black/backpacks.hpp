@@ -224,3 +224,23 @@
     };
     class TransportWeapons{};
   };
+
+#ifndef WS_CAPACITY_MACROS
+  #define WS_CAPACITY_MACROS
+  #define WS_MAXLOAD 380
+  #define WS_MASS    30
+  #define PATCH_PACK(_C) class _C; class _C : _C { maximumLoad = WS_MAXLOAD; mass = WS_MASS; }
+#endif
+
+PATCH_PACK(BAPMC_Kitbag);              
+PATCH_PACK(USP_45L_RUCKSACK);          
+PATCH_PACK(USP_REEBOW_3DAP_ACC9_BLK);
+PATCH_PACK(BAPMC_Surgeon_pack);
+PATCH_PACK(BAPMC_Medic_pack);
+PATCH_PACK(BAPMC_Rifleman_pack);
+PATCH_PACK(BAPMC_Cadet_pack);
+PATCH_PACK(BAPMC_Helicopter_Pilot_pack);
+PATCH_PACK(BAPMC_Pilot_pack);
+PATCH_PACK(BAPMC_Fixed_Wing_Crew_pack);
+PATCH_PACK(BAPMC_Helicopter_Crew_pack);
+PATCH_PACK(BAPMC_Vic_Crew_pack);
