@@ -99,6 +99,16 @@ _dialogParameters = _dialogParameters + [["_hasSpectator", false]];
 	// Add Arsenal
 	[_filter, _objects] remoteExec ["vs_core_fnc_arsenal", 2];
 
+	// Wait for the arsenal to initialize
+	[] spawn {
+	    sleep 1; // Adjust the wait duration as needed
+
+	    // Apply the limit to all players
+	    {
+	        [_x] remoteExec ["vs_core_fnc_camoArsenal", _x]; // Executes on each client's machine
+	    } forEach allPlayers;
+	};
+
 	if (_hasFullHeal) then {
 		[_objects] remoteExec ["vs_core_fnc_fullHeal", 2];
 	};

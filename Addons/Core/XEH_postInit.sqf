@@ -19,7 +19,11 @@ License GPL-2.0
 		} forEach _loadoutUnits;
 		publicVariable "VS_core_loadouts";
 		[VS_core_loadouts] remoteExec ["VS_core_fnc_setDefaultLoadouts", 0, true];
+
 	};
+
+	[player] call vs_core_fnc_camoArsenal;
+
 };
 
 //make units doctors

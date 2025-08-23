@@ -42,6 +42,7 @@ class CfgFunctions {
 			class teleport {};
 			//Original
 			class makeDoctor {};
+			class camoArsenal {};
 		};
 
 		class zeus_modules {

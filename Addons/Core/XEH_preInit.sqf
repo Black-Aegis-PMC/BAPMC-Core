@@ -59,90 +59,50 @@ private _VS_core_settings = [
         true
     ],
 	[
-        "VS_core_arsenal_blacklist_cdt",
+        "VS_core_camo_whitelist_tropical",
         "EDITBOX",
-        ["Cadet", "Cadet equipment Restrictions"],
-        ["Viking Studios Arsenal Restrictions", "Blacklist"],
+        ["Tropical", "Tropical Camo whitelist"],
+        ["Viking Studios Arsenal", "Uniform Whitelists"],
         "[]",
         1,
         {
+            // One day this will re-init all arsenals that have this filter set
         },
         true
     ],
 	[
-        "VS_core_arsenal_blacklist_rct",
+        "VS_core_camo_whitelist_temperate",
         "EDITBOX",
-        ["Recruit", "Recruit equipment Restrictions"],
-        ["Viking Studios Arsenal Restrictions", "Blacklist"],
+        ["Temperate", "Temperate Camo whitelist"],
+        ["Viking Studios Arsenal", "Uniform Whitelists"],
         "[]",
         1,
         {
+            // One day this will re-init all arsenals that have this filter set
         },
         true
     ],
 	[
-        "VS_core_arsenal_blacklist_pvt",
+        "VS_core_camo_whitelist_desert",
         "EDITBOX",
-        ["Private", "Private equipment Restrictions"],
-        ["Viking Studios Arsenal Restrictions", "Blacklist"],
+        ["Desert", "Desert Camo whitelist"],
+        ["Viking Studios Arsenal", "Uniform Whitelists"],
         "[]",
         1,
         {
+            // One day this will re-init all arsenals that have this filter set
         },
         true
     ],
 	[
-        "VS_core_arsenal_allowlist_ic",
+        "VS_core_camo_whitelist_arctic",
         "EDITBOX",
-        ["IC", "IC equipment Additions"],
-        ["Viking Studios Arsenal Restrictions", "Allowlist"],
+        ["Arctic", "Arctic Camo whitelist"],
+        ["Viking Studios Arsenal", "Uniform Whitelists"],
         "[]",
         1,
         {
-        },
-        true
-    ],
-	[
-        "VS_core_arsenal_allowlist_medic",
-        "EDITBOX",
-        ["Medic", "Medic equipment Additions"],
-        ["Viking Studios Arsenal Restrictions", "Allowlist"],
-        "[]",
-        1,
-        {
-        },
-        true
-    ],
-	[
-        "VS_core_arsenal_allowlist_surgeon",
-        "EDITBOX",
-        ["Surgeon", "Surgeon equipment Additions"],
-        ["Viking Studios Arsenal Restrictions", "Allowlist"],
-        "[]",
-        1,
-        {
-        },
-        true
-    ],
-	[
-        "VS_core_arsenal_allowlist_pilot",
-        "EDITBOX",
-        ["Pilot", "Pilot equipment Additions"],
-        ["Viking Studios Arsenal Restrictions", "Allowlist"],
-        "[]",
-        1,
-        {
-        },
-        true
-    ],
-	[
-        "VS_core_arsenal_allowlist_vicCrew",
-        "EDITBOX",
-        ["Vehicle Crew", "Vehicle Crew equipment Additions"],
-        ["Viking Studios Arsenal Restrictions", "Allowlist"],
-        "[]",
-        1,
-        {
+            // One day this will re-init all arsenals that have this filter set
         },
         true
     ]
